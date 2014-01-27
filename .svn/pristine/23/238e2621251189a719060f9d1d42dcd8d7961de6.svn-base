@@ -1,0 +1,15 @@
+//
+//  RACommand.h
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface RACommand : NSObject
+- (RACommand*) init;
+- (NSString *) getVerb;
+- (BOOL) executeWithArgs:(NSArray *) argv;
+@end

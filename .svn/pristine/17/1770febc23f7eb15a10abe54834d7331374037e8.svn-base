@@ -1,0 +1,43 @@
+//
+//  RACommandEmote.m
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RACommandEmote.h"
+
+@implementation RACommandEmote
+
+- (RACommand*) init
+{
+    return self;
+}
+
+- (NSString *) getVerb
+{
+    return @"emote";
+}
+
+- (BOOL) executeWithArgs:(NSArray *) argv
+{
+    BOOL ret = false;
+    NSLog(@"%@\n\r", @"Executing emote command.");
+    
+    
+    if(argv.count == 2) {
+        int xValue = [argv[0] intValue];
+        int yValue = [argv[1] intValue];
+        
+        NSLog(@"Emote x:%d y:%d", xValue, yValue);
+    }
+    else {
+        NSLog(@"Improper arg list length for emote.");
+        ret = false;
+    }
+    
+    return ret;
+}
+
+@end

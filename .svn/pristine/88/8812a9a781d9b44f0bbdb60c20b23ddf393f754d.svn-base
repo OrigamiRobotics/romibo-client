@@ -1,0 +1,33 @@
+//
+//  RACommand.m
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RACommand.h"
+
+@implementation RACommand {
+    NSString *_verb;
+}
+
+- (RACommand*) init
+{
+    // XXX throw exception?
+    _verb = nil;
+    return nil;
+}
+
+- (NSString *) getVerb
+{
+    return _verb;
+}
+
+- (BOOL) executeWithArgs:(NSArray *) argv
+{
+    // XXX throw exception;
+    return false;
+}
+
+@end

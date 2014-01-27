@@ -1,0 +1,77 @@
+//
+//  RACommandTilt.m
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RACommandTilt.h"
+#import <UIKit/UIKit.h>
+#import "RMBOAppDelegate.h"
+
+#define JoyStickCentered_YCoord 50
+
+@implementation RACommandTilt
+{
+    RARMCoreDelegate *_robot;
+}
+
+- (RACommand*) initWithRobot:(RARMCoreDelegate *)robot
+{
+    _robot = robot;
+    return self;
+}
+
+- (NSString *) getVerb
+{
+    return @"tilt";
+}
+
+- (BOOL) executeWithArgs:(NSArray *) argv
+{
+    static int currentTiltDirection = 0;
+    int requestedTiltDirection = 0;
+    BOOL ret = false;
+
+    //RMBOAppDelegate* appDelegate = (RMBOAppDelegate*) [UIApplication sharedApplication].delegate;
+   
+    if(argv.count == 2) {
+         int yValue = [argv[1] intValue];
+        
+        if (yValue == JoyStickCentered_YCoord)
+        {
+            requestedTiltDirection = 0;
+        }
+        else if (yValue < JoyStickCentered_YCoord)
+        {
+            requestedTiltDirection = -1;
+        }
+        else
+        {
+            requestedTiltDirection = 1;
+        }
+ 
+        @synchronized(self.init)
+        {
+            if (requestedTiltDirection != currentTiltDirection)
+            {
+                float motorSpeed = .5 * requestedTiltDirection;
+                NSString *newText = [NSString stringWithFormat:@"Tilt speed %f", motorSpeed];
+                NSLog(@"%@\n", newText);
+
+                [_robot.romoRobot tiltWithMotorPower:motorSpeed];
+            }
+        
+            currentTiltDirection = requestedTiltDirection;
+        }
+    }
+    else {
+        NSLog(@"Improper arg list length for tilt.");
+        ret = false;
+    }
+    
+    return ret;
+}
+
+@end

@@ -1,0 +1,30 @@
+//
+//  RARMCoreDelegate.h
+//  RomoArigato
+//
+//  Created by Mike Dillon on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <RMCore/RMCore.h>
+@interface RARMCoreDelegate : NSObject <RMCoreDelegate>
+
+@property (nonatomic, strong) RMCoreRobotRomo3<HeadTiltProtocol, DriveProtocol, LEDProtocol> *romoRobot;
+
+- (RARMCoreDelegate *)init;
+
+/**
+ Delegate method that is triggered when the iDevice is connected to a robot.
+ */
+- (void)robotDidConnect:(RMCoreRobotRomo3 *)robot;
+
+/**
+ Delegate method that is triggered when the iDevice is disconnected from a
+ robot.
+ */
+- (void)robotDidDisconnect:(RMCoreRobotRomo3 *)robot;
+
+- (bool)isConnectToRomo;
+
+@end

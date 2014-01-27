@@ -1,0 +1,55 @@
+//
+//  RACommandSay.m
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RACommandSay.h"
+#import "RMBOSoundLibrary.h"
+
+@implementation RACommandSay
+{
+    //NSMutableArray *_playCommandsToWaveFileMapping;
+    RMBOSoundLibrary *_soundLibrary;
+}
+
+- (RACommand*) init
+{
+    // Load in the play command to wav file mapping
+    //NSString* allCommands = [[NSBundle mainBundle] pathForResource:@"SayCommandToWavFileMap" ofType:@"plist"];
+    //_playCommandsToWaveFileMapping = [[NSMutableArray arrayWithContentsOfFile:allCommands] copy];
+    
+    // Load the sound library from the wav file mapping
+    _soundLibrary = [[RMBOSoundLibrary alloc] init];
+    
+    return self;
+}
+
+- (NSString *) getVerb
+{
+    return @"say";
+}
+
+- (BOOL) executeWithArgs:(NSArray *) argv
+{
+    BOOL ret = false;
+    NSLog(@"%@\n\r", @"Executing say command.");
+    
+    
+    if(argv.count == 1) {
+        NSString *fileName = [argv[0] stringByDeletingPathExtension];
+        
+        NSLog(@"Say %@", fileName);
+        [_soundLibrary playSoundClip:fileName vibrate:false];
+    }
+    else {
+        NSLog(@"Improper arg list length for say.");
+        ret = false;
+    }
+    
+    return ret;
+}
+
+@end

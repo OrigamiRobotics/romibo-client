@@ -1,0 +1,14 @@
+//
+//  RACommandDrive.h
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RACommand.h"
+#import "RARMCoreDelegate.h"
+
+@interface RACommandDrive : RACommand
+- (RACommand*) initWithRobot:(RARMCoreDelegate *)robot;
+@end

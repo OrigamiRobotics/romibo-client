@@ -1,0 +1,267 @@
+//
+//  RMBOSoundLibrary.m
+//
+//  Created by James Pari on 12/4/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RMBOSoundLibrary.h"
+
+@interface soundQueueObject : NSObject
+@property (nonatomic) NSString* soundName;
+@property (nonatomic) bool vibrate;
+@end
+
+@implementation soundQueueObject
+@end
+
+@implementation RMBOSoundLibrary
+
+NSMutableArray* soundQueue;
+NSMutableDictionary* soundLibrary;
+bool soundAlreadyPlaying = false;
+
+//Delegate method for all sounds...
+- (void) soundPlaybackComplete
+{
+    soundAlreadyPlaying = false;
+    [self playNextSound];
+}
+
+- (void) playNextSound
+{
+    if( soundQueue != nil )
+    {
+        if( [soundQueue count] > 0 )
+        {
+            soundQueueObject* nextSound = [soundQueue objectAtIndex:0];
+            [soundQueue removeObjectAtIndex:0];
+            
+            RMBOSound *sound = nil;
+            
+            sound = [soundLibrary objectForKey:nextSound.soundName];
+            
+            if( sound != nil )
+            {
+                soundAlreadyPlaying = true;
+                [sound playSound:nextSound.vibrate];
+            }
+        }
+    }
+}
+
+- (void) playQueuedSounds
+{
+    if( soundQueue != nil )
+    {
+        if( [soundQueue count] > 0 && !soundAlreadyPlaying )
+        {
+            [self playNextSound];
+        }
+    }
+}
+
+- (void) loadAllSoundClips
+{
+    //Load each of the needed sound clips...
+    [self loadSoundClip:@"lets_p1" ext:@"wav"];
+    [self loadSoundClip:@"simon_sa" ext:@"wav"];
+    [self loadSoundClip:@"raise_yo" ext:@"wav"];
+    [self loadSoundClip:@"look" ext:@"wav"];
+    [self loadSoundClip:@"hand" ext:@"wav"];
+    [self loadSoundClip:@"right" ext:@"wav"];
+    [self loadSoundClip:@"left" ext:@"wav"];
+    [self loadSoundClip:@"up" ext:@"wav"];
+    [self loadSoundClip:@"Down_1" ext:@"wav"];
+    [self loadSoundClip:@"point" ext:@"wav"];
+    [self loadSoundClip:@"Simon_di" ext:@"wav"];
+    [self loadSoundClip:@"Gotcha!" ext:@"wav"];
+    [self loadSoundClip:@"Oops" ext:@"wav"];
+    [self loadSoundClip:@"let's_pl" ext:@"wav"];
+    [self loadSoundClip:@"Great_Jo" ext:@"wav"];
+    [self loadSoundClip:@"clap_you" ext:@"wav"];
+    [self loadSoundClip:@"you_win" ext:@"wav"];
+    [self loadSoundClip:@"great_0" ext:@"wav"];
+    [self loadSoundClip:@"lets_p0" ext:@"wav"];
+    [self loadSoundClip:@"somethin" ext:@"wav"];
+    [self loadSoundClip:@"red" ext:@"wav"];
+    [self loadSoundClip:@"orange" ext:@"wav"];
+    [self loadSoundClip:@"yellow" ext:@"wav"];
+    [self loadSoundClip:@"green" ext:@"wav"];
+    [self loadSoundClip:@"blue" ext:@"wav"];
+    [self loadSoundClip:@"purple" ext:@"wav"];
+    [self loadSoundClip:@"black" ext:@"wav"];
+    [self loadSoundClip:@"white" ext:@"wav"];
+    [self loadSoundClip:@"big" ext:@"wav"];
+    [self loadSoundClip:@"small" ext:@"wav"];
+    [self loadSoundClip:@"no" ext:@"wav"];
+    [self loadSoundClip:@"Yes_2" ext:@"wav"];
+    [self loadSoundClip:@"guess_ag" ext:@"wav"];
+    [self loadSoundClip:@"keep_gue" ext:@"wav"];
+    [self loadSoundClip:@"you're_c" ext:@"wav"];
+    [self loadSoundClip:@"hello" ext:@"wav"];
+    [self loadSoundClip:@"My_nam0" ext:@"wav"];
+    [self loadSoundClip:@"what_i4" ext:@"wav"];
+    [self loadSoundClip:@"what_i5" ext:@"wav"];
+    [self loadSoundClip:@"Me_too!" ext:@"wav"];
+    [self loadSoundClip:@"ask_me_a" ext:@"wav"];
+    [self loadSoundClip:@"I_like1" ext:@"wav"];
+    [self loadSoundClip:@"tell_m1" ext:@"wav"];
+    [self loadSoundClip:@"ouch" ext:@"wav"];
+    [self loadSoundClip:@"color" ext:@"wav"];
+    [self loadSoundClip:@"food" ext:@"wav"];
+    [self loadSoundClip:@"thing" ext:@"wav"];
+    [self loadSoundClip:@"place_to" ext:@"wav"];
+    [self loadSoundClip:@"I_am_tir" ext:@"wav"];
+    [self loadSoundClip:@"I_need_t" ext:@"wav"];
+    [self loadSoundClip:@"I'll_see" ext:@"wav"];
+    [self loadSoundClip:@"lets_sin" ext:@"wav"];
+    [self loadSoundClip:@"do_you_k" ext:@"wav"];
+    [self loadSoundClip:@"sing_me_" ext:@"wav"];
+    [self loadSoundClip:@"that's_m" ext:@"wav"];
+    [self loadSoundClip:@"dance_wi" ext:@"wav"];
+    [self loadSoundClip:@"do_what_" ext:@"wav"];
+    [self loadSoundClip:@"louder" ext:@"wav"];
+    [self loadSoundClip:@"quieter" ext:@"wav"];
+    //[self loadSoundClip:@"You_are_" ext:@"wav"];
+    [self loadSoundClip:@"lets_try" ext:@"wav"];
+    //[self loadSoundClip:@"Bye_Bye_" ext:@"wav"];
+    [self loadSoundClip:@"In_the_M" ext:@"wav"];
+    [self loadSoundClip:@"little_m" ext:@"wav"];
+    [self loadSoundClip:@"old_macd" ext:@"wav"];
+    //[self loadSoundClip:@"Show_Me_" ext:@"wav"];
+    [self loadSoundClip:@"the_far0" ext:@"wav"];
+    [self loadSoundClip:@"twinkle" ext:@"wav"];
+    [self loadSoundClip:@"You_Are1" ext:@"wav"];
+    [self loadSoundClip:@"who" ext:@"wav"];
+    [self loadSoundClip:@"what" ext:@"wav"];
+    [self loadSoundClip:@"where" ext:@"wav"];
+    [self loadSoundClip:@"when" ext:@"wav"];
+    [self loadSoundClip:@"why" ext:@"wav"];
+    [self loadSoundClip:@"how" ext:@"wav"];
+    [self loadSoundClip:@"is_that" ext:@"wav"];
+    [self loadSoundClip:@"was_that" ext:@"wav"];
+    [self loadSoundClip:@"wow" ext:@"wav"];
+    [self loadSoundClip:@"that's_i" ext:@"wav"];
+    [self loadSoundClip:@"I_do_not" ext:@"wav"];
+    [self loadSoundClip:@"that's_f" ext:@"wav"];
+    [self loadSoundClip:@"really" ext:@"wav"];
+    [self loadSoundClip:@"you're_k" ext:@"wav"];
+    [self loadSoundClip:@"hehe_tha" ext:@"wav"];
+    [self loadSoundClip:@"tell_m0" ext:@"wav"];
+    [self loadSoundClip:@"what_hap" ext:@"wav"];
+    [self loadSoundClip:@"why_di0" ext:@"wav"];
+    [self loadSoundClip:@"robot" ext:@"wav"];
+    [self loadSoundClip:@"frog" ext:@"wav"];
+    [self loadSoundClip:@"cat" ext:@"wav"];
+    [self loadSoundClip:@"dog" ext:@"wav"];
+    [self loadSoundClip:@"what_d2" ext:@"wav"];
+    [self loadSoundClip:@"cross_th" ext:@"wav"];
+    [self loadSoundClip:@"climb_th" ext:@"wav"];
+    [self loadSoundClip:@"say_to_t" ext:@"wav"];
+    [self loadSoundClip:@"you_tell" ext:@"wav"];
+    [self loadSoundClip:@"tell_me_" ext:@"wav"];
+    [self loadSoundClip:@"I_don't_" ext:@"wav"];
+    [self loadSoundClip:@"knock_kn" ext:@"wav"];
+    [self loadSoundClip:@"who's_th" ext:@"wav"];
+    [self loadSoundClip:@"Romibo" ext:@"wav"];
+    [self loadSoundClip:@"just_kid" ext:@"wav"];
+    [self loadSoundClip:@"why_was_" ext:@"wav"];
+    [self loadSoundClip:@"Because_" ext:@"wav"];
+    [self loadSoundClip:@"what_i0" ext:@"wav"];
+    [self loadSoundClip:@"heavy_me" ext:@"wav"];
+    [self loadSoundClip:@"what_d8" ext:@"wav"];
+    [self loadSoundClip:@"a_trans-" ext:@"wav"];
+    [self loadSoundClip:@"when_doe" ext:@"wav"];
+    [self loadSoundClip:@"whenever" ext:@"wav"];
+    [self loadSoundClip:@"why_did_" ext:@"wav"];
+    [self loadSoundClip:@"becaus0" ext:@"wav"];
+    [self loadSoundClip:@"what_d5" ext:@"wav"];
+    [self loadSoundClip:@"R2_detou" ext:@"wav"];
+    [self loadSoundClip:@"What's_s" ext:@"wav"];
+    [self loadSoundClip:@"R2_doo_d" ext:@"wav"];
+    [self loadSoundClip:@"what_d6" ext:@"wav"];
+    [self loadSoundClip:@"a_row-bo" ext:@"wav"];
+    [self loadSoundClip:@"what_d0" ext:@"wav"];
+    [self loadSoundClip:@"Rib-bot" ext:@"wav"];
+    [self loadSoundClip:@"why_wa0" ext:@"wav"];
+    [self loadSoundClip:@"he_was_d" ext:@"wav"];
+    [self loadSoundClip:@"why_coul" ext:@"wav"];
+    [self loadSoundClip:@"he_was_c" ext:@"wav"];
+    [self loadSoundClip:@"what_d4" ext:@"wav"];
+    [self loadSoundClip:@"an_auton" ext:@"wav"];
+    [self loadSoundClip:@"why_co0" ext:@"wav"];
+    [self loadSoundClip:@"it_was_u" ext:@"wav"];
+    [self loadSoundClip:@"I_hate_t" ext:@"wav"];
+    [self loadSoundClip:@"what_d7" ext:@"wav"];
+    [self loadSoundClip:@"if_you_c" ext:@"wav"];
+    [self loadSoundClip:@"what_i3" ext:@"wav"];
+    [self loadSoundClip:@"never_li" ext:@"wav"];
+    [self loadSoundClip:@"what_d1" ext:@"wav"];
+    [self loadSoundClip:@"HeHe" ext:@"wav"];
+    [self loadSoundClip:@"what_d3" ext:@"wav"];
+    [self loadSoundClip:@"a_silico" ext:@"wav"];
+    [self loadSoundClip:@"draw_m2" ext:@"wav"];
+    [self loadSoundClip:@"draw_t0" ext:@"wav"];
+    [self loadSoundClip:@"draw_m1" ext:@"wav"];
+    [self loadSoundClip:@"draw_t1" ext:@"wav"];
+    [self loadSoundClip:@"draw_the" ext:@"wav"];
+    [self loadSoundClip:@"why_is_t" ext:@"wav"];
+    [self loadSoundClip:@"what_i1" ext:@"wav"];
+    [self loadSoundClip:@"draw_m3" ext:@"wav"];
+    [self loadSoundClip:@"draw_s0" ext:@"wav"];
+    [self loadSoundClip:@"draw_my_" ext:@"wav"];
+    [self loadSoundClip:@"what_did" ext:@"wav"];
+    [self loadSoundClip:@"draw_me_" ext:@"wav"];
+    [self loadSoundClip:@"draw_m0" ext:@"wav"];
+    [self loadSoundClip:@"what_am_" ext:@"wav"];
+    [self loadSoundClip:@"how_did_" ext:@"wav"];
+    [self loadSoundClip:@"draw_a_t" ext:@"wav"];
+    [self loadSoundClip:@"is_there" ext:@"wav"];
+    [self loadSoundClip:@"draw_m4" ext:@"wav"];
+    [self loadSoundClip:@"who_is_i" ext:@"wav"];
+    [self loadSoundClip:@"is_the0" ext:@"wav"];
+    [self loadSoundClip:@"draw_som" ext:@"wav"];
+    [self loadSoundClip:@"what_are" ext:@"wav"];
+    [self loadSoundClip:@"could_yo" ext:@"wav"];
+    [self loadSoundClip:@"I_look_a" ext:@"wav"];
+    [self loadSoundClip:@"where_am" ext:@"wav"];
+}
+
+- (void) loadSoundClip:(NSString*) filename ext:(NSString*) extension
+{
+    RMBOSound *sound = [[RMBOSound alloc] init];
+    if ([sound loadSound:filename ext:extension] == YES)
+    {
+        [sound setDelegate:self];
+        [soundLibrary setObject:sound forKey:filename];
+    } else
+    {
+        sound = nil;
+    }
+}
+
+- (void) playSoundClip:(NSString *)filename vibrate:(bool)vibrate
+{
+    soundQueueObject* obj = [[soundQueueObject alloc] init];
+    [obj setVibrate:vibrate];
+    [obj setSoundName:filename];
+    
+    [soundQueue addObject:obj];
+    [self playQueuedSounds];
+}
+
+- (id) init
+{
+    //Initialize the dictionary...
+    soundLibrary = [[NSMutableDictionary alloc] init];
+
+    //Turn on the queue...
+    soundQueue = [[NSMutableArray alloc] initWithCapacity:10];
+    
+    [self loadAllSoundClips];
+    
+    return self;
+}
+
+@end

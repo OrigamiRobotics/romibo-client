@@ -1,0 +1,56 @@
+//
+//  RARMCoreDelegate.m
+//  RomoArigato
+//
+//  Created by Mike Dillon on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RARMCoreDelegate.h"
+#import <foundation/foundation.h>
+
+@interface RARMCoreDelegate ()
+@end
+
+
+@implementation RARMCoreDelegate
+
+
+- (RARMCoreDelegate *)init
+{
+    [RMCore setDelegate:self];
+        
+    return self;
+}
+
+/**
+ Delegate method that is triggered when the iDevice is connected to a robot.
+ */
+- (void)robotDidConnect:(RMCoreRobotRomo3 *)robot
+{
+    if (robot.isDrivable && robot.isHeadTiltable && robot.isLEDEquipped)
+    {
+        self.romoRobot = (RMCoreRobotRomo3<HeadTiltProtocol, DriveProtocol, LEDProtocol> *) robot;
+        // Disable polling of IMU as a workaround for crash bug
+        self.romoRobot.robotMotionEnabled = NO;
+    }
+    
+}
+
+/**
+ Delegate method that is triggered when the iDevice is disconnected from a
+ robot.
+ */
+- (void)robotDidDisconnect:(RMCoreRobotRomo3 *)robot
+{
+    if (robot == self.romoRobot)
+    {
+        self.romoRobot = nil;
+    }
+}
+
+- (bool)isConnectToRomo
+{
+    return self.romoRobot.connected;
+}
+@end

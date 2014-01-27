@@ -1,0 +1,150 @@
+//
+//  RAListener.m
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/1/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RAListener.h"
+#import "RAListenerDelegate.h"
+#import "GCDAsyncSocket.h"
+
+#define DEFAULT_LISTEN_PORT 2000
+#define DEFAULT_READ_TIMEOUT_MS  60000
+
+@implementation RAListener {
+    id _delegate;
+    GCDAsyncSocket *_listenSocket;
+    NSMutableArray *_connectedSockets;
+    uint16_t _port;
+    uint16_t _timeout;
+    NSString *_connectedClientStatus;
+}
+
+
+- (RAListener*) initWithDelegate:(id)delegate
+                            port:(uint16_t)port
+                   readTimeoutMS:(uint16_t)timeout
+
+{
+    _connectedClientStatus = RA_NO_CLIENT_CONNECTED_STATUS;
+    
+    _delegate = delegate;
+    
+    // Set up server socket
+    _listenSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    
+    // Storage for accepted client sockets
+    _connectedSockets = [[NSMutableArray alloc] initWithCapacity:1];
+    
+    // TCP port number to listen on
+    _port = port;
+    
+    // Timeout (in ms) between reads
+    _timeout = timeout;
+    
+    return self;
+}
+
+- (void) startListening
+{
+    NSError *err = nil;
+    if(![_listenSocket acceptOnPort:_port error:&err]) {
+        NSLog(@"FAILED to listen on port %d", _port);
+    }
+}
+
+- (void) stopListening
+{
+    if(_listenSocket != nil) {
+        [_listenSocket setDelegate:nil];
+        [_listenSocket disconnect];
+        _listenSocket = nil;
+    }
+}
+
+- (NSString*) getConnectedClientStatus
+{
+    return _connectedClientStatus;
+}
+
+//
+//  GCDAsyncSocket delegate methods
+//
+- (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket
+{
+  	@synchronized(_connectedSockets)
+	{
+		[_connectedSockets addObject:newSocket];
+	}
+	
+	NSString *host = [newSocket connectedHost];
+	UInt16 port = [newSocket connectedPort];
+    _connectedClientStatus = [NSString stringWithFormat:@"Client %@:%hu", host, port];
+
+    
+	[newSocket readDataToData:[GCDAsyncSocket CRData] withTimeout:_timeout tag:0];
+}
+
+
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+{
+    NSData *strData = [data subdataWithRange:NSMakeRange(0, [data length])];
+    NSString *msg = [[NSString alloc] initWithData:strData encoding:NSUTF8StringEncoding];
+    
+    if (msg)
+    {
+        NSLog(@"Received command: %@", msg);
+    }
+    else
+    {
+        NSLog(@"Error converting received data into UTF-8 String");
+    }
+    
+    // Call command parser here
+    [_delegate parseLine:msg];
+    
+    //RRCVViewController *vc = (RRCVViewController *) [_window rootViewController];
+    //[vc updateLog:txt];
+    
+    [_connectedSockets[0] readDataToData:[GCDAsyncSocket CRData] withTimeout:_timeout tag:0];
+}
+
+- (NSTimeInterval)socket:(GCDAsyncSocket *)sock shouldTimeoutReadWithTag:(long)tag
+                 elapsed:(NSTimeInterval)elapsed
+               bytesDone:(NSUInteger)length
+{
+	//NSString *statStr = @"Read timed out";
+    
+    //RRCVViewController *vc = (RRCVViewController *) [_window rootViewController];
+    //[vc updateStatus:statStr];
+	
+    NSLog(@"Socket read timed out.");
+    
+    return 0.0;
+}
+
+
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
+{
+  	if (sock != _listenSocket)
+	{
+        _connectedClientStatus = @"Client disconnected";
+        //NSString *statStr = @"Client disconnected";
+        
+        //RRCVViewController *vc = (RRCVViewController *) [_window rootViewController];
+        //[vc updateStatus:statStr];
+        //[vc clearLog];
+        
+        NSLog(@"Client socket disconnected.");
+        
+		@synchronized(_connectedSockets)
+		{
+			[_connectedSockets removeObject:sock];
+		}
+	}
+}
+
+
+@end

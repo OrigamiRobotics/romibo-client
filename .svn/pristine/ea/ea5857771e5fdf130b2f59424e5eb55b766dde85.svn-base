@@ -1,0 +1,15 @@
+//
+//  RMBOSoundLibrary.h
+//
+//  Created by James Pari on 12/4/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "RMBOSound.h"
+
+@interface RMBOSoundLibrary : NSObject <RMBOSoundCompletionProtocol>
+
+- (void) playSoundClip:(NSString*) filename vibrate:(bool)vibrate;
+
+@end

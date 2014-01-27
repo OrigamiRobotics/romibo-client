@@ -1,0 +1,81 @@
+//
+//  RACommandParser.m
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RACommandParser.h"
+#import "RACommand.h"
+
+@interface RACommandParser ()
+- (void) logCmd:(NSString *)verb args:(NSArray *)argv;
+@end
+
+@implementation RACommandParser {
+    NSMutableDictionary * _commandMap;
+}
+
+- (RACommandParser *) initWithCommands:(NSArray *) commandArray
+{
+    
+    _commandMap = [NSMutableDictionary new];
+    
+    for(RACommand * cmd in commandArray) {
+        NSString *verb = [cmd getVerb];
+        [_commandMap setObject:cmd forKey:verb];
+    }
+
+    return self;
+}
+
+
+- (void) logCmd:(NSString *)verb args:(NSArray *)argv
+{
+    NSMutableString *line = [verb mutableCopy];
+    
+    for(NSString *a in argv) {
+        [line appendFormat: @" %@", a];
+    }
+    
+    NSLog(@"Parsed command:  %@\n\r", line);
+}
+
+// From RAParserDelegate protocol
+- (void) parseLine:(NSString *) line
+{
+    NSScanner *scanner = [[NSScanner alloc] initWithString:line];
+    
+   
+    NSString *verb = nil;
+    
+    if([scanner scanUpToCharactersFromSet: [NSCharacterSet whitespaceCharacterSet] intoString:&verb])
+    {
+        RACommand *cmd = [_commandMap valueForKey:verb];
+        
+        if(cmd) {
+            NSMutableArray *argv = [NSMutableArray new];
+            NSString *arg = nil;
+                
+            while([scanner scanUpToCharactersFromSet: [NSCharacterSet whitespaceCharacterSet]
+                                          intoString: &arg ]) {
+                if(arg && [arg length]) {
+                    [argv addObject: arg];
+                }
+            }
+                
+            [self logCmd:verb args:argv];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [cmd executeWithArgs: argv];
+            });
+          
+        }
+        else {
+            NSLog(@"Unknown verb: %@", verb);
+        }
+    }
+}
+
+@end

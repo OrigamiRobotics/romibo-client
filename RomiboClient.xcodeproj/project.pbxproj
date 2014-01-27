@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A41C323184C3F2800649EBD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A41C322184C3F2700649EBD /* AVFoundation.framework */; };
+		2A41C325184C3F2E00649EBD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A41C324184C3F2E00649EBD /* CoreImage.framework */; };
+		2A8351AF185F7FCF002AF83B /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8351AB185F7FCF002AF83B /* libTestFlight.a */; };
+		2A8351B1185F8016002AF83B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8351B0185F8016002AF83B /* libz.dylib */; };
+		2AB41E361876043B00CCE380 /* RMBOExpressiveEyes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB41E351876043B00CCE380 /* RMBOExpressiveEyes.m */; };
+		2AC1E9971856F155005D0426 /* RMBOEye.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1E9961856F155005D0426 /* RMBOEye.m */; };
+		2AE1E33F18540E59004C430F /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE1E33E18540E59004C430F /* MultipeerConnectivity.framework */; };
+		2AE1E3421854341A004C430F /* RMBODriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1E3411854341A004C430F /* RMBODriver.m */; };
+		2AE1E34418543494004C430F /* RMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE1E34318543494004C430F /* RMCore.framework */; };
+		2AE1E346185434A3004C430F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE1E345185434A3004C430F /* CoreMotion.framework */; };
+		2AE1E348185434A8004C430F /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE1E347185434A8004C430F /* ExternalAccessory.framework */; };
+		2AF522F7184C3B3A00C250EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522F6184C3B3A00C250EF /* Foundation.framework */; };
+		2AF522F9184C3B3A00C250EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522F8184C3B3A00C250EF /* CoreGraphics.framework */; };
+		2AF522FB184C3B3A00C250EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522FA184C3B3A00C250EF /* UIKit.framework */; };
+		2AF52301184C3B3A00C250EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AF522FF184C3B3A00C250EF /* InfoPlist.strings */; };
+		2AF52303184C3B3A00C250EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF52302184C3B3A00C250EF /* main.m */; };
+		2AF52307184C3B3A00C250EF /* RMBOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF52306184C3B3A00C250EF /* RMBOAppDelegate.m */; };
+		2AF5230A184C3B3A00C250EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF52308184C3B3A00C250EF /* Main.storyboard */; };
+		2AF5230D184C3B3A00C250EF /* RMBOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5230C184C3B3A00C250EF /* RMBOViewController.m */; };
+		2AF5230F184C3B3A00C250EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5230E184C3B3A00C250EF /* Images.xcassets */; };
+		2AF52316184C3B3A00C250EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF52315184C3B3A00C250EF /* XCTest.framework */; };
+		2AF52317184C3B3A00C250EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522F6184C3B3A00C250EF /* Foundation.framework */; };
+		2AF52318184C3B3A00C250EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522FA184C3B3A00C250EF /* UIKit.framework */; };
+		2AF52320184C3B3A00C250EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5231E184C3B3A00C250EF /* InfoPlist.strings */; };
+		2AF52322184C3B3A00C250EF /* RomiboClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF52321184C3B3A00C250EF /* RomiboClientTests.m */; };
+		8425C866CE1247108ABD50CC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F0461428D84AE7A2FE38EE /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2AF52319184C3B3A00C250EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF522EB184C3B3A00C250EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AF522F2184C3B3A00C250EF;
+			remoteInfo = RomiboClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A41C322184C3F2700649EBD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2A41C324184C3F2E00649EBD /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		2A8351AB185F7FCF002AF83B /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		2A8351AC185F7FCF002AF83B /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		2A8351AD185F7FCF002AF83B /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		2A8351AE185F7FCF002AF83B /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		2A8351B0185F8016002AF83B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		2AB41E341876043B00CCE380 /* RMBOExpressiveEyes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBOExpressiveEyes.h; sourceTree = "<group>"; };
+		2AB41E351876043B00CCE380 /* RMBOExpressiveEyes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBOExpressiveEyes.m; sourceTree = "<group>"; };
+		2AC1E9951856F155005D0426 /* RMBOEye.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBOEye.h; sourceTree = "<group>"; };
+		2AC1E9961856F155005D0426 /* RMBOEye.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBOEye.m; sourceTree = "<group>"; };
+		2AE1E33E18540E59004C430F /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		2AE1E3401854341A004C430F /* RMBODriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBODriver.h; sourceTree = "<group>"; };
+		2AE1E3411854341A004C430F /* RMBODriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBODriver.m; sourceTree = "<group>"; };
+		2AE1E34318543494004C430F /* RMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RMCore.framework; sourceTree = "<group>"; };
+		2AE1E345185434A3004C430F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		2AE1E347185434A8004C430F /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		2AF522F3184C3B3A00C250EF /* RomiboClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RomiboClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AF522F6184C3B3A00C250EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2AF522F8184C3B3A00C250EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2AF522FA184C3B3A00C250EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2AF522FE184C3B3A00C250EF /* RomiboClient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomiboClient-Info.plist"; sourceTree = "<group>"; };
+		2AF52300184C3B3A00C250EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2AF52302184C3B3A00C250EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2AF52304184C3B3A00C250EF /* RomiboClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomiboClient-Prefix.pch"; sourceTree = "<group>"; };
+		2AF52305184C3B3A00C250EF /* RMBOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMBOAppDelegate.h; sourceTree = "<group>"; };
+		2AF52306184C3B3A00C250EF /* RMBOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMBOAppDelegate.m; sourceTree = "<group>"; };
+		2AF52309184C3B3A00C250EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2AF5230B184C3B3A00C250EF /* RMBOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMBOViewController.h; sourceTree = "<group>"; };
+		2AF5230C184C3B3A00C250EF /* RMBOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMBOViewController.m; sourceTree = "<group>"; };
+		2AF5230E184C3B3A00C250EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2AF52314184C3B3A00C250EF /* RomiboClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RomiboClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AF52315184C3B3A00C250EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2AF5231D184C3B3A00C250EF /* RomiboClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomiboClientTests-Info.plist"; sourceTree = "<group>"; };
+		2AF5231F184C3B3A00C250EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2AF52321184C3B3A00C250EF /* RomiboClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RomiboClientTests.m; sourceTree = "<group>"; };
+		2F7B286E25DA450DB706927A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		88F0461428D84AE7A2FE38EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AF522F0184C3B3A00C250EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A8351B1185F8016002AF83B /* libz.dylib in Frameworks */,
+				2AE1E348185434A8004C430F /* ExternalAccessory.framework in Frameworks */,
+				2AE1E346185434A3004C430F /* CoreMotion.framework in Frameworks */,
+				2A8351AF185F7FCF002AF83B /* libTestFlight.a in Frameworks */,
+				2AE1E33F18540E59004C430F /* MultipeerConnectivity.framework in Frameworks */,
+				2A41C325184C3F2E00649EBD /* CoreImage.framework in Frameworks */,
+				2A41C323184C3F2800649EBD /* AVFoundation.framework in Frameworks */,
+				2AF522F9184C3B3A00C250EF /* CoreGraphics.framework in Frameworks */,
+				2AE1E34418543494004C430F /* RMCore.framework in Frameworks */,
+				2AF522FB184C3B3A00C250EF /* UIKit.framework in Frameworks */,
+				2AF522F7184C3B3A00C250EF /* Foundation.framework in Frameworks */,
+				8425C866CE1247108ABD50CC /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AF52311184C3B3A00C250EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AF52316184C3B3A00C250EF /* XCTest.framework in Frameworks */,
+				2AF52318184C3B3A00C250EF /* UIKit.framework in Frameworks */,
+				2AF52317184C3B3A00C250EF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AF522EA184C3B3A00C250EF = {
+			isa = PBXGroup;
+			children = (
+				2AF522FC184C3B3A00C250EF /* RomiboClient */,
+				2AF5231B184C3B3A00C250EF /* RomiboClientTests */,
+				2AF522F5184C3B3A00C250EF /* Frameworks */,
+				2AF522F4184C3B3A00C250EF /* Products */,
+				2F7B286E25DA450DB706927A /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		2AF522F4184C3B3A00C250EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AF522F3184C3B3A00C250EF /* RomiboClient.app */,
+				2AF52314184C3B3A00C250EF /* RomiboClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AF522F5184C3B3A00C250EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A8351B0185F8016002AF83B /* libz.dylib */,
+				2AE1E347185434A8004C430F /* ExternalAccessory.framework */,
+				2AE1E345185434A3004C430F /* CoreMotion.framework */,
+				2AE1E34318543494004C430F /* RMCore.framework */,
+				2AE1E33E18540E59004C430F /* MultipeerConnectivity.framework */,
+				2A41C324184C3F2E00649EBD /* CoreImage.framework */,
+				2A41C322184C3F2700649EBD /* AVFoundation.framework */,
+				2AF522F6184C3B3A00C250EF /* Foundation.framework */,
+				2AF522F8184C3B3A00C250EF /* CoreGraphics.framework */,
+				2AF522FA184C3B3A00C250EF /* UIKit.framework */,
+				2AF52315184C3B3A00C250EF /* XCTest.framework */,
+				88F0461428D84AE7A2FE38EE /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AF522FC184C3B3A00C250EF /* RomiboClient */ = {
+			isa = PBXGroup;
+			children = (
+				2AF52305184C3B3A00C250EF /* RMBOAppDelegate.h */,
+				2AF52306184C3B3A00C250EF /* RMBOAppDelegate.m */,
+				2AF52308184C3B3A00C250EF /* Main.storyboard */,
+				2AF5230B184C3B3A00C250EF /* RMBOViewController.h */,
+				2AF5230C184C3B3A00C250EF /* RMBOViewController.m */,
+				2AF5230E184C3B3A00C250EF /* Images.xcassets */,
+				2AF522FD184C3B3A00C250EF /* Supporting Files */,
+				2AE1E3401854341A004C430F /* RMBODriver.h */,
+				2AE1E3411854341A004C430F /* RMBODriver.m */,
+				2AB41E341876043B00CCE380 /* RMBOExpressiveEyes.h */,
+				2AB41E351876043B00CCE380 /* RMBOExpressiveEyes.m */,
+				2AC1E9951856F155005D0426 /* RMBOEye.h */,
+				2AC1E9961856F155005D0426 /* RMBOEye.m */,
+				2A8351AB185F7FCF002AF83B /* libTestFlight.a */,
+				2A8351AC185F7FCF002AF83B /* TestFlight.h */,
+				2A8351AD185F7FCF002AF83B /* TestFlight+AsyncLogging.h */,
+				2A8351AE185F7FCF002AF83B /* TestFlight+ManualSessions.h */,
+			);
+			path = RomiboClient;
+			sourceTree = "<group>";
+		};
+		2AF522FD184C3B3A00C250EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2AF522FE184C3B3A00C250EF /* RomiboClient-Info.plist */,
+				2AF522FF184C3B3A00C250EF /* InfoPlist.strings */,
+				2AF52302184C3B3A00C250EF /* main.m */,
+				2AF52304184C3B3A00C250EF /* RomiboClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2AF5231B184C3B3A00C250EF /* RomiboClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				2AF52321184C3B3A00C250EF /* RomiboClientTests.m */,
+				2AF5231C184C3B3A00C250EF /* Supporting Files */,
+			);
+			path = RomiboClientTests;
+			sourceTree = "<group>";
+		};
+		2AF5231C184C3B3A00C250EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5231D184C3B3A00C250EF /* RomiboClientTests-Info.plist */,
+				2AF5231E184C3B3A00C250EF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2AF522F2184C3B3A00C250EF /* RomiboClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AF52325184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClient" */;
+			buildPhases = (
+				FC0806FAAFEB487DAE7DA65A /* Check Pods Manifest.lock */,
+				2AF522EF184C3B3A00C250EF /* Sources */,
+				2AF522F0184C3B3A00C250EF /* Frameworks */,
+				2AF522F1184C3B3A00C250EF /* Resources */,
+				52B1376F15D740498D06BCCE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RomiboClient;
+			productName = RomiboClient;
+			productReference = 2AF522F3184C3B3A00C250EF /* RomiboClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2AF52313184C3B3A00C250EF /* RomiboClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AF52328184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClientTests" */;
+			buildPhases = (
+				2AF52310184C3B3A00C250EF /* Sources */,
+				2AF52311184C3B3A00C250EF /* Frameworks */,
+				2AF52312184C3B3A00C250EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AF5231A184C3B3A00C250EF /* PBXTargetDependency */,
+			);
+			name = RomiboClientTests;
+			productName = RomiboClientTests;
+			productReference = 2AF52314184C3B3A00C250EF /* RomiboClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AF522EB184C3B3A00C250EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RMBO;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = com.romibo;
+				TargetAttributes = {
+					2AF522F2184C3B3A00C250EF = {
+						DevelopmentTeam = 9YYN96VW6R;
+					};
+					2AF52313184C3B3A00C250EF = {
+						TestTargetID = 2AF522F2184C3B3A00C250EF;
+					};
+				};
+			};
+			buildConfigurationList = 2AF522EE184C3B3A00C250EF /* Build configuration list for PBXProject "RomiboClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AF522EA184C3B3A00C250EF;
+			productRefGroup = 2AF522F4184C3B3A00C250EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AF522F2184C3B3A00C250EF /* RomiboClient */,
+				2AF52313184C3B3A00C250EF /* RomiboClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AF522F1184C3B3A00C250EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AF5230F184C3B3A00C250EF /* Images.xcassets in Resources */,
+				2AF52301184C3B3A00C250EF /* InfoPlist.strings in Resources */,
+				2AF5230A184C3B3A00C250EF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AF52312184C3B3A00C250EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AF52320184C3B3A00C250EF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52B1376F15D740498D06BCCE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC0806FAAFEB487DAE7DA65A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AF522EF184C3B3A00C250EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AF52307184C3B3A00C250EF /* RMBOAppDelegate.m in Sources */,
+				2AB41E361876043B00CCE380 /* RMBOExpressiveEyes.m in Sources */,
+				2AF5230D184C3B3A00C250EF /* RMBOViewController.m in Sources */,
+				2AE1E3421854341A004C430F /* RMBODriver.m in Sources */,
+				2AF52303184C3B3A00C250EF /* main.m in Sources */,
+				2AC1E9971856F155005D0426 /* RMBOEye.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AF52310184C3B3A00C250EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AF52322184C3B3A00C250EF /* RomiboClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2AF5231A184C3B3A00C250EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AF522F2184C3B3A00C250EF /* RomiboClient */;
+			targetProxy = 2AF52319184C3B3A00C250EF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2AF522FF184C3B3A00C250EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AF52300184C3B3A00C250EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2AF52308184C3B3A00C250EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AF52309184C3B3A00C250EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2AF5231E184C3B3A00C250EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AF5231F184C3B3A00C250EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2AF52323184C3B3A00C250EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2AF52324184C3B3A00C250EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2AF52326184C3B3A00C250EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F7B286E25DA450DB706927A /* Pods.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dsuriano/Dev/RomiboClient,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
+				INFOPLIST_FILE = "RomiboClient/RomiboClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dsuriano/Dev/RomiboClient/RomiboClient,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2AF52327184C3B3A00C250EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F7B286E25DA450DB706927A /* Pods.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dsuriano/Dev/RomiboClient,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
+				INFOPLIST_FILE = "RomiboClient/RomiboClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dsuriano/Dev/RomiboClient/RomiboClient,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2AF52329184C3B3A00C250EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RomiboClient.app/RomiboClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RomiboClientTests/RomiboClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2AF5232A184C3B3A00C250EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RomiboClient.app/RomiboClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
+				INFOPLIST_FILE = "RomiboClientTests/RomiboClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AF522EE184C3B3A00C250EF /* Build configuration list for PBXProject "RomiboClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AF52323184C3B3A00C250EF /* Debug */,
+				2AF52324184C3B3A00C250EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AF52325184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AF52326184C3B3A00C250EF /* Debug */,
+				2AF52327184C3B3A00C250EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AF52328184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AF52329184C3B3A00C250EF /* Debug */,
+				2AF5232A184C3B3A00C250EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AF522EB184C3B3A00C250EF /* Project object */;
+}

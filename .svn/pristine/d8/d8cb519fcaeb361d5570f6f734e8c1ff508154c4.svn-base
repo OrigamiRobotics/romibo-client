@@ -1,0 +1,27 @@
+//
+//  RMBOSound.h
+//
+//  Created by James Pari on 12/4/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+
+@protocol RMBOSoundCompletionProtocol <NSObject>
+- (void) soundPlaybackComplete;
+@end
+
+@interface RMBOSound : NSObject
+
+@property (nonatomic, assign) id <RMBOSoundCompletionProtocol> delegate;
+
+@property (nonatomic, strong) NSString* soundFileExt;
+@property (nonatomic, strong) NSString* soundFileName;
+@property (readwrite)	CFURLRef		soundFileURLRef;
+@property (readonly)	SystemSoundID	soundFileObject;
+
+- (bool) loadSound:(NSString*) filename ext:(NSString*) extension;
+- (void) playSound:(bool) vibrate;
+
+@end

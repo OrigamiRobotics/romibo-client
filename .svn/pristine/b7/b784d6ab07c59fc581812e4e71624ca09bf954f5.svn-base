@@ -1,0 +1,78 @@
+//
+//  RACommandDrive.m
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RACommandDrive.h"
+
+@implementation RACommandDrive {
+    RARMCoreDelegate *_robot;
+}
+
+- (RACommand*) initWithRobot:(RARMCoreDelegate *)robot
+{
+    _robot = robot;
+    return self;
+}
+
+- (NSString *) getVerb
+{
+    return @"drive";
+}
+
+- (BOOL) executeWithArgs:(NSArray *) argv
+{
+    BOOL ret = false;
+    NSLog(@"%@\n\r", @"Executing drive command.");
+    
+    
+    if(argv.count == 2) {
+        int xValue = [argv[0] intValue];
+        int yValue = [argv[1] intValue];
+        
+        NSString *logMsg = [NSString stringWithFormat:@"Drive x:%d y%d", xValue, yValue];
+        NSLog(@"%@", logMsg);
+//        [RALogger logMessage: logMsg];
+        
+        // Scale the Romibo values (+/- 0-100) to Romo range (+/- 0-1.0)
+        float scaledLeft = xValue / 100.0;
+        float scaledRight = yValue / 100.0;
+        
+        // Send drive command to the robot
+        if(xValue == yValue) {
+            if(xValue > 0) {
+                // Drive straight forward
+                //[_robot.romoRobot driveForwardWithSpeed: scaledLeft];
+                [_robot.romoRobot driveWithLeftMotorPower:scaledLeft rightMotorPower:scaledRight];
+            }
+            else if(xValue < 0){
+                // Drive straight backward
+                //[_robot.romoRobot driveBackwardWithSpeed: scaledLeft];
+                [_robot.romoRobot driveWithLeftMotorPower:scaledLeft rightMotorPower:scaledRight];
+            }
+            else {
+                // Stop
+                [_robot.romoRobot stopDriving];
+            }
+        }
+        else {
+            // Turn
+            [_robot.romoRobot driveWithLeftMotorPower:scaledLeft rightMotorPower:scaledRight];
+        }
+        
+        
+        ret = true;
+    }
+    else {
+        NSLog(@"Improper arg list length for drive.");
+        ret = false;
+    }
+    
+    return ret;
+}
+
+
+@end

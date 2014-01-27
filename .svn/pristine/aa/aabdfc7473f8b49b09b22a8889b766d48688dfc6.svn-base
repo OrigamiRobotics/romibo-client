@@ -1,0 +1,14 @@
+//
+//  RACommandParser.h
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "RAListenerDelegate.h"
+
+@interface RACommandParser : NSObject <RAListenerDelegate>
+- (RACommandParser *) initWithCommands:(NSArray *) commandArray;
+@end

@@ -1,0 +1,1601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A41C323184C3F2800649EBD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A41C322184C3F2700649EBD /* AVFoundation.framework */; };
+		2A41C325184C3F2E00649EBD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A41C324184C3F2E00649EBD /* CoreImage.framework */; };
+		2AF522F7184C3B3A00C250EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522F6184C3B3A00C250EF /* Foundation.framework */; };
+		2AF522F9184C3B3A00C250EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522F8184C3B3A00C250EF /* CoreGraphics.framework */; };
+		2AF522FB184C3B3A00C250EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522FA184C3B3A00C250EF /* UIKit.framework */; };
+		2AF52301184C3B3A00C250EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AF522FF184C3B3A00C250EF /* InfoPlist.strings */; };
+		2AF52303184C3B3A00C250EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF52302184C3B3A00C250EF /* main.m */; };
+		2AF52307184C3B3A00C250EF /* RMBOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF52306184C3B3A00C250EF /* RMBOAppDelegate.m */; };
+		2AF5230A184C3B3A00C250EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF52308184C3B3A00C250EF /* Main.storyboard */; };
+		2AF5230D184C3B3A00C250EF /* RMBOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5230C184C3B3A00C250EF /* RMBOViewController.m */; };
+		2AF5230F184C3B3A00C250EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5230E184C3B3A00C250EF /* Images.xcassets */; };
+		2AF52316184C3B3A00C250EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF52315184C3B3A00C250EF /* XCTest.framework */; };
+		2AF52317184C3B3A00C250EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522F6184C3B3A00C250EF /* Foundation.framework */; };
+		2AF52318184C3B3A00C250EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522FA184C3B3A00C250EF /* UIKit.framework */; };
+		2AF52320184C3B3A00C250EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5231E184C3B3A00C250EF /* InfoPlist.strings */; };
+		2AF52322184C3B3A00C250EF /* RomiboClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF52321184C3B3A00C250EF /* RomiboClientTests.m */; };
+		3266A368185223EA00C1654B /* SayCommandToWavFileMap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3266A367185223EA00C1654B /* SayCommandToWavFileMap.plist */; };
+		3266A36B185230B200C1654B /* RMBOSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266A36A185230B200C1654B /* RMBOSound.m */; };
+		3266A36E185230C900C1654B /* RMBOSoundLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3266A36D185230C900C1654B /* RMBOSoundLibrary.m */; };
+		3297BC051851500800353BEB /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3297BBFD1851500800353BEB /* GCDAsyncSocket.m */; };
+		3297BC061851500800353BEB /* RACommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3297BBFF1851500800353BEB /* RACommand.m */; };
+		3297BC071851500800353BEB /* RACommandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC011851500800353BEB /* RACommandParser.m */; };
+		3297BC081851500800353BEB /* RAListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC031851500800353BEB /* RAListener.m */; };
+		3297BC111851512900353BEB /* RACommandDrive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC0A1851512900353BEB /* RACommandDrive.m */; };
+		3297BC121851512900353BEB /* RACommandEmote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC0C1851512900353BEB /* RACommandEmote.m */; };
+		3297BC131851512900353BEB /* RACommandSay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC0E1851512900353BEB /* RACommandSay.m */; };
+		3297BC141851512900353BEB /* RACommandTilt.m in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC101851512900353BEB /* RACommandTilt.m */; };
+		32C55E4818525CB30029016F /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D4E18525CB20029016F /* 0.wav */; };
+		32C55E4918525CB30029016F /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D4F18525CB20029016F /* 1.wav */; };
+		32C55E4A18525CB30029016F /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5018525CB20029016F /* 2.wav */; };
+		32C55E4B18525CB30029016F /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5118525CB20029016F /* 3.wav */; };
+		32C55E4C18525CB30029016F /* 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5218525CB20029016F /* 4.wav */; };
+		32C55E4D18525CB30029016F /* 5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5318525CB20029016F /* 5.wav */; };
+		32C55E4E18525CB30029016F /* 6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5418525CB20029016F /* 6.wav */; };
+		32C55E4F18525CB30029016F /* 7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5518525CB20029016F /* 7.wav */; };
+		32C55E5018525CB30029016F /* 789.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5618525CB20029016F /* 789.wav */; };
+		32C55E5118525CB30029016F /* 8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5718525CB20029016F /* 8.wav */; };
+		32C55E5218525CB30029016F /* 9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5818525CB20029016F /* 9.wav */; };
+		32C55E5318525CB30029016F /* a_row-bo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5918525CB20029016F /* a_row-bo.wav */; };
+		32C55E5418525CB30029016F /* a_silico.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5A18525CB20029016F /* a_silico.wav */; };
+		32C55E5518525CB30029016F /* a_trans-.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5B18525CB20029016F /* a_trans-.wav */; };
+		32C55E5618525CB30029016F /* ah!.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5C18525CB20029016F /* ah!.wav */; };
+		32C55E5718525CB30029016F /* an_auton.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5D18525CB20029016F /* an_auton.wav */; };
+		32C55E5818525CB30029016F /* angry.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5E18525CB20029016F /* angry.wav */; };
+		32C55E5918525CB30029016F /* Apples_a.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D5F18525CB20029016F /* Apples_a.wav */; };
+		32C55E5A18525CB30029016F /* ask_me_a.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6018525CB20029016F /* ask_me_a.wav */; };
+		32C55E5B18525CB30029016F /* audio files short names.csv in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6118525CB20029016F /* audio files short names.csv */; };
+		32C55E5C18525CB30029016F /* Barney_I.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6218525CB20029016F /* Barney_I.wav */; };
+		32C55E5D18525CB30029016F /* becaus0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6318525CB20029016F /* becaus0.wav */; };
+		32C55E5E18525CB30029016F /* Because_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6418525CB20029016F /* Because_.wav */; };
+		32C55E5F18525CB30029016F /* BECKON1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6518525CB20029016F /* BECKON1.WAV */; };
+		32C55E6018525CB30029016F /* Behind.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6618525CB20029016F /* Behind.wav */; };
+		32C55E6118525CB30029016F /* big.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6718525CB20029016F /* big.wav */; };
+		32C55E6218525CB30029016F /* black.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6818525CB20029016F /* black.wav */; };
+		32C55E6318525CB30029016F /* blue.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6918525CB20029016F /* blue.wav */; };
+		32C55E6418525CB30029016F /* bye.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6A18525CB20029016F /* bye.wav */; };
+		32C55E6518525CB30029016F /* Bye_Bye_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6B18525CB20029016F /* Bye_Bye_.wav */; };
+		32C55E6618525CB30029016F /* cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6C18525CB20029016F /* cat.wav */; };
+		32C55E6718525CB30029016F /* clap_you.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6D18525CB20029016F /* clap_you.wav */; };
+		32C55E6818525CB30029016F /* climb_th.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6E18525CB20029016F /* climb_th.wav */; };
+		32C55E6918525CB30029016F /* color.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D6F18525CB20029016F /* color.wav */; };
+		32C55E6A18525CB30029016F /* could_yo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7018525CB20029016F /* could_yo.wav */; };
+		32C55E6B18525CB30029016F /* cross_th.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7118525CB20029016F /* cross_th.wav */; };
+		32C55E6C18525CB30029016F /* dance_wi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7218525CB20029016F /* dance_wi.wav */; };
+		32C55E6D18525CB30029016F /* DIGIT1_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7318525CB20029016F /* DIGIT1_1.wav */; };
+		32C55E6E18525CB30029016F /* do_what_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7418525CB20029016F /* do_what_.wav */; };
+		32C55E6F18525CB30029016F /* do_you_k.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7518525CB20029016F /* do_you_k.wav */; };
+		32C55E7018525CB30029016F /* dog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7618525CB20029016F /* dog.wav */; };
+		32C55E7118525CB30029016F /* down.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7718525CB20029016F /* down.wav */; };
+		32C55E7218525CB30029016F /* Down_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7818525CB20029016F /* Down_1.wav */; };
+		32C55E7318525CB30029016F /* Down_by_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7918525CB20029016F /* Down_by_.wav */; };
+		32C55E7418525CB30029016F /* draw_a_t.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7A18525CB20029016F /* draw_a_t.wav */; };
+		32C55E7518525CB30029016F /* draw_m0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7B18525CB20029016F /* draw_m0.wav */; };
+		32C55E7618525CB30029016F /* draw_m1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7C18525CB20029016F /* draw_m1.wav */; };
+		32C55E7718525CB30029016F /* draw_m2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7D18525CB20029016F /* draw_m2.wav */; };
+		32C55E7818525CB30029016F /* draw_m3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7E18525CB20029016F /* draw_m3.wav */; };
+		32C55E7918525CB30029016F /* draw_m4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D7F18525CB20029016F /* draw_m4.wav */; };
+		32C55E7A18525CB30029016F /* draw_m5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8018525CB20029016F /* draw_m5.wav */; };
+		32C55E7B18525CB30029016F /* draw_me_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8118525CB20029016F /* draw_me_.wav */; };
+		32C55E7C18525CB30029016F /* draw_my_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8218525CB20029016F /* draw_my_.wav */; };
+		32C55E7D18525CB30029016F /* draw_s0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8318525CB20029016F /* draw_s0.wav */; };
+		32C55E7E18525CB30029016F /* draw_som.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8418525CB20029016F /* draw_som.wav */; };
+		32C55E7F18525CB30029016F /* draw_t0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8518525CB20029016F /* draw_t0.wav */; };
+		32C55E8018525CB30029016F /* draw_t1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8618525CB20029016F /* draw_t1.wav */; };
+		32C55E8118525CB30029016F /* draw_the.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8718525CB20029016F /* draw_the.wav */; };
+		32C55E8218525CB30029016F /* Eeeeeep!.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8818525CB20029016F /* Eeeeeep!.wav */; };
+		32C55E8318525CB30029016F /* food.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8918525CB20029016F /* food.wav */; };
+		32C55E8418525CB30029016F /* frog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8A18525CB20029016F /* frog.wav */; };
+		32C55E8518525CB30029016F /* Good_job.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8B18525CB20029016F /* Good_job.wav */; };
+		32C55E8618525CB30029016F /* Goodbye_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8C18525CB20029016F /* Goodbye_.wav */; };
+		32C55E8718525CB30029016F /* Gotcha!.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8D18525CB20029016F /* Gotcha!.wav */; };
+		32C55E8818525CB30029016F /* great_0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8E18525CB20029016F /* great_0.wav */; };
+		32C55E8918525CB30029016F /* Great_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D8F18525CB20029016F /* Great_1.wav */; };
+		32C55E8A18525CB30029016F /* Great_Jo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9018525CB20029016F /* Great_Jo.wav */; };
+		32C55E8B18525CB30029016F /* green.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9118525CB20029016F /* green.wav */; };
+		32C55E8C18525CB30029016F /* guess_ag.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9218525CB20029016F /* guess_ag.wav */; };
+		32C55E8D18525CB30029016F /* ha_ha_ha.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9318525CB20029016F /* ha_ha_ha.wav */; };
+		32C55E8E18525CB30029016F /* ha_ha_th.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9418525CB20029016F /* ha_ha_th.wav */; };
+		32C55E8F18525CB30029016F /* Hamburge.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9518525CB20029016F /* Hamburge.wav */; };
+		32C55E9018525CB30029016F /* hand.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9618525CB20029016F /* hand.wav */; };
+		32C55E9118525CB30029016F /* Happy!.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9718525CB20029016F /* Happy!.wav */; };
+		32C55E9218525CB30029016F /* HAPPY1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9818525CB20029016F /* HAPPY1.WAV */; };
+		32C55E9318525CB30029016F /* he_was_c.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9918525CB20029016F /* he_was_c.wav */; };
+		32C55E9418525CB30029016F /* he_was_d.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9A18525CB20029016F /* he_was_d.wav */; };
+		32C55E9518525CB30029016F /* Head_Rol.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9B18525CB20029016F /* Head_Rol.wav */; };
+		32C55E9618525CB30029016F /* heavy_me.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9C18525CB20029016F /* heavy_me.wav */; };
+		32C55E9718525CB30029016F /* HeHe.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9D18525CB20029016F /* HeHe.wav */; };
+		32C55E9818525CB30029016F /* hehe_tha.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9E18525CB20029016F /* hehe_tha.wav */; };
+		32C55E9918525CB30029016F /* hello.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55D9F18525CB20029016F /* hello.wav */; };
+		32C55E9A18525CB30029016F /* Hello_Sa.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DA018525CB20029016F /* Hello_Sa.wav */; };
+		32C55E9B18525CB30029016F /* Hi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DA118525CB20029016F /* Hi.wav */; };
+		32C55E9C18525CB30029016F /* Hi_Sam!.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DA218525CB20029016F /* Hi_Sam!.wav */; };
+		32C55E9D18525CB30029016F /* how.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DA318525CB20029016F /* how.wav */; };
+		32C55E9E18525CB30029016F /* how_are_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DA418525CB20029016F /* how_are_.wav */; };
+		32C55E9F18525CB30029016F /* how_did_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DA518525CB20029016F /* how_did_.wav */; };
+		32C55EA018525CB30029016F /* I'll_see.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DA618525CB20029016F /* I'll_see.wav */; };
+		32C55EA118525CB30029016F /* I_am_tir.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DA718525CB20029016F /* I_am_tir.wav */; };
+		32C55EA218525CB30029016F /* I_do_not.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DA818525CB20029016F /* I_do_not.wav */; };
+		32C55EA318525CB30029016F /* I_don'0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DA918525CB20029016F /* I_don'0.wav */; };
+		32C55EA418525CB30029016F /* I_don't_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DAA18525CB20029016F /* I_don't_.wav */; };
+		32C55EA518525CB30029016F /* I_hate_t.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DAB18525CB20029016F /* I_hate_t.wav */; };
+		32C55EA618525CB30029016F /* I_like0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DAC18525CB20029016F /* I_like0.wav */; };
+		32C55EA718525CB30029016F /* I_like1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DAD18525CB20029016F /* I_like1.wav */; };
+		32C55EA818525CB30029016F /* I_like_t.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DAE18525CB20029016F /* I_like_t.wav */; };
+		32C55EA918525CB30029016F /* I_look_a.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DAF18525CB20029016F /* I_look_a.wav */; };
+		32C55EAA18525CB30029016F /* I_need_t.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DB018525CB20029016F /* I_need_t.wav */; };
+		32C55EAB18525CB30029016F /* If_You'r.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DB118525CB20029016F /* If_You'r.wav */; };
+		32C55EAC18525CB30029016F /* if_you_c.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DB218525CB20029016F /* if_you_c.wav */; };
+		32C55EAD18525CB30029016F /* In_the_M.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DB318525CB20029016F /* In_the_M.wav */; };
+		32C55EAE18525CB30029016F /* is_that.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DB418525CB20029016F /* is_that.wav */; };
+		32C55EAF18525CB30029016F /* is_the0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DB518525CB20029016F /* is_the0.wav */; };
+		32C55EB018525CB30029016F /* is_there.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DB618525CB20029016F /* is_there.wav */; };
+		32C55EB118525CB30029016F /* it_was_u.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DB718525CB20029016F /* it_was_u.wav */; };
+		32C55EB218525CB30029016F /* just_kid.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DB818525CB20029016F /* just_kid.wav */; };
+		32C55EB318525CB30029016F /* keep_gue.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DB918525CB20029016F /* keep_gue.wav */; };
+		32C55EB418525CB30029016F /* knock_kn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DBA18525CB20029016F /* knock_kn.wav */; };
+		32C55EB518525CB30029016F /* left.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DBB18525CB20029016F /* left.wav */; };
+		32C55EB618525CB30029016F /* Left_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DBC18525CB20029016F /* Left_1.wav */; };
+		32C55EB718525CB30029016F /* let's_pl.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DBD18525CB20029016F /* let's_pl.wav */; };
+		32C55EB818525CB30029016F /* Let_Me_C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DBE18525CB20029016F /* Let_Me_C.wav */; };
+		32C55EB918525CB30029016F /* lets_dan.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DBF18525CB20029016F /* lets_dan.wav */; };
+		32C55EBA18525CB30029016F /* lets_p0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DC018525CB20029016F /* lets_p0.wav */; };
+		32C55EBB18525CB30029016F /* lets_p1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DC118525CB20029016F /* lets_p1.wav */; };
+		32C55EBC18525CB30029016F /* lets_pla.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DC218525CB20029016F /* lets_pla.wav */; };
+		32C55EBD18525CB30029016F /* lets_sin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DC318525CB20029016F /* lets_sin.wav */; };
+		32C55EBE18525CB30029016F /* lets_try.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DC418525CB20029016F /* lets_try.wav */; };
+		32C55EBF18525CB30029016F /* little_m.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DC518525CB20029016F /* little_m.wav */; };
+		32C55EC018525CB30029016F /* look.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DC618525CB20029016F /* look.wav */; };
+		32C55EC118525CB30029016F /* louder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DC718525CB20029016F /* louder.wav */; };
+		32C55EC218525CB30029016F /* Love.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DC818525CB20029016F /* Love.wav */; };
+		32C55EC318525CB30029016F /* Me_too!.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DC918525CB20029016F /* Me_too!.wav */; };
+		32C55EC418525CB30029016F /* me_too.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DCA18525CB20029016F /* me_too.wav */; };
+		32C55EC518525CB30029016F /* Meat_bal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DCB18525CB20029016F /* Meat_bal.wav */; };
+		32C55EC618525CB30029016F /* Mr_Sun.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DCC18525CB20029016F /* Mr_Sun.wav */; };
+		32C55EC718525CB30029016F /* My_nam0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DCD18525CB20029016F /* My_nam0.wav */; };
+		32C55EC818525CB30029016F /* my_name_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DCE18525CB20029016F /* my_name_.wav */; };
+		32C55EC918525CB30029016F /* never_li.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DCF18525CB20029016F /* never_li.wav */; };
+		32C55ECA18525CB30029016F /* no.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DD018525CB20029016F /* no.wav */; };
+		32C55ECB18525CB30029016F /* no_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DD118525CB20029016F /* no_1.wav */; };
+		32C55ECC18525CB30029016F /* old_macd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DD218525CB20029016F /* old_macd.wav */; };
+		32C55ECD18525CB30029016F /* Ooooooo!.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DD318525CB20029016F /* Ooooooo!.wav */; };
+		32C55ECE18525CB30029016F /* Ooops!_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DD418525CB20029016F /* Ooops!_1.wav */; };
+		32C55ECF18525CB30029016F /* Oops.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DD518525CB20029016F /* Oops.wav */; };
+		32C55ED018525CB30029016F /* orange.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DD618525CB20029016F /* orange.wav */; };
+		32C55ED118525CB30029016F /* Orange_J.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DD718525CB20029016F /* Orange_J.wav */; };
+		32C55ED218525CB30029016F /* ouch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DD818525CB20029016F /* ouch.wav */; };
+		32C55ED318525CB30029016F /* Pancakes.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DD918525CB20029016F /* Pancakes.wav */; };
+		32C55ED418525CB30029016F /* Pizza!.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DDA18525CB20029016F /* Pizza!.wav */; };
+		32C55ED518525CB30029016F /* place_to.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DDB18525CB20029016F /* place_to.wav */; };
+		32C55ED618525CB30029016F /* please.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DDC18525CB20029016F /* please.wav */; };
+		32C55ED718525CB30029016F /* point.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DDD18525CB20029016F /* point.wav */; };
+		32C55ED818525CB30029016F /* purple.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DDE18525CB20029016F /* purple.wav */; };
+		32C55ED918525CB30029016F /* quieter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DDF18525CB20029016F /* quieter.wav */; };
+		32C55EDA18525CB30029016F /* R2_detou.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DE018525CB20029016F /* R2_detou.wav */; };
+		32C55EDB18525CB30029016F /* R2_doo_d.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DE118525CB20029016F /* R2_doo_d.wav */; };
+		32C55EDC18525CB30029016F /* raise_yo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DE218525CB20029016F /* raise_yo.wav */; };
+		32C55EDD18525CB30029016F /* really.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DE318525CB20029016F /* really.wav */; };
+		32C55EDE18525CB30029016F /* red.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DE418525CB20029016F /* red.wav */; };
+		32C55EDF18525CB30029016F /* Rib-bot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DE518525CB20029016F /* Rib-bot.wav */; };
+		32C55EE018525CB30029016F /* right.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DE618525CB20029016F /* right.wav */; };
+		32C55EE118525CB30029016F /* Right_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DE718525CB20029016F /* Right_1.wav */; };
+		32C55EE218525CB30029016F /* right_an.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DE818525CB20029016F /* right_an.wav */; };
+		32C55EE318525CB30029016F /* robot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DE918525CB20029016F /* robot.wav */; };
+		32C55EE418525CB30029016F /* Romibo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DEA18525CB20029016F /* Romibo.wav */; };
+		32C55EE518525CB30029016F /* S1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DEB18525CB20029016F /* S1.WAV */; };
+		32C55EE618525CB30029016F /* S2.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DEC18525CB20029016F /* S2.WAV */; };
+		32C55EE718525CB30029016F /* S3.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DED18525CB20029016F /* S3.WAV */; };
+		32C55EE818525CB30029016F /* sad.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DEE18525CB20029016F /* sad.wav */; };
+		32C55EE918525CB30029016F /* Sam!.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DEF18525CB20029016F /* Sam!.wav */; };
+		32C55EEA18525CB30029016F /* Sam_is0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DF018525CB20029016F /* Sam_is0.wav */; };
+		32C55EEB18525CB30029016F /* Sam_is_a.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DF118525CB20029016F /* Sam_is_a.wav */; };
+		32C55EEC18525CB30029016F /* say_to_t.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DF218525CB20029016F /* say_to_t.wav */; };
+		32C55EED18525CB30029016F /* Show_Me_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DF318525CB20029016F /* Show_Me_.wav */; };
+		32C55EEE18525CB30029016F /* side_to_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DF418525CB20029016F /* side_to_.wav */; };
+		32C55EEF18525CB30029016F /* Silly.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DF518525CB20029016F /* Silly.wav */; };
+		32C55EF018525CB30029016F /* Simon_di.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DF618525CB20029016F /* Simon_di.wav */; };
+		32C55EF118525CB30029016F /* simon_sa.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DF718525CB20029016F /* simon_sa.wav */; };
+		32C55EF218525CB30029016F /* sing_me_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DF818525CB20029016F /* sing_me_.wav */; };
+		32C55EF318525CB30029016F /* small.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DF918525CB20029016F /* small.wav */; };
+		32C55EF418525CB30029016F /* somethin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DFA18525CB20029016F /* somethin.wav */; };
+		32C55EF518525CB30029016F /* Spaghett.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DFB18525CB20029016F /* Spaghett.wav */; };
+		32C55EF618525CB30029016F /* Spin_and.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DFC18525CB20029016F /* Spin_and.wav */; };
+		32C55EF718525CB30029016F /* Spin_Aro.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DFD18525CB30029016F /* Spin_Aro.wav */; };
+		32C55EF818525CB30029016F /* tell_m0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DFE18525CB30029016F /* tell_m0.wav */; };
+		32C55EF918525CB30029016F /* tell_m1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55DFF18525CB30029016F /* tell_m1.wav */; };
+		32C55EFA18525CB30029016F /* tell_me_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0018525CB30029016F /* tell_me_.wav */; };
+		32C55EFB18525CB30029016F /* thank_yo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0118525CB30029016F /* thank_yo.wav */; };
+		32C55EFC18525CB30029016F /* that's_f.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0218525CB30029016F /* that's_f.wav */; };
+		32C55EFD18525CB30029016F /* that's_i.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0318525CB30029016F /* that's_i.wav */; };
+		32C55EFE18525CB30029016F /* that's_m.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0418525CB30029016F /* that's_m.wav */; };
+		32C55EFF18525CB30029016F /* That's_R.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0518525CB30029016F /* That's_R.wav */; };
+		32C55F0018525CB30029016F /* That_was.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0618525CB30029016F /* That_was.wav */; };
+		32C55F0118525CB30029016F /* the_far0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0718525CB30029016F /* the_far0.wav */; };
+		32C55F0218525CB30029016F /* the_farm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0818525CB30029016F /* the_farm.wav */; };
+		32C55F0318525CB30029016F /* thing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0918525CB30029016F /* thing.wav */; };
+		32C55F0418525CB30029016F /* twinkle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0A18525CB30029016F /* twinkle.wav */; };
+		32C55F0518525CB30029016F /* twinkle_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0B18525CB30029016F /* twinkle_.wav */; };
+		32C55F0618525CB30029016F /* Under.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0C18525CB30029016F /* Under.wav */; };
+		32C55F0718525CB30029016F /* up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0D18525CB30029016F /* up.wav */; };
+		32C55F0818525CB30029016F /* Up_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0E18525CB30029016F /* Up_1.wav */; };
+		32C55F0918525CB30029016F /* up_and_d.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E0F18525CB30029016F /* up_and_d.wav */; };
+		32C55F0A18525CB30029016F /* was_that.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1018525CB30029016F /* was_that.wav */; };
+		32C55F0B18525CB30029016F /* What's_s.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1118525CB30029016F /* What's_s.wav */; };
+		32C55F0C18525CB30029016F /* what.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1218525CB30029016F /* what.wav */; };
+		32C55F0D18525CB30029016F /* what_am_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1318525CB30029016F /* what_am_.wav */; };
+		32C55F0E18525CB30029016F /* what_are.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1418525CB30029016F /* what_are.wav */; };
+		32C55F0F18525CB30029016F /* what_d0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1518525CB30029016F /* what_d0.wav */; };
+		32C55F1018525CB30029016F /* what_d1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1618525CB30029016F /* what_d1.wav */; };
+		32C55F1118525CB30029016F /* what_d2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1718525CB30029016F /* what_d2.wav */; };
+		32C55F1218525CB30029016F /* what_d3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1818525CB30029016F /* what_d3.wav */; };
+		32C55F1318525CB30029016F /* what_d4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1918525CB30029016F /* what_d4.wav */; };
+		32C55F1418525CB30029016F /* what_d5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1A18525CB30029016F /* what_d5.wav */; };
+		32C55F1518525CB30029016F /* what_d6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1B18525CB30029016F /* what_d6.wav */; };
+		32C55F1618525CB30029016F /* what_d7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1C18525CB30029016F /* what_d7.wav */; };
+		32C55F1718525CB30029016F /* what_d8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1D18525CB30029016F /* what_d8.wav */; };
+		32C55F1818525CB30029016F /* what_did.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1E18525CB30029016F /* what_did.wav */; };
+		32C55F1918525CB30029016F /* what_do_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E1F18525CB30029016F /* what_do_.wav */; };
+		32C55F1A18525CB30029016F /* what_hap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2018525CB30029016F /* what_hap.wav */; };
+		32C55F1B18525CB30029016F /* what_i0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2118525CB30029016F /* what_i0.wav */; };
+		32C55F1C18525CB30029016F /* what_i1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2218525CB30029016F /* what_i1.wav */; };
+		32C55F1D18525CB30029016F /* what_i2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2318525CB30029016F /* what_i2.wav */; };
+		32C55F1E18525CB30029016F /* what_i3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2418525CB30029016F /* what_i3.wav */; };
+		32C55F1F18525CB30029016F /* what_i4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2518525CB30029016F /* what_i4.wav */; };
+		32C55F2018525CB30029016F /* what_i5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2618525CB30029016F /* what_i5.wav */; };
+		32C55F2118525CB30029016F /* What_i6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2718525CB30029016F /* What_i6.wav */; };
+		32C55F2218525CB30029016F /* what_is_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2818525CB30029016F /* what_is_.wav */; };
+		32C55F2318525CB30029016F /* Wheeeeee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2918525CB30029016F /* Wheeeeee.wav */; };
+		32C55F2418525CB30029016F /* when.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2A18525CB30029016F /* when.wav */; };
+		32C55F2518525CB30029016F /* when_doe.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2B18525CB30029016F /* when_doe.wav */; };
+		32C55F2618525CB30029016F /* whenever.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2C18525CB30029016F /* whenever.wav */; };
+		32C55F2718525CB30029016F /* where.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2D18525CB30029016F /* where.wav */; };
+		32C55F2818525CB30029016F /* where_am.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2E18525CB30029016F /* where_am.wav */; };
+		32C55F2918525CB30029016F /* Where_is.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E2F18525CB30029016F /* Where_is.wav */; };
+		32C55F2A18525CB30029016F /* white.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3018525CB30029016F /* white.wav */; };
+		32C55F2B18525CB30029016F /* who's_th.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3118525CB30029016F /* who's_th.wav */; };
+		32C55F2C18525CB30029016F /* who.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3218525CB30029016F /* who.wav */; };
+		32C55F2D18525CB30029016F /* who_is_i.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3318525CB30029016F /* who_is_i.wav */; };
+		32C55F2E18525CB30029016F /* why.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3418525CB30029016F /* why.wav */; };
+		32C55F2F18525CB30029016F /* why_co0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3518525CB30029016F /* why_co0.wav */; };
+		32C55F3018525CB30029016F /* why_coul.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3618525CB30029016F /* why_coul.wav */; };
+		32C55F3118525CB30029016F /* why_di0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3718525CB30029016F /* why_di0.wav */; };
+		32C55F3218525CB30029016F /* why_did_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3818525CB30029016F /* why_did_.wav */; };
+		32C55F3318525CB30029016F /* why_is_t.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3918525CB30029016F /* why_is_t.wav */; };
+		32C55F3418525CB30029016F /* why_wa0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3A18525CB30029016F /* why_wa0.wav */; };
+		32C55F3518525CB30029016F /* why_was_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3B18525CB30029016F /* why_was_.wav */; };
+		32C55F3618525CB30029016F /* wow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3C18525CB30029016F /* wow.wav */; };
+		32C55F3718525CB30029016F /* Yay.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3D18525CB30029016F /* Yay.wav */; };
+		32C55F3818525CB30029016F /* yellow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3E18525CB30029016F /* yellow.wav */; };
+		32C55F3918525CB30029016F /* yes.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E3F18525CB30029016F /* yes.wav */; };
+		32C55F3A18525CB30029016F /* Yes_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E4018525CB30029016F /* Yes_2.wav */; };
+		32C55F3B18525CB30029016F /* you're_c.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E4118525CB30029016F /* you're_c.wav */; };
+		32C55F3C18525CB30029016F /* you're_k.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E4218525CB30029016F /* you're_k.wav */; };
+		32C55F3D18525CB30029016F /* You_ar0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E4318525CB30029016F /* You_ar0.wav */; };
+		32C55F3E18525CB30029016F /* You_Are1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E4418525CB30029016F /* You_Are1.wav */; };
+		32C55F3F18525CB30029016F /* you_are_.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E4518525CB30029016F /* you_are_.wav */; };
+		32C55F4018525CB30029016F /* you_tell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E4618525CB30029016F /* you_tell.wav */; };
+		32C55F4118525CB30029016F /* you_win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32C55E4718525CB30029016F /* you_win.wav */; };
+		32D7AB9018515D42009F14A0 /* RARMCoreDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D7AB8F18515D42009F14A0 /* RARMCoreDelegate.m */; };
+		32D7AB9218515D7E009F14A0 /* RMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D7AB9118515D7E009F14A0 /* RMCore.framework */; };
+		32D7AB9418515DE4009F14A0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D7AB9318515DE4009F14A0 /* CoreMotion.framework */; };
+		32D7AB9618515DF0009F14A0 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D7AB9518515DF0009F14A0 /* ExternalAccessory.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2AF52319184C3B3A00C250EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF522EB184C3B3A00C250EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AF522F2184C3B3A00C250EF;
+			remoteInfo = RomiboClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A41C322184C3F2700649EBD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2A41C324184C3F2E00649EBD /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		2AF522F3184C3B3A00C250EF /* RomiboClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RomiboClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AF522F6184C3B3A00C250EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2AF522F8184C3B3A00C250EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2AF522FA184C3B3A00C250EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2AF522FE184C3B3A00C250EF /* RomiboClient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomiboClient-Info.plist"; sourceTree = "<group>"; };
+		2AF52300184C3B3A00C250EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2AF52302184C3B3A00C250EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2AF52304184C3B3A00C250EF /* RomiboClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomiboClient-Prefix.pch"; sourceTree = "<group>"; };
+		2AF52305184C3B3A00C250EF /* RMBOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMBOAppDelegate.h; sourceTree = "<group>"; };
+		2AF52306184C3B3A00C250EF /* RMBOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMBOAppDelegate.m; sourceTree = "<group>"; };
+		2AF52309184C3B3A00C250EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2AF5230B184C3B3A00C250EF /* RMBOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMBOViewController.h; sourceTree = "<group>"; };
+		2AF5230C184C3B3A00C250EF /* RMBOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMBOViewController.m; sourceTree = "<group>"; };
+		2AF5230E184C3B3A00C250EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2AF52314184C3B3A00C250EF /* RomiboClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RomiboClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AF52315184C3B3A00C250EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2AF5231D184C3B3A00C250EF /* RomiboClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomiboClientTests-Info.plist"; sourceTree = "<group>"; };
+		2AF5231F184C3B3A00C250EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2AF52321184C3B3A00C250EF /* RomiboClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RomiboClientTests.m; sourceTree = "<group>"; };
+		3266A367185223EA00C1654B /* SayCommandToWavFileMap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SayCommandToWavFileMap.plist; sourceTree = "<group>"; };
+		3266A369185230A400C1654B /* RMBOSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBOSound.h; sourceTree = "<group>"; };
+		3266A36A185230B200C1654B /* RMBOSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBOSound.m; sourceTree = "<group>"; };
+		3266A36C185230C000C1654B /* RMBOSoundLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBOSoundLibrary.h; sourceTree = "<group>"; };
+		3266A36D185230C900C1654B /* RMBOSoundLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBOSoundLibrary.m; sourceTree = "<group>"; };
+		3297BBFC1851500800353BEB /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		3297BBFD1851500800353BEB /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		3297BBFE1851500800353BEB /* RACommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACommand.h; sourceTree = "<group>"; };
+		3297BBFF1851500800353BEB /* RACommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACommand.m; sourceTree = "<group>"; };
+		3297BC001851500800353BEB /* RACommandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACommandParser.h; sourceTree = "<group>"; };
+		3297BC011851500800353BEB /* RACommandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACommandParser.m; sourceTree = "<group>"; };
+		3297BC021851500800353BEB /* RAListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAListener.h; sourceTree = "<group>"; };
+		3297BC031851500800353BEB /* RAListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAListener.m; sourceTree = "<group>"; };
+		3297BC041851500800353BEB /* RAListenerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAListenerDelegate.h; sourceTree = "<group>"; };
+		3297BC091851512900353BEB /* RACommandDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACommandDrive.h; sourceTree = "<group>"; };
+		3297BC0A1851512900353BEB /* RACommandDrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACommandDrive.m; sourceTree = "<group>"; };
+		3297BC0B1851512900353BEB /* RACommandEmote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACommandEmote.h; sourceTree = "<group>"; };
+		3297BC0C1851512900353BEB /* RACommandEmote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACommandEmote.m; sourceTree = "<group>"; };
+		3297BC0D1851512900353BEB /* RACommandSay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACommandSay.h; sourceTree = "<group>"; };
+		3297BC0E1851512900353BEB /* RACommandSay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACommandSay.m; sourceTree = "<group>"; };
+		3297BC0F1851512900353BEB /* RACommandTilt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACommandTilt.h; sourceTree = "<group>"; };
+		3297BC101851512900353BEB /* RACommandTilt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACommandTilt.m; sourceTree = "<group>"; };
+		32C55D4E18525CB20029016F /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
+		32C55D4F18525CB20029016F /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		32C55D5018525CB20029016F /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		32C55D5118525CB20029016F /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
+		32C55D5218525CB20029016F /* 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 4.wav; sourceTree = "<group>"; };
+		32C55D5318525CB20029016F /* 5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5.wav; sourceTree = "<group>"; };
+		32C55D5418525CB20029016F /* 6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 6.wav; sourceTree = "<group>"; };
+		32C55D5518525CB20029016F /* 7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 7.wav; sourceTree = "<group>"; };
+		32C55D5618525CB20029016F /* 789.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 789.wav; sourceTree = "<group>"; };
+		32C55D5718525CB20029016F /* 8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 8.wav; sourceTree = "<group>"; };
+		32C55D5818525CB20029016F /* 9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 9.wav; sourceTree = "<group>"; };
+		32C55D5918525CB20029016F /* a_row-bo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "a_row-bo.wav"; sourceTree = "<group>"; };
+		32C55D5A18525CB20029016F /* a_silico.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a_silico.wav; sourceTree = "<group>"; };
+		32C55D5B18525CB20029016F /* a_trans-.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "a_trans-.wav"; sourceTree = "<group>"; };
+		32C55D5C18525CB20029016F /* ah!.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ah!.wav"; sourceTree = "<group>"; };
+		32C55D5D18525CB20029016F /* an_auton.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = an_auton.wav; sourceTree = "<group>"; };
+		32C55D5E18525CB20029016F /* angry.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = angry.wav; sourceTree = "<group>"; };
+		32C55D5F18525CB20029016F /* Apples_a.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Apples_a.wav; sourceTree = "<group>"; };
+		32C55D6018525CB20029016F /* ask_me_a.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ask_me_a.wav; sourceTree = "<group>"; };
+		32C55D6118525CB20029016F /* audio files short names.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "audio files short names.csv"; sourceTree = "<group>"; };
+		32C55D6218525CB20029016F /* Barney_I.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Barney_I.wav; sourceTree = "<group>"; };
+		32C55D6318525CB20029016F /* becaus0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = becaus0.wav; sourceTree = "<group>"; };
+		32C55D6418525CB20029016F /* Because_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Because_.wav; sourceTree = "<group>"; };
+		32C55D6518525CB20029016F /* BECKON1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BECKON1.WAV; sourceTree = "<group>"; };
+		32C55D6618525CB20029016F /* Behind.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Behind.wav; sourceTree = "<group>"; };
+		32C55D6718525CB20029016F /* big.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = big.wav; sourceTree = "<group>"; };
+		32C55D6818525CB20029016F /* black.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = black.wav; sourceTree = "<group>"; };
+		32C55D6918525CB20029016F /* blue.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = blue.wav; sourceTree = "<group>"; };
+		32C55D6A18525CB20029016F /* bye.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bye.wav; sourceTree = "<group>"; };
+		32C55D6B18525CB20029016F /* Bye_Bye_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bye_Bye_.wav; sourceTree = "<group>"; };
+		32C55D6C18525CB20029016F /* cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cat.wav; sourceTree = "<group>"; };
+		32C55D6D18525CB20029016F /* clap_you.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clap_you.wav; sourceTree = "<group>"; };
+		32C55D6E18525CB20029016F /* climb_th.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = climb_th.wav; sourceTree = "<group>"; };
+		32C55D6F18525CB20029016F /* color.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = color.wav; sourceTree = "<group>"; };
+		32C55D7018525CB20029016F /* could_yo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = could_yo.wav; sourceTree = "<group>"; };
+		32C55D7118525CB20029016F /* cross_th.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cross_th.wav; sourceTree = "<group>"; };
+		32C55D7218525CB20029016F /* dance_wi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dance_wi.wav; sourceTree = "<group>"; };
+		32C55D7318525CB20029016F /* DIGIT1_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DIGIT1_1.wav; sourceTree = "<group>"; };
+		32C55D7418525CB20029016F /* do_what_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = do_what_.wav; sourceTree = "<group>"; };
+		32C55D7518525CB20029016F /* do_you_k.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = do_you_k.wav; sourceTree = "<group>"; };
+		32C55D7618525CB20029016F /* dog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dog.wav; sourceTree = "<group>"; };
+		32C55D7718525CB20029016F /* down.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = down.wav; sourceTree = "<group>"; };
+		32C55D7818525CB20029016F /* Down_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Down_1.wav; sourceTree = "<group>"; };
+		32C55D7918525CB20029016F /* Down_by_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Down_by_.wav; sourceTree = "<group>"; };
+		32C55D7A18525CB20029016F /* draw_a_t.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_a_t.wav; sourceTree = "<group>"; };
+		32C55D7B18525CB20029016F /* draw_m0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_m0.wav; sourceTree = "<group>"; };
+		32C55D7C18525CB20029016F /* draw_m1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_m1.wav; sourceTree = "<group>"; };
+		32C55D7D18525CB20029016F /* draw_m2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_m2.wav; sourceTree = "<group>"; };
+		32C55D7E18525CB20029016F /* draw_m3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_m3.wav; sourceTree = "<group>"; };
+		32C55D7F18525CB20029016F /* draw_m4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_m4.wav; sourceTree = "<group>"; };
+		32C55D8018525CB20029016F /* draw_m5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_m5.wav; sourceTree = "<group>"; };
+		32C55D8118525CB20029016F /* draw_me_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_me_.wav; sourceTree = "<group>"; };
+		32C55D8218525CB20029016F /* draw_my_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_my_.wav; sourceTree = "<group>"; };
+		32C55D8318525CB20029016F /* draw_s0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_s0.wav; sourceTree = "<group>"; };
+		32C55D8418525CB20029016F /* draw_som.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_som.wav; sourceTree = "<group>"; };
+		32C55D8518525CB20029016F /* draw_t0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_t0.wav; sourceTree = "<group>"; };
+		32C55D8618525CB20029016F /* draw_t1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_t1.wav; sourceTree = "<group>"; };
+		32C55D8718525CB20029016F /* draw_the.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = draw_the.wav; sourceTree = "<group>"; };
+		32C55D8818525CB20029016F /* Eeeeeep!.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Eeeeeep!.wav"; sourceTree = "<group>"; };
+		32C55D8918525CB20029016F /* food.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = food.wav; sourceTree = "<group>"; };
+		32C55D8A18525CB20029016F /* frog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = frog.wav; sourceTree = "<group>"; };
+		32C55D8B18525CB20029016F /* Good_job.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Good_job.wav; sourceTree = "<group>"; };
+		32C55D8C18525CB20029016F /* Goodbye_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Goodbye_.wav; sourceTree = "<group>"; };
+		32C55D8D18525CB20029016F /* Gotcha!.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Gotcha!.wav"; sourceTree = "<group>"; };
+		32C55D8E18525CB20029016F /* great_0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = great_0.wav; sourceTree = "<group>"; };
+		32C55D8F18525CB20029016F /* Great_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Great_1.wav; sourceTree = "<group>"; };
+		32C55D9018525CB20029016F /* Great_Jo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Great_Jo.wav; sourceTree = "<group>"; };
+		32C55D9118525CB20029016F /* green.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = green.wav; sourceTree = "<group>"; };
+		32C55D9218525CB20029016F /* guess_ag.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = guess_ag.wav; sourceTree = "<group>"; };
+		32C55D9318525CB20029016F /* ha_ha_ha.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ha_ha_ha.wav; sourceTree = "<group>"; };
+		32C55D9418525CB20029016F /* ha_ha_th.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ha_ha_th.wav; sourceTree = "<group>"; };
+		32C55D9518525CB20029016F /* Hamburge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Hamburge.wav; sourceTree = "<group>"; };
+		32C55D9618525CB20029016F /* hand.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hand.wav; sourceTree = "<group>"; };
+		32C55D9718525CB20029016F /* Happy!.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Happy!.wav"; sourceTree = "<group>"; };
+		32C55D9818525CB20029016F /* HAPPY1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HAPPY1.WAV; sourceTree = "<group>"; };
+		32C55D9918525CB20029016F /* he_was_c.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = he_was_c.wav; sourceTree = "<group>"; };
+		32C55D9A18525CB20029016F /* he_was_d.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = he_was_d.wav; sourceTree = "<group>"; };
+		32C55D9B18525CB20029016F /* Head_Rol.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Head_Rol.wav; sourceTree = "<group>"; };
+		32C55D9C18525CB20029016F /* heavy_me.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heavy_me.wav; sourceTree = "<group>"; };
+		32C55D9D18525CB20029016F /* HeHe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HeHe.wav; sourceTree = "<group>"; };
+		32C55D9E18525CB20029016F /* hehe_tha.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hehe_tha.wav; sourceTree = "<group>"; };
+		32C55D9F18525CB20029016F /* hello.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hello.wav; sourceTree = "<group>"; };
+		32C55DA018525CB20029016F /* Hello_Sa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Hello_Sa.wav; sourceTree = "<group>"; };
+		32C55DA118525CB20029016F /* Hi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Hi.wav; sourceTree = "<group>"; };
+		32C55DA218525CB20029016F /* Hi_Sam!.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Hi_Sam!.wav"; sourceTree = "<group>"; };
+		32C55DA318525CB20029016F /* how.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = how.wav; sourceTree = "<group>"; };
+		32C55DA418525CB20029016F /* how_are_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = how_are_.wav; sourceTree = "<group>"; };
+		32C55DA518525CB20029016F /* how_did_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = how_did_.wav; sourceTree = "<group>"; };
+		32C55DA618525CB20029016F /* I'll_see.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "I'll_see.wav"; sourceTree = "<group>"; };
+		32C55DA718525CB20029016F /* I_am_tir.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = I_am_tir.wav; sourceTree = "<group>"; };
+		32C55DA818525CB20029016F /* I_do_not.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = I_do_not.wav; sourceTree = "<group>"; };
+		32C55DA918525CB20029016F /* I_don'0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "I_don'0.wav"; sourceTree = "<group>"; };
+		32C55DAA18525CB20029016F /* I_don't_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "I_don't_.wav"; sourceTree = "<group>"; };
+		32C55DAB18525CB20029016F /* I_hate_t.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = I_hate_t.wav; sourceTree = "<group>"; };
+		32C55DAC18525CB20029016F /* I_like0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = I_like0.wav; sourceTree = "<group>"; };
+		32C55DAD18525CB20029016F /* I_like1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = I_like1.wav; sourceTree = "<group>"; };
+		32C55DAE18525CB20029016F /* I_like_t.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = I_like_t.wav; sourceTree = "<group>"; };
+		32C55DAF18525CB20029016F /* I_look_a.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = I_look_a.wav; sourceTree = "<group>"; };
+		32C55DB018525CB20029016F /* I_need_t.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = I_need_t.wav; sourceTree = "<group>"; };
+		32C55DB118525CB20029016F /* If_You'r.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "If_You'r.wav"; sourceTree = "<group>"; };
+		32C55DB218525CB20029016F /* if_you_c.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = if_you_c.wav; sourceTree = "<group>"; };
+		32C55DB318525CB20029016F /* In_the_M.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = In_the_M.wav; sourceTree = "<group>"; };
+		32C55DB418525CB20029016F /* is_that.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = is_that.wav; sourceTree = "<group>"; };
+		32C55DB518525CB20029016F /* is_the0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = is_the0.wav; sourceTree = "<group>"; };
+		32C55DB618525CB20029016F /* is_there.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = is_there.wav; sourceTree = "<group>"; };
+		32C55DB718525CB20029016F /* it_was_u.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = it_was_u.wav; sourceTree = "<group>"; };
+		32C55DB818525CB20029016F /* just_kid.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = just_kid.wav; sourceTree = "<group>"; };
+		32C55DB918525CB20029016F /* keep_gue.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = keep_gue.wav; sourceTree = "<group>"; };
+		32C55DBA18525CB20029016F /* knock_kn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = knock_kn.wav; sourceTree = "<group>"; };
+		32C55DBB18525CB20029016F /* left.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = left.wav; sourceTree = "<group>"; };
+		32C55DBC18525CB20029016F /* Left_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Left_1.wav; sourceTree = "<group>"; };
+		32C55DBD18525CB20029016F /* let's_pl.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "let's_pl.wav"; sourceTree = "<group>"; };
+		32C55DBE18525CB20029016F /* Let_Me_C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Let_Me_C.wav; sourceTree = "<group>"; };
+		32C55DBF18525CB20029016F /* lets_dan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lets_dan.wav; sourceTree = "<group>"; };
+		32C55DC018525CB20029016F /* lets_p0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lets_p0.wav; sourceTree = "<group>"; };
+		32C55DC118525CB20029016F /* lets_p1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lets_p1.wav; sourceTree = "<group>"; };
+		32C55DC218525CB20029016F /* lets_pla.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lets_pla.wav; sourceTree = "<group>"; };
+		32C55DC318525CB20029016F /* lets_sin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lets_sin.wav; sourceTree = "<group>"; };
+		32C55DC418525CB20029016F /* lets_try.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lets_try.wav; sourceTree = "<group>"; };
+		32C55DC518525CB20029016F /* little_m.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = little_m.wav; sourceTree = "<group>"; };
+		32C55DC618525CB20029016F /* look.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = look.wav; sourceTree = "<group>"; };
+		32C55DC718525CB20029016F /* louder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = louder.wav; sourceTree = "<group>"; };
+		32C55DC818525CB20029016F /* Love.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Love.wav; sourceTree = "<group>"; };
+		32C55DC918525CB20029016F /* Me_too!.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Me_too!.wav"; sourceTree = "<group>"; };
+		32C55DCA18525CB20029016F /* me_too.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = me_too.wav; sourceTree = "<group>"; };
+		32C55DCB18525CB20029016F /* Meat_bal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Meat_bal.wav; sourceTree = "<group>"; };
+		32C55DCC18525CB20029016F /* Mr_Sun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Mr_Sun.wav; sourceTree = "<group>"; };
+		32C55DCD18525CB20029016F /* My_nam0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = My_nam0.wav; sourceTree = "<group>"; };
+		32C55DCE18525CB20029016F /* my_name_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = my_name_.wav; sourceTree = "<group>"; };
+		32C55DCF18525CB20029016F /* never_li.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = never_li.wav; sourceTree = "<group>"; };
+		32C55DD018525CB20029016F /* no.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = no.wav; sourceTree = "<group>"; };
+		32C55DD118525CB20029016F /* no_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = no_1.wav; sourceTree = "<group>"; };
+		32C55DD218525CB20029016F /* old_macd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = old_macd.wav; sourceTree = "<group>"; };
+		32C55DD318525CB20029016F /* Ooooooo!.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ooooooo!.wav"; sourceTree = "<group>"; };
+		32C55DD418525CB20029016F /* Ooops!_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ooops!_1.wav"; sourceTree = "<group>"; };
+		32C55DD518525CB20029016F /* Oops.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Oops.wav; sourceTree = "<group>"; };
+		32C55DD618525CB20029016F /* orange.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = orange.wav; sourceTree = "<group>"; };
+		32C55DD718525CB20029016F /* Orange_J.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Orange_J.wav; sourceTree = "<group>"; };
+		32C55DD818525CB20029016F /* ouch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ouch.wav; sourceTree = "<group>"; };
+		32C55DD918525CB20029016F /* Pancakes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Pancakes.wav; sourceTree = "<group>"; };
+		32C55DDA18525CB20029016F /* Pizza!.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pizza!.wav"; sourceTree = "<group>"; };
+		32C55DDB18525CB20029016F /* place_to.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = place_to.wav; sourceTree = "<group>"; };
+		32C55DDC18525CB20029016F /* please.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = please.wav; sourceTree = "<group>"; };
+		32C55DDD18525CB20029016F /* point.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = point.wav; sourceTree = "<group>"; };
+		32C55DDE18525CB20029016F /* purple.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = purple.wav; sourceTree = "<group>"; };
+		32C55DDF18525CB20029016F /* quieter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = quieter.wav; sourceTree = "<group>"; };
+		32C55DE018525CB20029016F /* R2_detou.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = R2_detou.wav; sourceTree = "<group>"; };
+		32C55DE118525CB20029016F /* R2_doo_d.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = R2_doo_d.wav; sourceTree = "<group>"; };
+		32C55DE218525CB20029016F /* raise_yo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = raise_yo.wav; sourceTree = "<group>"; };
+		32C55DE318525CB20029016F /* really.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = really.wav; sourceTree = "<group>"; };
+		32C55DE418525CB20029016F /* red.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = red.wav; sourceTree = "<group>"; };
+		32C55DE518525CB20029016F /* Rib-bot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Rib-bot.wav"; sourceTree = "<group>"; };
+		32C55DE618525CB20029016F /* right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = right.wav; sourceTree = "<group>"; };
+		32C55DE718525CB20029016F /* Right_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Right_1.wav; sourceTree = "<group>"; };
+		32C55DE818525CB20029016F /* right_an.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = right_an.wav; sourceTree = "<group>"; };
+		32C55DE918525CB20029016F /* robot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robot.wav; sourceTree = "<group>"; };
+		32C55DEA18525CB20029016F /* Romibo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Romibo.wav; sourceTree = "<group>"; };
+		32C55DEB18525CB20029016F /* S1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = S1.WAV; sourceTree = "<group>"; };
+		32C55DEC18525CB20029016F /* S2.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = S2.WAV; sourceTree = "<group>"; };
+		32C55DED18525CB20029016F /* S3.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = S3.WAV; sourceTree = "<group>"; };
+		32C55DEE18525CB20029016F /* sad.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sad.wav; sourceTree = "<group>"; };
+		32C55DEF18525CB20029016F /* Sam!.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sam!.wav"; sourceTree = "<group>"; };
+		32C55DF018525CB20029016F /* Sam_is0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sam_is0.wav; sourceTree = "<group>"; };
+		32C55DF118525CB20029016F /* Sam_is_a.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sam_is_a.wav; sourceTree = "<group>"; };
+		32C55DF218525CB20029016F /* say_to_t.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = say_to_t.wav; sourceTree = "<group>"; };
+		32C55DF318525CB20029016F /* Show_Me_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Show_Me_.wav; sourceTree = "<group>"; };
+		32C55DF418525CB20029016F /* side_to_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = side_to_.wav; sourceTree = "<group>"; };
+		32C55DF518525CB20029016F /* Silly.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Silly.wav; sourceTree = "<group>"; };
+		32C55DF618525CB20029016F /* Simon_di.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Simon_di.wav; sourceTree = "<group>"; };
+		32C55DF718525CB20029016F /* simon_sa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = simon_sa.wav; sourceTree = "<group>"; };
+		32C55DF818525CB20029016F /* sing_me_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sing_me_.wav; sourceTree = "<group>"; };
+		32C55DF918525CB20029016F /* small.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = small.wav; sourceTree = "<group>"; };
+		32C55DFA18525CB20029016F /* somethin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = somethin.wav; sourceTree = "<group>"; };
+		32C55DFB18525CB20029016F /* Spaghett.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Spaghett.wav; sourceTree = "<group>"; };
+		32C55DFC18525CB20029016F /* Spin_and.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Spin_and.wav; sourceTree = "<group>"; };
+		32C55DFD18525CB30029016F /* Spin_Aro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Spin_Aro.wav; sourceTree = "<group>"; };
+		32C55DFE18525CB30029016F /* tell_m0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tell_m0.wav; sourceTree = "<group>"; };
+		32C55DFF18525CB30029016F /* tell_m1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tell_m1.wav; sourceTree = "<group>"; };
+		32C55E0018525CB30029016F /* tell_me_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tell_me_.wav; sourceTree = "<group>"; };
+		32C55E0118525CB30029016F /* thank_yo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thank_yo.wav; sourceTree = "<group>"; };
+		32C55E0218525CB30029016F /* that's_f.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "that's_f.wav"; sourceTree = "<group>"; };
+		32C55E0318525CB30029016F /* that's_i.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "that's_i.wav"; sourceTree = "<group>"; };
+		32C55E0418525CB30029016F /* that's_m.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "that's_m.wav"; sourceTree = "<group>"; };
+		32C55E0518525CB30029016F /* That's_R.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "That's_R.wav"; sourceTree = "<group>"; };
+		32C55E0618525CB30029016F /* That_was.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = That_was.wav; sourceTree = "<group>"; };
+		32C55E0718525CB30029016F /* the_far0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = the_far0.wav; sourceTree = "<group>"; };
+		32C55E0818525CB30029016F /* the_farm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = the_farm.wav; sourceTree = "<group>"; };
+		32C55E0918525CB30029016F /* thing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thing.wav; sourceTree = "<group>"; };
+		32C55E0A18525CB30029016F /* twinkle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = twinkle.wav; sourceTree = "<group>"; };
+		32C55E0B18525CB30029016F /* twinkle_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = twinkle_.wav; sourceTree = "<group>"; };
+		32C55E0C18525CB30029016F /* Under.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Under.wav; sourceTree = "<group>"; };
+		32C55E0D18525CB30029016F /* up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = up.wav; sourceTree = "<group>"; };
+		32C55E0E18525CB30029016F /* Up_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Up_1.wav; sourceTree = "<group>"; };
+		32C55E0F18525CB30029016F /* up_and_d.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = up_and_d.wav; sourceTree = "<group>"; };
+		32C55E1018525CB30029016F /* was_that.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = was_that.wav; sourceTree = "<group>"; };
+		32C55E1118525CB30029016F /* What's_s.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "What's_s.wav"; sourceTree = "<group>"; };
+		32C55E1218525CB30029016F /* what.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what.wav; sourceTree = "<group>"; };
+		32C55E1318525CB30029016F /* what_am_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_am_.wav; sourceTree = "<group>"; };
+		32C55E1418525CB30029016F /* what_are.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_are.wav; sourceTree = "<group>"; };
+		32C55E1518525CB30029016F /* what_d0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_d0.wav; sourceTree = "<group>"; };
+		32C55E1618525CB30029016F /* what_d1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_d1.wav; sourceTree = "<group>"; };
+		32C55E1718525CB30029016F /* what_d2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_d2.wav; sourceTree = "<group>"; };
+		32C55E1818525CB30029016F /* what_d3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_d3.wav; sourceTree = "<group>"; };
+		32C55E1918525CB30029016F /* what_d4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_d4.wav; sourceTree = "<group>"; };
+		32C55E1A18525CB30029016F /* what_d5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_d5.wav; sourceTree = "<group>"; };
+		32C55E1B18525CB30029016F /* what_d6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_d6.wav; sourceTree = "<group>"; };
+		32C55E1C18525CB30029016F /* what_d7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_d7.wav; sourceTree = "<group>"; };
+		32C55E1D18525CB30029016F /* what_d8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_d8.wav; sourceTree = "<group>"; };
+		32C55E1E18525CB30029016F /* what_did.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_did.wav; sourceTree = "<group>"; };
+		32C55E1F18525CB30029016F /* what_do_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_do_.wav; sourceTree = "<group>"; };
+		32C55E2018525CB30029016F /* what_hap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_hap.wav; sourceTree = "<group>"; };
+		32C55E2118525CB30029016F /* what_i0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_i0.wav; sourceTree = "<group>"; };
+		32C55E2218525CB30029016F /* what_i1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_i1.wav; sourceTree = "<group>"; };
+		32C55E2318525CB30029016F /* what_i2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_i2.wav; sourceTree = "<group>"; };
+		32C55E2418525CB30029016F /* what_i3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_i3.wav; sourceTree = "<group>"; };
+		32C55E2518525CB30029016F /* what_i4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_i4.wav; sourceTree = "<group>"; };
+		32C55E2618525CB30029016F /* what_i5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_i5.wav; sourceTree = "<group>"; };
+		32C55E2718525CB30029016F /* What_i6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = What_i6.wav; sourceTree = "<group>"; };
+		32C55E2818525CB30029016F /* what_is_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = what_is_.wav; sourceTree = "<group>"; };
+		32C55E2918525CB30029016F /* Wheeeeee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Wheeeeee.wav; sourceTree = "<group>"; };
+		32C55E2A18525CB30029016F /* when.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = when.wav; sourceTree = "<group>"; };
+		32C55E2B18525CB30029016F /* when_doe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = when_doe.wav; sourceTree = "<group>"; };
+		32C55E2C18525CB30029016F /* whenever.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whenever.wav; sourceTree = "<group>"; };
+		32C55E2D18525CB30029016F /* where.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = where.wav; sourceTree = "<group>"; };
+		32C55E2E18525CB30029016F /* where_am.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = where_am.wav; sourceTree = "<group>"; };
+		32C55E2F18525CB30029016F /* Where_is.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Where_is.wav; sourceTree = "<group>"; };
+		32C55E3018525CB30029016F /* white.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = white.wav; sourceTree = "<group>"; };
+		32C55E3118525CB30029016F /* who's_th.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "who's_th.wav"; sourceTree = "<group>"; };
+		32C55E3218525CB30029016F /* who.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = who.wav; sourceTree = "<group>"; };
+		32C55E3318525CB30029016F /* who_is_i.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = who_is_i.wav; sourceTree = "<group>"; };
+		32C55E3418525CB30029016F /* why.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = why.wav; sourceTree = "<group>"; };
+		32C55E3518525CB30029016F /* why_co0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = why_co0.wav; sourceTree = "<group>"; };
+		32C55E3618525CB30029016F /* why_coul.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = why_coul.wav; sourceTree = "<group>"; };
+		32C55E3718525CB30029016F /* why_di0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = why_di0.wav; sourceTree = "<group>"; };
+		32C55E3818525CB30029016F /* why_did_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = why_did_.wav; sourceTree = "<group>"; };
+		32C55E3918525CB30029016F /* why_is_t.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = why_is_t.wav; sourceTree = "<group>"; };
+		32C55E3A18525CB30029016F /* why_wa0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = why_wa0.wav; sourceTree = "<group>"; };
+		32C55E3B18525CB30029016F /* why_was_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = why_was_.wav; sourceTree = "<group>"; };
+		32C55E3C18525CB30029016F /* wow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wow.wav; sourceTree = "<group>"; };
+		32C55E3D18525CB30029016F /* Yay.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Yay.wav; sourceTree = "<group>"; };
+		32C55E3E18525CB30029016F /* yellow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yellow.wav; sourceTree = "<group>"; };
+		32C55E3F18525CB30029016F /* yes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yes.wav; sourceTree = "<group>"; };
+		32C55E4018525CB30029016F /* Yes_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Yes_2.wav; sourceTree = "<group>"; };
+		32C55E4118525CB30029016F /* you're_c.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "you're_c.wav"; sourceTree = "<group>"; };
+		32C55E4218525CB30029016F /* you're_k.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "you're_k.wav"; sourceTree = "<group>"; };
+		32C55E4318525CB30029016F /* You_ar0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = You_ar0.wav; sourceTree = "<group>"; };
+		32C55E4418525CB30029016F /* You_Are1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = You_Are1.wav; sourceTree = "<group>"; };
+		32C55E4518525CB30029016F /* you_are_.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = you_are_.wav; sourceTree = "<group>"; };
+		32C55E4618525CB30029016F /* you_tell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = you_tell.wav; sourceTree = "<group>"; };
+		32C55E4718525CB30029016F /* you_win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = you_win.wav; sourceTree = "<group>"; };
+		32D7AB8E18515D42009F14A0 /* RARMCoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RARMCoreDelegate.h; sourceTree = "<group>"; };
+		32D7AB8F18515D42009F14A0 /* RARMCoreDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RARMCoreDelegate.m; sourceTree = "<group>"; };
+		32D7AB9118515D7E009F14A0 /* RMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RMCore.framework; sourceTree = "<group>"; };
+		32D7AB9318515DE4009F14A0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		32D7AB9518515DF0009F14A0 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AF522F0184C3B3A00C250EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D7AB9618515DF0009F14A0 /* ExternalAccessory.framework in Frameworks */,
+				32D7AB9418515DE4009F14A0 /* CoreMotion.framework in Frameworks */,
+				2A41C325184C3F2E00649EBD /* CoreImage.framework in Frameworks */,
+				2A41C323184C3F2800649EBD /* AVFoundation.framework in Frameworks */,
+				2AF522F9184C3B3A00C250EF /* CoreGraphics.framework in Frameworks */,
+				2AF522FB184C3B3A00C250EF /* UIKit.framework in Frameworks */,
+				32D7AB9218515D7E009F14A0 /* RMCore.framework in Frameworks */,
+				2AF522F7184C3B3A00C250EF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AF52311184C3B3A00C250EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AF52316184C3B3A00C250EF /* XCTest.framework in Frameworks */,
+				2AF52318184C3B3A00C250EF /* UIKit.framework in Frameworks */,
+				2AF52317184C3B3A00C250EF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AF522EA184C3B3A00C250EF = {
+			isa = PBXGroup;
+			children = (
+				2AF522FC184C3B3A00C250EF /* RomiboClient */,
+				2AF5231B184C3B3A00C250EF /* RomiboClientTests */,
+				2AF522F5184C3B3A00C250EF /* Frameworks */,
+				2AF522F4184C3B3A00C250EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2AF522F4184C3B3A00C250EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AF522F3184C3B3A00C250EF /* RomiboClient.app */,
+				2AF52314184C3B3A00C250EF /* RomiboClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AF522F5184C3B3A00C250EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32D7AB9518515DF0009F14A0 /* ExternalAccessory.framework */,
+				32D7AB9318515DE4009F14A0 /* CoreMotion.framework */,
+				32D7AB9118515D7E009F14A0 /* RMCore.framework */,
+				2A41C324184C3F2E00649EBD /* CoreImage.framework */,
+				2A41C322184C3F2700649EBD /* AVFoundation.framework */,
+				2AF522F6184C3B3A00C250EF /* Foundation.framework */,
+				2AF522F8184C3B3A00C250EF /* CoreGraphics.framework */,
+				2AF522FA184C3B3A00C250EF /* UIKit.framework */,
+				2AF52315184C3B3A00C250EF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AF522FC184C3B3A00C250EF /* RomiboClient */ = {
+			isa = PBXGroup;
+			children = (
+				3266A36D185230C900C1654B /* RMBOSoundLibrary.m */,
+				3266A36C185230C000C1654B /* RMBOSoundLibrary.h */,
+				3266A36A185230B200C1654B /* RMBOSound.m */,
+				3266A369185230A400C1654B /* RMBOSound.h */,
+				3297BBFF1851500800353BEB /* RACommand.m */,
+				3297BBFE1851500800353BEB /* RACommand.h */,
+				32D7AB8E18515D42009F14A0 /* RARMCoreDelegate.h */,
+				32D7AB8F18515D42009F14A0 /* RARMCoreDelegate.m */,
+				3297BC091851512900353BEB /* RACommandDrive.h */,
+				3297BC0A1851512900353BEB /* RACommandDrive.m */,
+				3297BC0B1851512900353BEB /* RACommandEmote.h */,
+				3297BC0C1851512900353BEB /* RACommandEmote.m */,
+				3297BC0D1851512900353BEB /* RACommandSay.h */,
+				3297BC0E1851512900353BEB /* RACommandSay.m */,
+				3297BC0F1851512900353BEB /* RACommandTilt.h */,
+				3297BC101851512900353BEB /* RACommandTilt.m */,
+				3297BBFB18514FCB00353BEB /* Socket Code */,
+				2AF52305184C3B3A00C250EF /* RMBOAppDelegate.h */,
+				2AF52306184C3B3A00C250EF /* RMBOAppDelegate.m */,
+				2AF52308184C3B3A00C250EF /* Main.storyboard */,
+				2AF5230B184C3B3A00C250EF /* RMBOViewController.h */,
+				2AF5230C184C3B3A00C250EF /* RMBOViewController.m */,
+				2AF5230E184C3B3A00C250EF /* Images.xcassets */,
+				2AF522FD184C3B3A00C250EF /* Supporting Files */,
+			);
+			path = RomiboClient;
+			sourceTree = "<group>";
+		};
+		2AF522FD184C3B3A00C250EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				32C55D4D18525CB20029016F /* Sound Files */,
+				2AF522FE184C3B3A00C250EF /* RomiboClient-Info.plist */,
+				2AF522FF184C3B3A00C250EF /* InfoPlist.strings */,
+				2AF52302184C3B3A00C250EF /* main.m */,
+				2AF52304184C3B3A00C250EF /* RomiboClient-Prefix.pch */,
+				3266A367185223EA00C1654B /* SayCommandToWavFileMap.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2AF5231B184C3B3A00C250EF /* RomiboClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				2AF52321184C3B3A00C250EF /* RomiboClientTests.m */,
+				2AF5231C184C3B3A00C250EF /* Supporting Files */,
+			);
+			path = RomiboClientTests;
+			sourceTree = "<group>";
+		};
+		2AF5231C184C3B3A00C250EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5231D184C3B3A00C250EF /* RomiboClientTests-Info.plist */,
+				2AF5231E184C3B3A00C250EF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3297BBFB18514FCB00353BEB /* Socket Code */ = {
+			isa = PBXGroup;
+			children = (
+				3297BBFC1851500800353BEB /* GCDAsyncSocket.h */,
+				3297BBFD1851500800353BEB /* GCDAsyncSocket.m */,
+				3297BC001851500800353BEB /* RACommandParser.h */,
+				3297BC011851500800353BEB /* RACommandParser.m */,
+				3297BC021851500800353BEB /* RAListener.h */,
+				3297BC031851500800353BEB /* RAListener.m */,
+				3297BC041851500800353BEB /* RAListenerDelegate.h */,
+			);
+			name = "Socket Code";
+			sourceTree = "<group>";
+		};
+		32C55D4D18525CB20029016F /* Sound Files */ = {
+			isa = PBXGroup;
+			children = (
+				32C55D4E18525CB20029016F /* 0.wav */,
+				32C55D4F18525CB20029016F /* 1.wav */,
+				32C55D5018525CB20029016F /* 2.wav */,
+				32C55D5118525CB20029016F /* 3.wav */,
+				32C55D5218525CB20029016F /* 4.wav */,
+				32C55D5318525CB20029016F /* 5.wav */,
+				32C55D5418525CB20029016F /* 6.wav */,
+				32C55D5518525CB20029016F /* 7.wav */,
+				32C55D5618525CB20029016F /* 789.wav */,
+				32C55D5718525CB20029016F /* 8.wav */,
+				32C55D5818525CB20029016F /* 9.wav */,
+				32C55D5918525CB20029016F /* a_row-bo.wav */,
+				32C55D5A18525CB20029016F /* a_silico.wav */,
+				32C55D5B18525CB20029016F /* a_trans-.wav */,
+				32C55D5C18525CB20029016F /* ah!.wav */,
+				32C55D5D18525CB20029016F /* an_auton.wav */,
+				32C55D5E18525CB20029016F /* angry.wav */,
+				32C55D5F18525CB20029016F /* Apples_a.wav */,
+				32C55D6018525CB20029016F /* ask_me_a.wav */,
+				32C55D6118525CB20029016F /* audio files short names.csv */,
+				32C55D6218525CB20029016F /* Barney_I.wav */,
+				32C55D6318525CB20029016F /* becaus0.wav */,
+				32C55D6418525CB20029016F /* Because_.wav */,
+				32C55D6518525CB20029016F /* BECKON1.WAV */,
+				32C55D6618525CB20029016F /* Behind.wav */,
+				32C55D6718525CB20029016F /* big.wav */,
+				32C55D6818525CB20029016F /* black.wav */,
+				32C55D6918525CB20029016F /* blue.wav */,
+				32C55D6A18525CB20029016F /* bye.wav */,
+				32C55D6B18525CB20029016F /* Bye_Bye_.wav */,
+				32C55D6C18525CB20029016F /* cat.wav */,
+				32C55D6D18525CB20029016F /* clap_you.wav */,
+				32C55D6E18525CB20029016F /* climb_th.wav */,
+				32C55D6F18525CB20029016F /* color.wav */,
+				32C55D7018525CB20029016F /* could_yo.wav */,
+				32C55D7118525CB20029016F /* cross_th.wav */,
+				32C55D7218525CB20029016F /* dance_wi.wav */,
+				32C55D7318525CB20029016F /* DIGIT1_1.wav */,
+				32C55D7418525CB20029016F /* do_what_.wav */,
+				32C55D7518525CB20029016F /* do_you_k.wav */,
+				32C55D7618525CB20029016F /* dog.wav */,
+				32C55D7718525CB20029016F /* down.wav */,
+				32C55D7818525CB20029016F /* Down_1.wav */,
+				32C55D7918525CB20029016F /* Down_by_.wav */,
+				32C55D7A18525CB20029016F /* draw_a_t.wav */,
+				32C55D7B18525CB20029016F /* draw_m0.wav */,
+				32C55D7C18525CB20029016F /* draw_m1.wav */,
+				32C55D7D18525CB20029016F /* draw_m2.wav */,
+				32C55D7E18525CB20029016F /* draw_m3.wav */,
+				32C55D7F18525CB20029016F /* draw_m4.wav */,
+				32C55D8018525CB20029016F /* draw_m5.wav */,
+				32C55D8118525CB20029016F /* draw_me_.wav */,
+				32C55D8218525CB20029016F /* draw_my_.wav */,
+				32C55D8318525CB20029016F /* draw_s0.wav */,
+				32C55D8418525CB20029016F /* draw_som.wav */,
+				32C55D8518525CB20029016F /* draw_t0.wav */,
+				32C55D8618525CB20029016F /* draw_t1.wav */,
+				32C55D8718525CB20029016F /* draw_the.wav */,
+				32C55D8818525CB20029016F /* Eeeeeep!.wav */,
+				32C55D8918525CB20029016F /* food.wav */,
+				32C55D8A18525CB20029016F /* frog.wav */,
+				32C55D8B18525CB20029016F /* Good_job.wav */,
+				32C55D8C18525CB20029016F /* Goodbye_.wav */,
+				32C55D8D18525CB20029016F /* Gotcha!.wav */,
+				32C55D8E18525CB20029016F /* great_0.wav */,
+				32C55D8F18525CB20029016F /* Great_1.wav */,
+				32C55D9018525CB20029016F /* Great_Jo.wav */,
+				32C55D9118525CB20029016F /* green.wav */,
+				32C55D9218525CB20029016F /* guess_ag.wav */,
+				32C55D9318525CB20029016F /* ha_ha_ha.wav */,
+				32C55D9418525CB20029016F /* ha_ha_th.wav */,
+				32C55D9518525CB20029016F /* Hamburge.wav */,
+				32C55D9618525CB20029016F /* hand.wav */,
+				32C55D9718525CB20029016F /* Happy!.wav */,
+				32C55D9818525CB20029016F /* HAPPY1.WAV */,
+				32C55D9918525CB20029016F /* he_was_c.wav */,
+				32C55D9A18525CB20029016F /* he_was_d.wav */,
+				32C55D9B18525CB20029016F /* Head_Rol.wav */,
+				32C55D9C18525CB20029016F /* heavy_me.wav */,
+				32C55D9D18525CB20029016F /* HeHe.wav */,
+				32C55D9E18525CB20029016F /* hehe_tha.wav */,
+				32C55D9F18525CB20029016F /* hello.wav */,
+				32C55DA018525CB20029016F /* Hello_Sa.wav */,
+				32C55DA118525CB20029016F /* Hi.wav */,
+				32C55DA218525CB20029016F /* Hi_Sam!.wav */,
+				32C55DA318525CB20029016F /* how.wav */,
+				32C55DA418525CB20029016F /* how_are_.wav */,
+				32C55DA518525CB20029016F /* how_did_.wav */,
+				32C55DA618525CB20029016F /* I'll_see.wav */,
+				32C55DA718525CB20029016F /* I_am_tir.wav */,
+				32C55DA818525CB20029016F /* I_do_not.wav */,
+				32C55DA918525CB20029016F /* I_don'0.wav */,
+				32C55DAA18525CB20029016F /* I_don't_.wav */,
+				32C55DAB18525CB20029016F /* I_hate_t.wav */,
+				32C55DAC18525CB20029016F /* I_like0.wav */,
+				32C55DAD18525CB20029016F /* I_like1.wav */,
+				32C55DAE18525CB20029016F /* I_like_t.wav */,
+				32C55DAF18525CB20029016F /* I_look_a.wav */,
+				32C55DB018525CB20029016F /* I_need_t.wav */,
+				32C55DB118525CB20029016F /* If_You'r.wav */,
+				32C55DB218525CB20029016F /* if_you_c.wav */,
+				32C55DB318525CB20029016F /* In_the_M.wav */,
+				32C55DB418525CB20029016F /* is_that.wav */,
+				32C55DB518525CB20029016F /* is_the0.wav */,
+				32C55DB618525CB20029016F /* is_there.wav */,
+				32C55DB718525CB20029016F /* it_was_u.wav */,
+				32C55DB818525CB20029016F /* just_kid.wav */,
+				32C55DB918525CB20029016F /* keep_gue.wav */,
+				32C55DBA18525CB20029016F /* knock_kn.wav */,
+				32C55DBB18525CB20029016F /* left.wav */,
+				32C55DBC18525CB20029016F /* Left_1.wav */,
+				32C55DBD18525CB20029016F /* let's_pl.wav */,
+				32C55DBE18525CB20029016F /* Let_Me_C.wav */,
+				32C55DBF18525CB20029016F /* lets_dan.wav */,
+				32C55DC018525CB20029016F /* lets_p0.wav */,
+				32C55DC118525CB20029016F /* lets_p1.wav */,
+				32C55DC218525CB20029016F /* lets_pla.wav */,
+				32C55DC318525CB20029016F /* lets_sin.wav */,
+				32C55DC418525CB20029016F /* lets_try.wav */,
+				32C55DC518525CB20029016F /* little_m.wav */,
+				32C55DC618525CB20029016F /* look.wav */,
+				32C55DC718525CB20029016F /* louder.wav */,
+				32C55DC818525CB20029016F /* Love.wav */,
+				32C55DC918525CB20029016F /* Me_too!.wav */,
+				32C55DCA18525CB20029016F /* me_too.wav */,
+				32C55DCB18525CB20029016F /* Meat_bal.wav */,
+				32C55DCC18525CB20029016F /* Mr_Sun.wav */,
+				32C55DCD18525CB20029016F /* My_nam0.wav */,
+				32C55DCE18525CB20029016F /* my_name_.wav */,
+				32C55DCF18525CB20029016F /* never_li.wav */,
+				32C55DD018525CB20029016F /* no.wav */,
+				32C55DD118525CB20029016F /* no_1.wav */,
+				32C55DD218525CB20029016F /* old_macd.wav */,
+				32C55DD318525CB20029016F /* Ooooooo!.wav */,
+				32C55DD418525CB20029016F /* Ooops!_1.wav */,
+				32C55DD518525CB20029016F /* Oops.wav */,
+				32C55DD618525CB20029016F /* orange.wav */,
+				32C55DD718525CB20029016F /* Orange_J.wav */,
+				32C55DD818525CB20029016F /* ouch.wav */,
+				32C55DD918525CB20029016F /* Pancakes.wav */,
+				32C55DDA18525CB20029016F /* Pizza!.wav */,
+				32C55DDB18525CB20029016F /* place_to.wav */,
+				32C55DDC18525CB20029016F /* please.wav */,
+				32C55DDD18525CB20029016F /* point.wav */,
+				32C55DDE18525CB20029016F /* purple.wav */,
+				32C55DDF18525CB20029016F /* quieter.wav */,
+				32C55DE018525CB20029016F /* R2_detou.wav */,
+				32C55DE118525CB20029016F /* R2_doo_d.wav */,
+				32C55DE218525CB20029016F /* raise_yo.wav */,
+				32C55DE318525CB20029016F /* really.wav */,
+				32C55DE418525CB20029016F /* red.wav */,
+				32C55DE518525CB20029016F /* Rib-bot.wav */,
+				32C55DE618525CB20029016F /* right.wav */,
+				32C55DE718525CB20029016F /* Right_1.wav */,
+				32C55DE818525CB20029016F /* right_an.wav */,
+				32C55DE918525CB20029016F /* robot.wav */,
+				32C55DEA18525CB20029016F /* Romibo.wav */,
+				32C55DEB18525CB20029016F /* S1.WAV */,
+				32C55DEC18525CB20029016F /* S2.WAV */,
+				32C55DED18525CB20029016F /* S3.WAV */,
+				32C55DEE18525CB20029016F /* sad.wav */,
+				32C55DEF18525CB20029016F /* Sam!.wav */,
+				32C55DF018525CB20029016F /* Sam_is0.wav */,
+				32C55DF118525CB20029016F /* Sam_is_a.wav */,
+				32C55DF218525CB20029016F /* say_to_t.wav */,
+				32C55DF318525CB20029016F /* Show_Me_.wav */,
+				32C55DF418525CB20029016F /* side_to_.wav */,
+				32C55DF518525CB20029016F /* Silly.wav */,
+				32C55DF618525CB20029016F /* Simon_di.wav */,
+				32C55DF718525CB20029016F /* simon_sa.wav */,
+				32C55DF818525CB20029016F /* sing_me_.wav */,
+				32C55DF918525CB20029016F /* small.wav */,
+				32C55DFA18525CB20029016F /* somethin.wav */,
+				32C55DFB18525CB20029016F /* Spaghett.wav */,
+				32C55DFC18525CB20029016F /* Spin_and.wav */,
+				32C55DFD18525CB30029016F /* Spin_Aro.wav */,
+				32C55DFE18525CB30029016F /* tell_m0.wav */,
+				32C55DFF18525CB30029016F /* tell_m1.wav */,
+				32C55E0018525CB30029016F /* tell_me_.wav */,
+				32C55E0118525CB30029016F /* thank_yo.wav */,
+				32C55E0218525CB30029016F /* that's_f.wav */,
+				32C55E0318525CB30029016F /* that's_i.wav */,
+				32C55E0418525CB30029016F /* that's_m.wav */,
+				32C55E0518525CB30029016F /* That's_R.wav */,
+				32C55E0618525CB30029016F /* That_was.wav */,
+				32C55E0718525CB30029016F /* the_far0.wav */,
+				32C55E0818525CB30029016F /* the_farm.wav */,
+				32C55E0918525CB30029016F /* thing.wav */,
+				32C55E0A18525CB30029016F /* twinkle.wav */,
+				32C55E0B18525CB30029016F /* twinkle_.wav */,
+				32C55E0C18525CB30029016F /* Under.wav */,
+				32C55E0D18525CB30029016F /* up.wav */,
+				32C55E0E18525CB30029016F /* Up_1.wav */,
+				32C55E0F18525CB30029016F /* up_and_d.wav */,
+				32C55E1018525CB30029016F /* was_that.wav */,
+				32C55E1118525CB30029016F /* What's_s.wav */,
+				32C55E1218525CB30029016F /* what.wav */,
+				32C55E1318525CB30029016F /* what_am_.wav */,
+				32C55E1418525CB30029016F /* what_are.wav */,
+				32C55E1518525CB30029016F /* what_d0.wav */,
+				32C55E1618525CB30029016F /* what_d1.wav */,
+				32C55E1718525CB30029016F /* what_d2.wav */,
+				32C55E1818525CB30029016F /* what_d3.wav */,
+				32C55E1918525CB30029016F /* what_d4.wav */,
+				32C55E1A18525CB30029016F /* what_d5.wav */,
+				32C55E1B18525CB30029016F /* what_d6.wav */,
+				32C55E1C18525CB30029016F /* what_d7.wav */,
+				32C55E1D18525CB30029016F /* what_d8.wav */,
+				32C55E1E18525CB30029016F /* what_did.wav */,
+				32C55E1F18525CB30029016F /* what_do_.wav */,
+				32C55E2018525CB30029016F /* what_hap.wav */,
+				32C55E2118525CB30029016F /* what_i0.wav */,
+				32C55E2218525CB30029016F /* what_i1.wav */,
+				32C55E2318525CB30029016F /* what_i2.wav */,
+				32C55E2418525CB30029016F /* what_i3.wav */,
+				32C55E2518525CB30029016F /* what_i4.wav */,
+				32C55E2618525CB30029016F /* what_i5.wav */,
+				32C55E2718525CB30029016F /* What_i6.wav */,
+				32C55E2818525CB30029016F /* what_is_.wav */,
+				32C55E2918525CB30029016F /* Wheeeeee.wav */,
+				32C55E2A18525CB30029016F /* when.wav */,
+				32C55E2B18525CB30029016F /* when_doe.wav */,
+				32C55E2C18525CB30029016F /* whenever.wav */,
+				32C55E2D18525CB30029016F /* where.wav */,
+				32C55E2E18525CB30029016F /* where_am.wav */,
+				32C55E2F18525CB30029016F /* Where_is.wav */,
+				32C55E3018525CB30029016F /* white.wav */,
+				32C55E3118525CB30029016F /* who's_th.wav */,
+				32C55E3218525CB30029016F /* who.wav */,
+				32C55E3318525CB30029016F /* who_is_i.wav */,
+				32C55E3418525CB30029016F /* why.wav */,
+				32C55E3518525CB30029016F /* why_co0.wav */,
+				32C55E3618525CB30029016F /* why_coul.wav */,
+				32C55E3718525CB30029016F /* why_di0.wav */,
+				32C55E3818525CB30029016F /* why_did_.wav */,
+				32C55E3918525CB30029016F /* why_is_t.wav */,
+				32C55E3A18525CB30029016F /* why_wa0.wav */,
+				32C55E3B18525CB30029016F /* why_was_.wav */,
+				32C55E3C18525CB30029016F /* wow.wav */,
+				32C55E3D18525CB30029016F /* Yay.wav */,
+				32C55E3E18525CB30029016F /* yellow.wav */,
+				32C55E3F18525CB30029016F /* yes.wav */,
+				32C55E4018525CB30029016F /* Yes_2.wav */,
+				32C55E4118525CB30029016F /* you're_c.wav */,
+				32C55E4218525CB30029016F /* you're_k.wav */,
+				32C55E4318525CB30029016F /* You_ar0.wav */,
+				32C55E4418525CB30029016F /* You_Are1.wav */,
+				32C55E4518525CB30029016F /* you_are_.wav */,
+				32C55E4618525CB30029016F /* you_tell.wav */,
+				32C55E4718525CB30029016F /* you_win.wav */,
+			);
+			name = "Sound Files";
+			path = "Short File Names";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2AF522F2184C3B3A00C250EF /* RomiboClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AF52325184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClient" */;
+			buildPhases = (
+				2AF522EF184C3B3A00C250EF /* Sources */,
+				2AF522F0184C3B3A00C250EF /* Frameworks */,
+				2AF522F1184C3B3A00C250EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RomiboClient;
+			productName = RomiboClient;
+			productReference = 2AF522F3184C3B3A00C250EF /* RomiboClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2AF52313184C3B3A00C250EF /* RomiboClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AF52328184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClientTests" */;
+			buildPhases = (
+				2AF52310184C3B3A00C250EF /* Sources */,
+				2AF52311184C3B3A00C250EF /* Frameworks */,
+				2AF52312184C3B3A00C250EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AF5231A184C3B3A00C250EF /* PBXTargetDependency */,
+			);
+			name = RomiboClientTests;
+			productName = RomiboClientTests;
+			productReference = 2AF52314184C3B3A00C250EF /* RomiboClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AF522EB184C3B3A00C250EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RMBO;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = com.romibo;
+				TargetAttributes = {
+					2AF522F2184C3B3A00C250EF = {
+						DevelopmentTeam = 9YYN96VW6R;
+					};
+					2AF52313184C3B3A00C250EF = {
+						TestTargetID = 2AF522F2184C3B3A00C250EF;
+					};
+				};
+			};
+			buildConfigurationList = 2AF522EE184C3B3A00C250EF /* Build configuration list for PBXProject "RomiboClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AF522EA184C3B3A00C250EF;
+			productRefGroup = 2AF522F4184C3B3A00C250EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AF522F2184C3B3A00C250EF /* RomiboClient */,
+				2AF52313184C3B3A00C250EF /* RomiboClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AF522F1184C3B3A00C250EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32C55EFF18525CB30029016F /* That's_R.wav in Resources */,
+				32C55E9A18525CB30029016F /* Hello_Sa.wav in Resources */,
+				32C55E4F18525CB30029016F /* 7.wav in Resources */,
+				32C55E9318525CB30029016F /* he_was_c.wav in Resources */,
+				32C55EAE18525CB30029016F /* is_that.wav in Resources */,
+				32C55F3418525CB30029016F /* why_wa0.wav in Resources */,
+				32C55E8A18525CB30029016F /* Great_Jo.wav in Resources */,
+				32C55EC018525CB30029016F /* look.wav in Resources */,
+				32C55EDE18525CB30029016F /* red.wav in Resources */,
+				32C55EAB18525CB30029016F /* If_You'r.wav in Resources */,
+				32C55F3018525CB30029016F /* why_coul.wav in Resources */,
+				32C55F3F18525CB30029016F /* you_are_.wav in Resources */,
+				32C55E6F18525CB30029016F /* do_you_k.wav in Resources */,
+				32C55E8D18525CB30029016F /* ha_ha_ha.wav in Resources */,
+				32C55F3E18525CB30029016F /* You_Are1.wav in Resources */,
+				32C55EE918525CB30029016F /* Sam!.wav in Resources */,
+				32C55E8718525CB30029016F /* Gotcha!.wav in Resources */,
+				32C55EF018525CB30029016F /* Simon_di.wav in Resources */,
+				32C55EE318525CB30029016F /* robot.wav in Resources */,
+				32C55EA318525CB30029016F /* I_don'0.wav in Resources */,
+				32C55F0818525CB30029016F /* Up_1.wav in Resources */,
+				32C55EC318525CB30029016F /* Me_too!.wav in Resources */,
+				32C55F0F18525CB30029016F /* what_d0.wav in Resources */,
+				32C55F2018525CB30029016F /* what_i5.wav in Resources */,
+				32C55EF618525CB30029016F /* Spin_and.wav in Resources */,
+				32C55F0418525CB30029016F /* twinkle.wav in Resources */,
+				32C55E5918525CB30029016F /* Apples_a.wav in Resources */,
+				32C55E5518525CB30029016F /* a_trans-.wav in Resources */,
+				32C55F1A18525CB30029016F /* what_hap.wav in Resources */,
+				32C55E7F18525CB30029016F /* draw_t0.wav in Resources */,
+				32C55E8418525CB30029016F /* frog.wav in Resources */,
+				32C55EFC18525CB30029016F /* that's_f.wav in Resources */,
+				32C55EBA18525CB30029016F /* lets_p0.wav in Resources */,
+				32C55EC618525CB30029016F /* Mr_Sun.wav in Resources */,
+				32C55E5118525CB30029016F /* 8.wav in Resources */,
+				32C55E8518525CB30029016F /* Good_job.wav in Resources */,
+				32C55F2918525CB30029016F /* Where_is.wav in Resources */,
+				32C55F2718525CB30029016F /* where.wav in Resources */,
+				32C55E7D18525CB30029016F /* draw_s0.wav in Resources */,
+				32C55EE618525CB30029016F /* S2.WAV in Resources */,
+				32C55E8018525CB30029016F /* draw_t1.wav in Resources */,
+				32C55E9218525CB30029016F /* HAPPY1.WAV in Resources */,
+				32C55E4E18525CB30029016F /* 6.wav in Resources */,
+				32C55E7B18525CB30029016F /* draw_me_.wav in Resources */,
+				32C55EEE18525CB30029016F /* side_to_.wav in Resources */,
+				32C55E4918525CB30029016F /* 1.wav in Resources */,
+				32C55EBD18525CB30029016F /* lets_sin.wav in Resources */,
+				32C55E6A18525CB30029016F /* could_yo.wav in Resources */,
+				32C55F1C18525CB30029016F /* what_i1.wav in Resources */,
+				32C55E7A18525CB30029016F /* draw_m5.wav in Resources */,
+				32C55EDF18525CB30029016F /* Rib-bot.wav in Resources */,
+				32C55E6C18525CB30029016F /* dance_wi.wav in Resources */,
+				32C55ED318525CB30029016F /* Pancakes.wav in Resources */,
+				32C55E7218525CB30029016F /* Down_1.wav in Resources */,
+				32C55E9018525CB30029016F /* hand.wav in Resources */,
+				32C55F1718525CB30029016F /* what_d8.wav in Resources */,
+				32C55F3718525CB30029016F /* Yay.wav in Resources */,
+				32C55E7018525CB30029016F /* dog.wav in Resources */,
+				32C55F1618525CB30029016F /* what_d7.wav in Resources */,
+				32C55EFA18525CB30029016F /* tell_me_.wav in Resources */,
+				32C55F0A18525CB30029016F /* was_that.wav in Resources */,
+				32C55E9C18525CB30029016F /* Hi_Sam!.wav in Resources */,
+				32C55F1E18525CB30029016F /* what_i3.wav in Resources */,
+				32C55EB318525CB30029016F /* keep_gue.wav in Resources */,
+				32C55F2A18525CB30029016F /* white.wav in Resources */,
+				32C55E5D18525CB30029016F /* becaus0.wav in Resources */,
+				32C55F2D18525CB30029016F /* who_is_i.wav in Resources */,
+				32C55EE218525CB30029016F /* right_an.wav in Resources */,
+				32C55EB018525CB30029016F /* is_there.wav in Resources */,
+				32C55F2418525CB30029016F /* when.wav in Resources */,
+				32C55F0218525CB30029016F /* the_farm.wav in Resources */,
+				32C55E5718525CB30029016F /* an_auton.wav in Resources */,
+				32C55EE418525CB30029016F /* Romibo.wav in Resources */,
+				32C55EB218525CB30029016F /* just_kid.wav in Resources */,
+				32C55E6518525CB30029016F /* Bye_Bye_.wav in Resources */,
+				32C55F3218525CB30029016F /* why_did_.wav in Resources */,
+				32C55F3A18525CB30029016F /* Yes_2.wav in Resources */,
+				2AF5230F184C3B3A00C250EF /* Images.xcassets in Resources */,
+				32C55EBF18525CB30029016F /* little_m.wav in Resources */,
+				32C55EEC18525CB30029016F /* say_to_t.wav in Resources */,
+				32C55E6918525CB30029016F /* color.wav in Resources */,
+				32C55E8818525CB30029016F /* great_0.wav in Resources */,
+				32C55E6118525CB30029016F /* big.wav in Resources */,
+				32C55EBC18525CB30029016F /* lets_pla.wav in Resources */,
+				32C55E9F18525CB30029016F /* how_did_.wav in Resources */,
+				32C55EAA18525CB30029016F /* I_need_t.wav in Resources */,
+				32C55ED018525CB30029016F /* orange.wav in Resources */,
+				32C55F2118525CB30029016F /* What_i6.wav in Resources */,
+				32C55EC518525CB30029016F /* Meat_bal.wav in Resources */,
+				32C55ED518525CB30029016F /* place_to.wav in Resources */,
+				32C55EF818525CB30029016F /* tell_m0.wav in Resources */,
+				32C55F1518525CB30029016F /* what_d6.wav in Resources */,
+				32C55ED918525CB30029016F /* quieter.wav in Resources */,
+				32C55F3918525CB30029016F /* yes.wav in Resources */,
+				32C55ECB18525CB30029016F /* no_1.wav in Resources */,
+				32C55E8218525CB30029016F /* Eeeeeep!.wav in Resources */,
+				32C55EB918525CB30029016F /* lets_dan.wav in Resources */,
+				32C55E4D18525CB30029016F /* 5.wav in Resources */,
+				32C55F0E18525CB30029016F /* what_are.wav in Resources */,
+				32C55E5818525CB30029016F /* angry.wav in Resources */,
+				32C55F3318525CB30029016F /* why_is_t.wav in Resources */,
+				32C55E8F18525CB30029016F /* Hamburge.wav in Resources */,
+				32C55EB618525CB30029016F /* Left_1.wav in Resources */,
+				32C55EC418525CB30029016F /* me_too.wav in Resources */,
+				32C55F1318525CB30029016F /* what_d4.wav in Resources */,
+				32C55E8B18525CB30029016F /* green.wav in Resources */,
+				32C55E6318525CB30029016F /* blue.wav in Resources */,
+				32C55EC918525CB30029016F /* never_li.wav in Resources */,
+				32C55EE018525CB30029016F /* right.wav in Resources */,
+				32C55EB118525CB30029016F /* it_was_u.wav in Resources */,
+				32C55F0118525CB30029016F /* the_far0.wav in Resources */,
+				32C55ECF18525CB30029016F /* Oops.wav in Resources */,
+				32C55F2518525CB30029016F /* when_doe.wav in Resources */,
+				32C55F3C18525CB30029016F /* you're_k.wav in Resources */,
+				32C55EFD18525CB30029016F /* that's_i.wav in Resources */,
+				2AF52301184C3B3A00C250EF /* InfoPlist.strings in Resources */,
+				32C55EF718525CB30029016F /* Spin_Aro.wav in Resources */,
+				32C55F2318525CB30029016F /* Wheeeeee.wav in Resources */,
+				32C55F0618525CB30029016F /* Under.wav in Resources */,
+				32C55EF318525CB30029016F /* small.wav in Resources */,
+				32C55E9E18525CB30029016F /* how_are_.wav in Resources */,
+				32C55E7118525CB30029016F /* down.wav in Resources */,
+				32C55F0D18525CB30029016F /* what_am_.wav in Resources */,
+				32C55EA418525CB30029016F /* I_don't_.wav in Resources */,
+				32C55E9818525CB30029016F /* hehe_tha.wav in Resources */,
+				32C55E7E18525CB30029016F /* draw_som.wav in Resources */,
+				32C55E5A18525CB30029016F /* ask_me_a.wav in Resources */,
+				32C55EAF18525CB30029016F /* is_the0.wav in Resources */,
+				32C55F0318525CB30029016F /* thing.wav in Resources */,
+				32C55E4C18525CB30029016F /* 4.wav in Resources */,
+				32C55F2618525CB30029016F /* whenever.wav in Resources */,
+				32C55E8118525CB30029016F /* draw_the.wav in Resources */,
+				32C55E5618525CB30029016F /* ah!.wav in Resources */,
+				32C55E9418525CB30029016F /* he_was_d.wav in Resources */,
+				32C55EC118525CB30029016F /* louder.wav in Resources */,
+				32C55F4018525CB30029016F /* you_tell.wav in Resources */,
+				32C55ED618525CB30029016F /* please.wav in Resources */,
+				32C55F2218525CB30029016F /* what_is_.wav in Resources */,
+				32C55EC718525CB30029016F /* My_nam0.wav in Resources */,
+				32C55E7918525CB30029016F /* draw_m4.wav in Resources */,
+				32C55E9718525CB30029016F /* HeHe.wav in Resources */,
+				32C55ED818525CB30029016F /* purple.wav in Resources */,
+				32C55F0518525CB30029016F /* twinkle_.wav in Resources */,
+				32C55E8C18525CB30029016F /* guess_ag.wav in Resources */,
+				32C55EFB18525CB30029016F /* thank_yo.wav in Resources */,
+				32C55EA018525CB30029016F /* I'll_see.wav in Resources */,
+				32C55E6218525CB30029016F /* black.wav in Resources */,
+				32C55ECD18525CB30029016F /* Ooooooo!.wav in Resources */,
+				32C55EA718525CB30029016F /* I_like1.wav in Resources */,
+				32C55E5C18525CB30029016F /* Barney_I.wav in Resources */,
+				32C55E7718525CB30029016F /* draw_m2.wav in Resources */,
+				32C55F0018525CB30029016F /* That_was.wav in Resources */,
+				32C55EB418525CB30029016F /* knock_kn.wav in Resources */,
+				32C55EE518525CB30029016F /* S1.WAV in Resources */,
+				32C55E9118525CB30029016F /* Happy!.wav in Resources */,
+				32C55EEA18525CB30029016F /* Sam_is0.wav in Resources */,
+				32C55EA818525CB30029016F /* I_like_t.wav in Resources */,
+				32C55EE118525CB30029016F /* Right_1.wav in Resources */,
+				32C55ECA18525CB30029016F /* no.wav in Resources */,
+				32C55F3D18525CB30029016F /* You_ar0.wav in Resources */,
+				32C55E5B18525CB30029016F /* audio files short names.csv in Resources */,
+				32C55E4818525CB30029016F /* 0.wav in Resources */,
+				32C55EA118525CB30029016F /* I_am_tir.wav in Resources */,
+				32C55E5E18525CB30029016F /* Because_.wav in Resources */,
+				32C55EDC18525CB30029016F /* raise_yo.wav in Resources */,
+				32C55EDA18525CB30029016F /* R2_detou.wav in Resources */,
+				32C55EF518525CB30029016F /* Spaghett.wav in Resources */,
+				32C55EEF18525CB30029016F /* Silly.wav in Resources */,
+				32C55F2B18525CB30029016F /* who's_th.wav in Resources */,
+				32C55E6618525CB30029016F /* cat.wav in Resources */,
+				32C55E7C18525CB30029016F /* draw_my_.wav in Resources */,
+				32C55EB718525CB30029016F /* let's_pl.wav in Resources */,
+				32C55F3118525CB30029016F /* why_di0.wav in Resources */,
+				32C55F2F18525CB30029016F /* why_co0.wav in Resources */,
+				32C55E8918525CB30029016F /* Great_1.wav in Resources */,
+				32C55F2C18525CB30029016F /* who.wav in Resources */,
+				32C55F1B18525CB30029016F /* what_i0.wav in Resources */,
+				32C55E7418525CB30029016F /* draw_a_t.wav in Resources */,
+				32C55F1818525CB30029016F /* what_did.wav in Resources */,
+				32C55E6E18525CB30029016F /* do_what_.wav in Resources */,
+				32C55F0918525CB30029016F /* up_and_d.wav in Resources */,
+				32C55ED718525CB30029016F /* point.wav in Resources */,
+				32C55F1918525CB30029016F /* what_do_.wav in Resources */,
+				32C55EAD18525CB30029016F /* In_the_M.wav in Resources */,
+				32C55E8318525CB30029016F /* food.wav in Resources */,
+				32C55F1118525CB30029016F /* what_d2.wav in Resources */,
+				32C55E5218525CB30029016F /* 9.wav in Resources */,
+				32C55F1218525CB30029016F /* what_d3.wav in Resources */,
+				32C55EA218525CB30029016F /* I_do_not.wav in Resources */,
+				32C55EAC18525CB30029016F /* if_you_c.wav in Resources */,
+				32C55E5018525CB30029016F /* 789.wav in Resources */,
+				32C55E8E18525CB30029016F /* ha_ha_th.wav in Resources */,
+				32C55E9918525CB30029016F /* hello.wav in Resources */,
+				32C55F2E18525CB30029016F /* why.wav in Resources */,
+				32C55E5418525CB30029016F /* a_silico.wav in Resources */,
+				32C55F1418525CB30029016F /* what_d5.wav in Resources */,
+				32C55E8618525CB30029016F /* Goodbye_.wav in Resources */,
+				32C55E6B18525CB30029016F /* cross_th.wav in Resources */,
+				32C55F1018525CB30029016F /* what_d1.wav in Resources */,
+				32C55ED218525CB30029016F /* ouch.wav in Resources */,
+				32C55ECE18525CB30029016F /* Ooops!_1.wav in Resources */,
+				32C55EF918525CB30029016F /* tell_m1.wav in Resources */,
+				32C55EED18525CB30029016F /* Show_Me_.wav in Resources */,
+				32C55E5F18525CB30029016F /* BECKON1.WAV in Resources */,
+				32C55EA518525CB30029016F /* I_hate_t.wav in Resources */,
+				32C55ECC18525CB30029016F /* old_macd.wav in Resources */,
+				32C55E4B18525CB30029016F /* 3.wav in Resources */,
+				32C55E9518525CB30029016F /* Head_Rol.wav in Resources */,
+				32C55EE818525CB30029016F /* sad.wav in Resources */,
+				32C55E6418525CB30029016F /* bye.wav in Resources */,
+				32C55E6D18525CB30029016F /* DIGIT1_1.wav in Resources */,
+				32C55E9B18525CB30029016F /* Hi.wav in Resources */,
+				32C55F3618525CB30029016F /* wow.wav in Resources */,
+				32C55EDB18525CB30029016F /* R2_doo_d.wav in Resources */,
+				32C55E4A18525CB30029016F /* 2.wav in Resources */,
+				32C55E7318525CB30029016F /* Down_by_.wav in Resources */,
+				32C55E7518525CB30029016F /* draw_m0.wav in Resources */,
+				3266A368185223EA00C1654B /* SayCommandToWavFileMap.plist in Resources */,
+				32C55F3B18525CB30029016F /* you're_c.wav in Resources */,
+				32C55F4118525CB30029016F /* you_win.wav in Resources */,
+				32C55E6718525CB30029016F /* clap_you.wav in Resources */,
+				32C55E7618525CB30029016F /* draw_m1.wav in Resources */,
+				32C55F0C18525CB30029016F /* what.wav in Resources */,
+				32C55EA618525CB30029016F /* I_like0.wav in Resources */,
+				32C55EB518525CB30029016F /* left.wav in Resources */,
+				32C55F0B18525CB30029016F /* What's_s.wav in Resources */,
+				32C55E5318525CB30029016F /* a_row-bo.wav in Resources */,
+				32C55EE718525CB30029016F /* S3.WAV in Resources */,
+				32C55EF218525CB30029016F /* sing_me_.wav in Resources */,
+				32C55EBE18525CB30029016F /* lets_try.wav in Resources */,
+				32C55ED418525CB30029016F /* Pizza!.wav in Resources */,
+				32C55E7818525CB30029016F /* draw_m3.wav in Resources */,
+				32C55EB818525CB30029016F /* Let_Me_C.wav in Resources */,
+				32C55EEB18525CB30029016F /* Sam_is_a.wav in Resources */,
+				32C55EC218525CB30029016F /* Love.wav in Resources */,
+				32C55F1D18525CB30029016F /* what_i2.wav in Resources */,
+				32C55F3818525CB30029016F /* yellow.wav in Resources */,
+				2AF5230A184C3B3A00C250EF /* Main.storyboard in Resources */,
+				32C55EDD18525CB30029016F /* really.wav in Resources */,
+				32C55E6018525CB30029016F /* Behind.wav in Resources */,
+				32C55E9D18525CB30029016F /* how.wav in Resources */,
+				32C55EF418525CB30029016F /* somethin.wav in Resources */,
+				32C55F0718525CB30029016F /* up.wav in Resources */,
+				32C55EF118525CB30029016F /* simon_sa.wav in Resources */,
+				32C55EFE18525CB30029016F /* that's_m.wav in Resources */,
+				32C55E6818525CB30029016F /* climb_th.wav in Resources */,
+				32C55EC818525CB30029016F /* my_name_.wav in Resources */,
+				32C55F2818525CB30029016F /* where_am.wav in Resources */,
+				32C55E9618525CB30029016F /* heavy_me.wav in Resources */,
+				32C55ED118525CB30029016F /* Orange_J.wav in Resources */,
+				32C55EA918525CB30029016F /* I_look_a.wav in Resources */,
+				32C55F3518525CB30029016F /* why_was_.wav in Resources */,
+				32C55EBB18525CB30029016F /* lets_p1.wav in Resources */,
+				32C55F1F18525CB30029016F /* what_i4.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AF52312184C3B3A00C250EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AF52320184C3B3A00C250EF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AF522EF184C3B3A00C250EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3297BC121851512900353BEB /* RACommandEmote.m in Sources */,
+				3266A36E185230C900C1654B /* RMBOSoundLibrary.m in Sources */,
+				3297BC081851500800353BEB /* RAListener.m in Sources */,
+				3297BC051851500800353BEB /* GCDAsyncSocket.m in Sources */,
+				3297BC071851500800353BEB /* RACommandParser.m in Sources */,
+				3297BC061851500800353BEB /* RACommand.m in Sources */,
+				2AF52307184C3B3A00C250EF /* RMBOAppDelegate.m in Sources */,
+				3297BC131851512900353BEB /* RACommandSay.m in Sources */,
+				2AF5230D184C3B3A00C250EF /* RMBOViewController.m in Sources */,
+				3266A36B185230B200C1654B /* RMBOSound.m in Sources */,
+				3297BC141851512900353BEB /* RACommandTilt.m in Sources */,
+				2AF52303184C3B3A00C250EF /* main.m in Sources */,
+				3297BC111851512900353BEB /* RACommandDrive.m in Sources */,
+				32D7AB9018515D42009F14A0 /* RARMCoreDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AF52310184C3B3A00C250EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AF52322184C3B3A00C250EF /* RomiboClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2AF5231A184C3B3A00C250EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AF522F2184C3B3A00C250EF /* RomiboClient */;
+			targetProxy = 2AF52319184C3B3A00C250EF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2AF522FF184C3B3A00C250EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AF52300184C3B3A00C250EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2AF52308184C3B3A00C250EF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AF52309184C3B3A00C250EF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2AF5231E184C3B3A00C250EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AF5231F184C3B3A00C250EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2AF52323184C3B3A00C250EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2AF52324184C3B3A00C250EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2AF52326184C3B3A00C250EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Dillon (2465WRUWN5)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mikedillon/Documents/romibo/norm/RomiboClient,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
+				INFOPLIST_FILE = "RomiboClient/RomiboClient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2AF52327184C3B3A00C250EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Dillon (2465WRUWN5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mike Dillon (2465WRUWN5)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mikedillon/Documents/romibo/norm/RomiboClient,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
+				INFOPLIST_FILE = "RomiboClient/RomiboClient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2AF52329184C3B3A00C250EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RomiboClient.app/RomiboClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RomiboClientTests/RomiboClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2AF5232A184C3B3A00C250EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RomiboClient.app/RomiboClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
+				INFOPLIST_FILE = "RomiboClientTests/RomiboClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AF522EE184C3B3A00C250EF /* Build configuration list for PBXProject "RomiboClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AF52323184C3B3A00C250EF /* Debug */,
+				2AF52324184C3B3A00C250EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AF52325184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AF52326184C3B3A00C250EF /* Debug */,
+				2AF52327184C3B3A00C250EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AF52328184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AF52329184C3B3A00C250EF /* Debug */,
+				2AF5232A184C3B3A00C250EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AF522EB184C3B3A00C250EF /* Project object */;
+}

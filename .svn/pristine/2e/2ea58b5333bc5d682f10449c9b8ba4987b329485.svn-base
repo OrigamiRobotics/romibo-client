@@ -1,0 +1,86 @@
+//
+//  RMBOSound.m
+//
+//  Created by James Pari on 12/4/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RMBOSound.h"
+
+@implementation RMBOSound
+
+@synthesize soundFileName;
+@synthesize soundFileObject;
+@synthesize soundFileURLRef;
+@synthesize soundFileExt;
+
+void completionCallback (SystemSoundID  mySSID, void* myself)
+{
+    AudioServicesRemoveSystemSoundCompletion (mySSID);
+    [[(__bridge RMBOSound*) myself delegate] soundPlaybackComplete];
+}
+
+/* 
+ * This method is the initialization method for the class.
+ * Filename is the name of the file without the extension.
+ * Extension is the file extension without the '.'
+ */
+- (bool) loadSound:(NSString *)filename ext:(NSString *)extension
+{
+    bool successFlag = false;
+    
+    if( filename != nil && extension != nil )
+    {
+        soundFileName = filename;
+        soundFileExt = extension;
+        
+        // Create the URL for the source audio file...
+        NSURL *mySound   = [[NSBundle mainBundle] URLForResource: filename
+                                                        withExtension: extension];
+        
+        // Store the URL as a CFURLRef instance...
+        soundFileURLRef = (__bridge CFURLRef) mySound;
+        
+        // Create a system sound object representing the sound file...
+        if ( AudioServicesCreateSystemSoundID ( soundFileURLRef, &soundFileObject ) == 0)
+        {
+            successFlag = true;
+        } else
+        {
+            NSLog( @"Error loading sound: '%@.%@'- creating system soundId failed", filename, extension);
+        }
+    } else
+    {
+        NSLog( @"Error loading sound: '%@.%@'", filename, extension);
+    }
+    
+    return successFlag;
+}
+
+// Respond to a tap on the System Sound button.
+- (void) playSound:(bool)vibrate
+{
+    AudioServicesAddSystemSoundCompletion (soundFileObject,NULL,NULL,completionCallback,(__bridge void*) self);
+    
+    if( vibrate )
+    {
+        AudioServicesPlayAlertSound (soundFileObject);
+        //AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
+    } else
+    {
+        AudioServicesPlaySystemSound (soundFileObject);
+    }
+}
+
+- (void) dealloc
+{
+    soundFileExt = nil;
+    soundFileName = nil;
+    AudioServicesDisposeSystemSoundID (soundFileObject);
+    if (soundFileURLRef != nil)
+    {
+        CFRelease (soundFileURLRef);
+    }
+}
+
+@end

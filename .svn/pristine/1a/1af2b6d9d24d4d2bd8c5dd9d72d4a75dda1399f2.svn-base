@@ -1,0 +1,13 @@
+//
+//  RACommandSay.h
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/2/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import "RACommand.h"
+
+@interface RACommandSay : RACommand
+
+@end

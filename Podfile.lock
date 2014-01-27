@@ -1,0 +1,10 @@
+PODS:
+  - ShowKit (0.7.11)
+
+DEPENDENCIES:
+  - ShowKit
+
+SPEC CHECKSUMS:
+  ShowKit: 7e10e399395b08ce7873aff29e0b872fc8603aec
+
+COCOAPODS: 0.28.0

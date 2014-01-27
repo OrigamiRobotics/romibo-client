@@ -1,0 +1,20 @@
+//
+//  RAListener.h
+//  RomoArigato
+//
+//  Created by Norm Lunde on 12/1/13.
+//  Copyright (c) 2013 Origami Robotics. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#define RA_NO_CLIENT_CONNECTED_STATUS  @"No Client Connected"
+
+@interface RAListener : NSObject
+- (RAListener*) initWithDelegate:(id) delegate
+                            port:(uint16_t) port
+                   readTimeoutMS:(uint16_t) timeout;
+- (void) startListening;
+- (void) stopListening;
+- (NSString*) getConnectedClientStatus;
+@end

@@ -1,0 +1,34 @@
+//
+//  RMBOViewController.h
+//  RomiboClient
+//
+//  Created by Doug Suriano on 12/1/13.
+//  Copyright (c) 2013 com.romibo. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@import AVFoundation;
+@import CoreImage;
+
+@interface RMBOViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
+
+@property (nonatomic, weak) IBOutlet UIView *previewView;
+@property (nonatomic, weak) IBOutlet UIImageView *leftEyeball;
+@property (nonatomic, weak) IBOutlet UIImageView *rightEyeball;
+@property (nonatomic, weak) IBOutlet UIImageView *leftEye;
+@property (nonatomic, weak) IBOutlet UIImageView *rightEye;
+@property (nonatomic, strong) AVSpeechSynthesizer *speechSynth;
+
+//@property (nonatomic, strong) IBOutlet UILabel* robotConnectionStatus;
+
+- (void)setupEyeTracking;
+- (void)tearDownEyeTracking;
+
+- (void)speakUtterance:(NSString *)phrase atSpeechRate:(float)speechRate withVoice:(AVSpeechSynthesisVoice *)voice;
+- (void)stopRobotMovement;
+- (void)moveRobotAtSpeedrate:(float)rate inDirection:(float)direction;
+- (void)tiltRobotHeadAtAngle:(float)angle;
+
+//- (void) timerExpired_RomoConnection:(NSTimer*)theTimer;
+@end
