@@ -51,7 +51,7 @@ typedef uint8_t RMCoreMotorAxis;
 @property (nonatomic, readonly) unsigned int pwmScalar;
 
 /**
- The power level of the motor (in the range [-self.pwmScalar, +self.pwmScalar])
+ The power level of the motor (in the range [-1.0, 1.0])
  */
 @property (nonatomic, readonly) float powerLevel;
 

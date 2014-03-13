@@ -25,6 +25,20 @@
 #pragma mark - Types
 
 /**
+ The items in this enumeration are used to keep track of the current command
+ drive action
+ */
+typedef enum {
+    RMCoreDriveCommandStop        = 0,
+    RMCoreDriveCommandForward     = 1,
+    RMCoreDriveCommandBackward    = 2,
+    RMCoreDriveCommandWithPower   = 3,
+    RMCoreDriveCommandWithHeading = 4,
+    RMCoreDriveCommandWithRadius  = 5,
+    RMCoreDriveCommandTurn        = 6
+} RMCoreDriveCommand;
+
+/**
  The items in this enumeration signal the drive module what it should do after
  the target heading has been reached at the end of a turn-to heading command.
  */
@@ -38,10 +52,13 @@ typedef enum {
  Block that is intended to be used as callback when the robot has completed a
  command that involved moving to a certain heading (orientation).
 
+ @param success Whether the robot successfully executed the turn command
+ (NO if the turn was aborted).
+ 
  @param heading The heading the robot actually ended up at when the turn
  completed.
  */
-typedef void (^RMCoreTurncompletion)(float heading);
+typedef void (^RMCoreTurncompletion)(BOOL success, float heading);
 
 #pragma mark - Special Drive Constants
 
@@ -54,6 +71,10 @@ typedef void (^RMCoreTurncompletion)(float heading);
 /** Macro that defines a speed value indicating the robot cannot determine its
  speed */
 #define RM_DRIVE_SPEED_UNKNOWN 9999
+
+/** Macro that defines the maximum and minimum robot headings (degrees) */
+#define RM_MAX_HEADING 180
+#define RM_MIN_HEADING -180
 
 /**
  NSNotification posted from a robot, when drive speed changes
@@ -83,6 +104,12 @@ extern NSString *const RMCoreRobotDriveSpeedDidChangeNotification;
  correspond to a high-level speed)
  */
 @property (nonatomic, readonly) float speed;
+
+/**
+ Read-only property that indicates what the most recent drive command issued
+ is.
+ */
+@property (nonatomic, readonly) RMCoreDriveCommand driveCommand;
 
 #pragma mark - Driving Straight
 
@@ -145,7 +172,8 @@ extern NSString *const RMCoreRobotDriveSpeedDidChangeNotification;
  ~[-.75, .75]
  - RM_DRIVE_RADIUS_TURN_IN_PLACE causes robot to turn-in-place.
 
- @param completion Optional callback when target heading is reached.
+ @param completion Optional callback when target heading is reached or turn is 
+ aborted.
  */
 
 - (void)turnByAngle:(float)angle
@@ -168,7 +196,8 @@ extern NSString *const RMCoreRobotDriveSpeedDidChangeNotification;
  @param finishingAction Dictates what should happen immediately after the target
  heading is reached (e.g. continue driving straight on target heading)
 
- @param completion Optional callback when target heading is reached.
+ @param completion Optional callback when target heading is reached or turn is 
+ aborted.
  */
 
 - (void)turnByAngle:(float)angle
@@ -196,7 +225,8 @@ extern NSString *const RMCoreRobotDriveSpeedDidChangeNotification;
  @param finishingAction Dictates what should happen immediately after the target
  heading is reached (e.g. continue driving straight on target heading)
 
- @param completion Optional callback when target heading is reached.
+ @param completion Optional callback when target heading is reached or turn is 
+ aborted.
  */
 - (void)turnByAngle:(float)angle
          withRadius:(float)radius
@@ -220,7 +250,8 @@ extern NSString *const RMCoreRobotDriveSpeedDidChangeNotification;
  @param finishingAction Dictates what should happen immediately after the target
  heading is reached (e.g. continue driving straight on target heading)
 
- @param completion Optional callback when target heading is reached.
+ @param completion Optional callback when target heading is reached or turn is 
+ aborted.
  */
 - (void)turnToHeading:(float)targetHeading
            withRadius:(float)radius
@@ -250,7 +281,8 @@ extern NSString *const RMCoreRobotDriveSpeedDidChangeNotification;
  @param finishingAction Dictates what should happen immediately after the target
  heading is reached (e.g. continue driving straight on target heading)
 
- @param completion Optional callback when target heading is reached.
+ @param completion Optional callback when target heading is reached or turn is 
+ aborted.
  */
 - (void)turnToHeading:(float)targetHeading
            withRadius:(float)radius

@@ -112,7 +112,7 @@ Yaw rate of the platform around the gravity vector.
 /**
  Platform acceleration along the direction of the gravity vector.
  */
-@property (nonatomic, readonly) float platformVerticalAcceleration;
+@property (nonatomic, readonly) CMAcceleration platformAcceleration;
 
 /**
  Attitude of the platform.  Accuracy is depenedent on the platform being on

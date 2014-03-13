@@ -7,13 +7,13 @@
 //
 
 #import "RMBOAppDelegate.h"
-#import "TestFlight.h"
+//#import "TestFlight.h"
 
 @implementation RMBOAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [TestFlight takeOff:@"f752fed2-5c7d-4bf5-b8f6-179e4beb6750"];
+    //[TestFlight takeOff:@"f752fed2-5c7d-4bf5-b8f6-179e4beb6750"];
     
     return YES;
 }

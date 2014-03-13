@@ -5,6 +5,7 @@
 //  Created by Doug Suriano on 12/9/13.
 //  Copyright (c) 2013 com.romibo. All rights reserved.
 //
+// This is v1 of the eyes. Not in use anymore
 
 #import "RMBOEye.h"
 

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 #import "RMBODriver.h"
-#import <ShowKit/ShowKit.h>
 
 
 @import AVFoundation;
@@ -18,7 +17,7 @@
 @class RMBOEyeball;
 @class RMBODriver;
 @class RMBOEye;
-@class RMBOExpressiveEyes;
+@class RMBOExpressiveMoodEyes;
 
 @interface RMBOViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate, MCSessionDelegate, RMBODriverDelegate, MCNearbyServiceAdvertiserDelegate>
 
@@ -41,7 +40,7 @@
 @property (nonatomic, weak) IBOutlet RMBOEye *leftEye;
 @property (nonatomic, weak) IBOutlet RMBOEye *rightEye;
 
-@property (nonatomic, weak) IBOutlet RMBOExpressiveEyes *eyes;
+@property (nonatomic, weak) IBOutlet RMBOExpressiveMoodEyes *eyes;
 
 //TODO DELETE
 @property (nonatomic, weak) IBOutlet UISlider *xSlider;

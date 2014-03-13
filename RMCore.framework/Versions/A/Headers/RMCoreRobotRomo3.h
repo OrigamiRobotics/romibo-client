@@ -38,20 +38,3 @@
 @interface RMCoreRobotRomo3 : RMCoreRobot <DifferentialDriveProtocol, HeadTiltProtocol, LEDProtocol, RobotMotionProtocol>
 
 @end
-
-/**
- @brief Protocol that defines the delegate methods specific to ROMO3A
- */
-@protocol RMCoreRobotRomo3Delegate <NSObject>
-
-/**
- Triggered when Romo receives a drive command
- */
-- (void)romo3DidChangeDriveCommand;
-
-/**
- Triggered when Romo receives a tilt command
- */
-- (void)romo3DidChangeTiltCommand;
-
-@end

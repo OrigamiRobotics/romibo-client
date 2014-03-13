@@ -120,6 +120,8 @@ typedef float (^RMControllerPIDSubtractionHandler)(float a, float b);
 
 /**
 Frequency at which the controller updates (Hz)
+ A frequency less than or equal to zero indicates that the controller is
+ externally triggered
  */
 @property (nonatomic) float controlFrequency;
 
@@ -172,6 +174,29 @@ Frequency at which the controller updates (Hz)
              outputSink:(RMControllerPIDOutputSinkHandler)outputSinkHandler
      subtractionHandler:(RMControllerPIDSubtractionHandler)subtractionHandler;
 
+/**
+ Use this method to initialize an externally triggered controller with all the necessary parameters
+ populated
+ */
+-(id)initWithProportional:(float)P
+                 integral:(float)I
+               derivative:(float)D
+                 setpoint:(float)setpoint
+              inputSource:(RMControllerPIDInputSourceHandler)inputSourceHandler
+               outputSink:(RMControllerPIDOutputSinkHandler)outputSinkHandler;
+
+/**
+ Use this method to initialize an externally triggered controller with all the necessary parameters,
+ plus the optional subtractionHandler, populated
+ */
+-(id)initWithProportional:(float)P
+                 integral:(float)I
+               derivative:(float)D
+                 setpoint:(float)setpoint
+              inputSource:(RMControllerPIDInputSourceHandler)inputSourceHandler
+               outputSink:(RMControllerPIDOutputSinkHandler)outputSinkHandler
+       subtractionHandler:(RMControllerPIDSubtractionHandler)subtractionHandler;
+
 #pragma mark - Controller Guts
 
 /**
@@ -179,6 +204,12 @@ Frequency at which the controller updates (Hz)
  effectively eliminates the controller's history
  */
 - (void)resetController;
+
+/**
+ This method allows you to manual trigger an externally triggered control
+ loop
+ */
+- (void)triggerController;
 
 #pragma mark - PID Tuning Helpers
 

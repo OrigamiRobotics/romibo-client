@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A15D63218B5C4C1008AF982 /* RMBOExpressiveMoodEyes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A15D63118B5C4C1008AF982 /* RMBOExpressiveMoodEyes.m */; };
 		2A41C323184C3F2800649EBD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A41C322184C3F2700649EBD /* AVFoundation.framework */; };
 		2A41C325184C3F2E00649EBD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A41C324184C3F2E00649EBD /* CoreImage.framework */; };
-		2A8351AF185F7FCF002AF83B /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8351AB185F7FCF002AF83B /* libTestFlight.a */; };
 		2A8351B1185F8016002AF83B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8351B0185F8016002AF83B /* libz.dylib */; };
+		2A8D70A518AB243400D0E6CD /* RMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8D70A418AB243400D0E6CD /* RMCore.framework */; };
 		2AB41E361876043B00CCE380 /* RMBOExpressiveEyes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB41E351876043B00CCE380 /* RMBOExpressiveEyes.m */; };
 		2AC1E9971856F155005D0426 /* RMBOEye.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1E9961856F155005D0426 /* RMBOEye.m */; };
 		2AE1E33F18540E59004C430F /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE1E33E18540E59004C430F /* MultipeerConnectivity.framework */; };
 		2AE1E3421854341A004C430F /* RMBODriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1E3411854341A004C430F /* RMBODriver.m */; };
-		2AE1E34418543494004C430F /* RMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE1E34318543494004C430F /* RMCore.framework */; };
 		2AE1E346185434A3004C430F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE1E345185434A3004C430F /* CoreMotion.framework */; };
 		2AE1E348185434A8004C430F /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE1E347185434A8004C430F /* ExternalAccessory.framework */; };
 		2AF522F7184C3B3A00C250EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522F6184C3B3A00C250EF /* Foundation.framework */; };
@@ -32,7 +32,6 @@
 		2AF52318184C3B3A00C250EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522FA184C3B3A00C250EF /* UIKit.framework */; };
 		2AF52320184C3B3A00C250EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5231E184C3B3A00C250EF /* InfoPlist.strings */; };
 		2AF52322184C3B3A00C250EF /* RomiboClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF52321184C3B3A00C250EF /* RomiboClientTests.m */; };
-		8425C866CE1247108ABD50CC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F0461428D84AE7A2FE38EE /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A15D63018B5C4C1008AF982 /* RMBOExpressiveMoodEyes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBOExpressiveMoodEyes.h; sourceTree = "<group>"; };
+		2A15D63118B5C4C1008AF982 /* RMBOExpressiveMoodEyes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBOExpressiveMoodEyes.m; sourceTree = "<group>"; };
 		2A41C322184C3F2700649EBD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2A41C324184C3F2E00649EBD /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		2A8351AB185F7FCF002AF83B /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		2A8351AD185F7FCF002AF83B /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		2A8351AE185F7FCF002AF83B /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		2A8351B0185F8016002AF83B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		2A8D70A418AB243400D0E6CD /* RMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RMCore.framework; sourceTree = "<group>"; };
 		2AB41E341876043B00CCE380 /* RMBOExpressiveEyes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBOExpressiveEyes.h; sourceTree = "<group>"; };
 		2AB41E351876043B00CCE380 /* RMBOExpressiveEyes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBOExpressiveEyes.m; sourceTree = "<group>"; };
 		2AC1E9951856F155005D0426 /* RMBOEye.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBOEye.h; sourceTree = "<group>"; };
@@ -60,7 +62,6 @@
 		2AE1E33E18540E59004C430F /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 		2AE1E3401854341A004C430F /* RMBODriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBODriver.h; sourceTree = "<group>"; };
 		2AE1E3411854341A004C430F /* RMBODriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBODriver.m; sourceTree = "<group>"; };
-		2AE1E34318543494004C430F /* RMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RMCore.framework; sourceTree = "<group>"; };
 		2AE1E345185434A3004C430F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		2AE1E347185434A8004C430F /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2AF522F3184C3B3A00C250EF /* RomiboClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RomiboClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,8 +83,6 @@
 		2AF5231D184C3B3A00C250EF /* RomiboClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomiboClientTests-Info.plist"; sourceTree = "<group>"; };
 		2AF5231F184C3B3A00C250EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2AF52321184C3B3A00C250EF /* RomiboClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RomiboClientTests.m; sourceTree = "<group>"; };
-		2F7B286E25DA450DB706927A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		88F0461428D84AE7A2FE38EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,15 +93,13 @@
 				2A8351B1185F8016002AF83B /* libz.dylib in Frameworks */,
 				2AE1E348185434A8004C430F /* ExternalAccessory.framework in Frameworks */,
 				2AE1E346185434A3004C430F /* CoreMotion.framework in Frameworks */,
-				2A8351AF185F7FCF002AF83B /* libTestFlight.a in Frameworks */,
+				2A8D70A518AB243400D0E6CD /* RMCore.framework in Frameworks */,
 				2AE1E33F18540E59004C430F /* MultipeerConnectivity.framework in Frameworks */,
 				2A41C325184C3F2E00649EBD /* CoreImage.framework in Frameworks */,
 				2A41C323184C3F2800649EBD /* AVFoundation.framework in Frameworks */,
 				2AF522F9184C3B3A00C250EF /* CoreGraphics.framework in Frameworks */,
-				2AE1E34418543494004C430F /* RMCore.framework in Frameworks */,
 				2AF522FB184C3B3A00C250EF /* UIKit.framework in Frameworks */,
 				2AF522F7184C3B3A00C250EF /* Foundation.framework in Frameworks */,
-				8425C866CE1247108ABD50CC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +123,6 @@
 				2AF5231B184C3B3A00C250EF /* RomiboClientTests */,
 				2AF522F5184C3B3A00C250EF /* Frameworks */,
 				2AF522F4184C3B3A00C250EF /* Products */,
-				2F7B286E25DA450DB706927A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,9 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				2A8351B0185F8016002AF83B /* libz.dylib */,
+				2A8D70A418AB243400D0E6CD /* RMCore.framework */,
 				2AE1E347185434A8004C430F /* ExternalAccessory.framework */,
 				2AE1E345185434A3004C430F /* CoreMotion.framework */,
-				2AE1E34318543494004C430F /* RMCore.framework */,
 				2AE1E33E18540E59004C430F /* MultipeerConnectivity.framework */,
 				2A41C324184C3F2E00649EBD /* CoreImage.framework */,
 				2A41C322184C3F2700649EBD /* AVFoundation.framework */,
@@ -153,7 +149,6 @@
 				2AF522F8184C3B3A00C250EF /* CoreGraphics.framework */,
 				2AF522FA184C3B3A00C250EF /* UIKit.framework */,
 				2AF52315184C3B3A00C250EF /* XCTest.framework */,
-				88F0461428D84AE7A2FE38EE /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,6 +167,8 @@
 				2AE1E3411854341A004C430F /* RMBODriver.m */,
 				2AB41E341876043B00CCE380 /* RMBOExpressiveEyes.h */,
 				2AB41E351876043B00CCE380 /* RMBOExpressiveEyes.m */,
+				2A15D63018B5C4C1008AF982 /* RMBOExpressiveMoodEyes.h */,
+				2A15D63118B5C4C1008AF982 /* RMBOExpressiveMoodEyes.m */,
 				2AC1E9951856F155005D0426 /* RMBOEye.h */,
 				2AC1E9961856F155005D0426 /* RMBOEye.m */,
 				2A8351AB185F7FCF002AF83B /* libTestFlight.a */,
@@ -218,11 +215,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AF52325184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClient" */;
 			buildPhases = (
-				FC0806FAAFEB487DAE7DA65A /* Check Pods Manifest.lock */,
 				2AF522EF184C3B3A00C250EF /* Sources */,
 				2AF522F0184C3B3A00C250EF /* Frameworks */,
 				2AF522F1184C3B3A00C250EF /* Resources */,
-				52B1376F15D740498D06BCCE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,45 +304,13 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		52B1376F15D740498D06BCCE /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC0806FAAFEB487DAE7DA65A /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		2AF522EF184C3B3A00C250EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2AF52307184C3B3A00C250EF /* RMBOAppDelegate.m in Sources */,
+				2A15D63218B5C4C1008AF982 /* RMBOExpressiveMoodEyes.m in Sources */,
 				2AB41E361876043B00CCE380 /* RMBOExpressiveEyes.m in Sources */,
 				2AF5230D184C3B3A00C250EF /* RMBOViewController.m in Sources */,
 				2AE1E3421854341A004C430F /* RMBODriver.m in Sources */,
@@ -476,7 +439,6 @@
 		};
 		2AF52326184C3B3A00C250EF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F7B286E25DA450DB706927A /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -484,23 +446,20 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/dsuriano/Dev/RomiboClient,
+					/Users/dsuriano/dev/romibo_client,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
 				INFOPLIST_FILE = "RomiboClient/RomiboClient-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/dsuriano/Dev/RomiboClient/RomiboClient,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos7.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		2AF52327184C3B3A00C250EF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F7B286E25DA450DB706927A /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -508,16 +467,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/dsuriano/Dev/RomiboClient,
+					/Users/dsuriano/dev/romibo_client,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
 				INFOPLIST_FILE = "RomiboClient/RomiboClient-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/dsuriano/Dev/RomiboClient/RomiboClient,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos7.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

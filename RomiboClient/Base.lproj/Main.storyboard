@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -95,24 +95,22 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1H-88-aFZ" customClass="RMBOExpressiveEyes">
-                                        <rect key="frame" x="44" y="38" width="480" height="240"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbF-ct-s26" customClass="RMBOExpressiveMoodEyes">
+                                        <rect key="frame" x="44" y="0.0" width="480" height="320"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="240" id="cZR-BT-3IP"/>
-                                            <constraint firstAttribute="width" constant="480" id="nAc-3F-w9E"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="dbF-ct-s26" firstAttribute="bottom" secondItem="9is-ba-fwL" secondAttribute="bottom" id="E8x-Ai-PCO"/>
+                                    <constraint firstItem="dbF-ct-s26" firstAttribute="centerX" secondItem="u34-e1-pyf" secondAttribute="centerX" id="GOT-q1-cc8"/>
                                     <constraint firstItem="YIE-kR-yIH" firstAttribute="leading" secondItem="u34-e1-pyf" secondAttribute="leading" constant="8" id="Lgq-e5-mFU"/>
                                     <constraint firstAttribute="bottom" secondItem="9is-ba-fwL" secondAttribute="bottom" id="N5d-dK-Au6"/>
                                     <constraint firstAttribute="bottom" secondItem="YIE-kR-yIH" secondAttribute="bottom" constant="42" id="SDD-GD-rgq"/>
-                                    <constraint firstAttribute="centerY" secondItem="y1H-88-aFZ" secondAttribute="centerY" constant="2" id="cmu-Fb-tSs"/>
-                                    <constraint firstAttribute="centerX" secondItem="y1H-88-aFZ" secondAttribute="centerX" id="egi-wx-VBs"/>
                                     <constraint firstItem="9is-ba-fwL" firstAttribute="leading" secondItem="u34-e1-pyf" secondAttribute="leading" id="rat-gQ-nQ3"/>
+                                    <constraint firstItem="dbF-ct-s26" firstAttribute="leading" secondItem="u34-e1-pyf" secondAttribute="leading" constant="44" id="tKO-jh-KSe"/>
+                                    <constraint firstItem="dbF-ct-s26" firstAttribute="top" secondItem="u34-e1-pyf" secondAttribute="top" id="xhp-dU-Qb6"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -139,7 +137,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="blackBackgroundView" destination="u34-e1-pyf" id="Fo5-gm-dMS"/>
-                        <outlet property="eyes" destination="y1H-88-aFZ" id="Pec-OX-Lvd"/>
+                        <outlet property="eyes" destination="dbF-ct-s26" id="UE7-ci-OH4"/>
                         <outlet property="previewView" destination="FPb-Ei-5s0" id="ca8-Ju-BR4"/>
                         <outlet property="settingsButton" destination="9is-ba-fwL" id="ZC1-Di-erv"/>
                         <outlet property="settingsHoldLabel" destination="YIE-kR-yIH" id="t2v-zi-5Pg"/>

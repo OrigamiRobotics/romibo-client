@@ -68,6 +68,13 @@
  */
 + (NSArray *)connectedRobots;
 
+/**
+ To be used exclusively for development. It simulates the connection of a
+ Romo3 robot, and immediately notifies RMCore's delegate and posts a notification.
+ */
++ (void)connectToSimulatedRobot;
++ (void)disconnectFromSimulatedRobot;
+
 @end
 
 /**

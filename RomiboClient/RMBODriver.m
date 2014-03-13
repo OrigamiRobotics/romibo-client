@@ -7,7 +7,7 @@
 //
 
 #import "RMBODriver.h"
-#import "TestFlight.h"
+//#import "TestFlight.h"
 
 
 
@@ -67,36 +67,31 @@
 
 - (void)driveRobotWithXValue:(float)xValue andYValue:(float)yValue
 {
-    @try {
-        TFLog(@"Driving robot with values %f,%f", xValue, yValue);
-        if (xValue > -0.3 && xValue < 0.3) {
-            [_robot driveWithRadius:RM_DRIVE_RADIUS_STRAIGHT speed:yValue];
+    //TFLog(@"Driving robot with values %f,%f", xValue, yValue);
+    if (xValue > -0.3 && xValue < 0.3) {
+        [_robot driveWithRadius:RM_DRIVE_RADIUS_STRAIGHT speed:yValue];
+    }
+    else {
+        if (xValue < 0) {
+            
+            [_robot turnByAngle:((xValue * 180) * -1) withRadius:kRMBODriveRadius * -1 completion:^(BOOL completed, float heading) {
+                
+            }];
         }
         else {
-            if (xValue < 0) {
-
-                [_robot turnByAngle:((xValue * 180) * -1) withRadius:kRMBODriveRadius * -1 completion:^(float heading) {
-                    
-                }];
-            }
-            else {
-                [_robot turnByAngle:((xValue * 180) * -1) withRadius:kRMBODriveRadius completion:^(float heading) {
-                    
-                }];
-            }
+            [_robot turnByAngle:((xValue * 180) * -1) withRadius:kRMBODriveRadius completion:^(BOOL completed, float heading) {
+                
+            }];
         }
-
     }
-    @catch (NSException *e) {
-        TFLog(@"EXCEPTION %@ - %@", [e name], [e reason]);
-    }
+    
     
 }
 
 
 - (void)tiltHeadToAngle:(float)angle
 {
-    TFLog(@"Tilting robot with angle %f", angle);
+    //TFLog(@"Tilting robot with angle %f", angle);
     if (!_robot.tilting) {
         [_robot tiltToAngle:angle completion:^(BOOL success) {
             if (success) {
@@ -117,14 +112,14 @@
 
 - (void)turnRobotInPlaceClockwise
 {
-    [_robot turnByAngle:180 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:^(float heading) {
+    [_robot turnByAngle:180 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:^(BOOL completed, float heading) {
         
     }];
 }
 
 - (void)turnRobotInPlaceCounterClockwise
 {
-    [_robot turnByAngle:-180 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:^(float heading) {
+    [_robot turnByAngle:-180 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:^(BOOL completed, float heading) {
         
     }];
 }

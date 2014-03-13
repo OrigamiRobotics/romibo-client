@@ -8,7 +8,7 @@
 
 #import "RMBOViewController.h"
 #import "RMBOEye.h"
-#import "RMBOExpressiveEyes.h"
+#import "RMBOExpressiveMoodEyes.h"
 
 @interface RMBOViewController ()
 
@@ -23,6 +23,7 @@
 
 - (void)updateEyesUsingFeatures:(NSArray *)features;
 - (void)sendDictionaryToRobot:(NSDictionary *)dictionary;
+- (void)changeMoodOnRobotToMood:(NSInteger)mood;
 
 @end
 
@@ -46,6 +47,7 @@
 #define kRMBOTurnInPlaceClockwise @"kRMBOTurnInPlaceClockwise"
 #define kRMBOTurnInPlaceCounterClockwise @"kRMBOTurnInPlaceCounterClockwise"
 #define kRMBOStopRobotMovement @"kRMBOStopRobotMovement"
+#define kRMBOChangeMood @"kRMBOChangeMood"
 
 #define kRMBOSettingsHoldThreshold 3
 
@@ -65,7 +67,7 @@
     [self setupMultipeerConnectivity];
     [self setupVoiceSynth];
     [self setupRobotCommunication];
-    [self setupShowkit];
+    //[self setupShowkit];
     
     _verisionLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     
@@ -74,12 +76,12 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self setupEyeTracking];
+    //[self setupEyeTracking];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [self tearDownEyeTracking];
+    //[self tearDownEyeTracking];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,6 +96,8 @@
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"starback"]]];
     _blackBackgroundView.frame = screen;
+    
+    //[_eyes turnOnAutoBlinkWithTimeInterval:7];
 }
 
 - (void)setupEyeTracking
@@ -191,39 +195,39 @@
     //[RMCore setDelegate:self];
 }
 
-- (void)setupShowkit
-{
-    [ShowKit login:@"584.romibo_test_client" password:@"iloverobots" withCompletionBlock:^(NSString *const connectionStatus) {
-        NSLog(@"%@", connectionStatus);
-        [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleShowkitConnectionChange:) name:SHKConnectionStatusChangedNotification object:nil];
-    }];
-}
-
-- (void)handleShowkitConnectionChange:(NSNotification *)notification
-{
-    [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
-    SHKNotification *showNotice ;
-    NSString *value ;
-    NSLog(@"%@",value);
-    showNotice = (SHKNotification *) [notification object];
-    value = (NSString *)showNotice.Value;
-    NSLog(@"%@",value);
-    if ([value isEqualToString:SHKConnectionStatusCallIncoming]) {
-        [ShowKit acceptCall];
-        [self tearDownEyeTracking];
-        [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
-        //[ShowKit setState:_previewView forKey:SHKPreviewDisplayViewKey];
-        //[ShowKit setState:SHKVideoLocalPreviewEnabled forKey:SHKPreviewDisplayViewKey];
-        [self speakUtterance:@"Starting video streaming" atSpeechRate:AVSpeechUtteranceDefaultSpeechRate * .8 withVoice:nil];
-    }
-    else if ([value isEqualToString:SHKConnectionStatusInCall]) {
-        [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
-    }
-    else if ([value isEqualToString:SHKConnectionStatusCallTerminated]) {
-        [self setupEyeTracking];
-    }
-}
+//- (void)setupShowkit
+//{
+//    [ShowKit login:@"584.romibo_test_client" password:@"iloverobots" withCompletionBlock:^(NSString *const connectionStatus) {
+//        NSLog(@"%@", connectionStatus);
+//        [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleShowkitConnectionChange:) name:SHKConnectionStatusChangedNotification object:nil];
+//    }];
+//}
+//
+//- (void)handleShowkitConnectionChange:(NSNotification *)notification
+//{
+//    [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
+//    SHKNotification *showNotice ;
+//    NSString *value ;
+//    NSLog(@"%@",value);
+//    showNotice = (SHKNotification *) [notification object];
+//    value = (NSString *)showNotice.Value;
+//    NSLog(@"%@",value);
+//    if ([value isEqualToString:SHKConnectionStatusCallIncoming]) {
+//        [ShowKit acceptCall];
+//        [self tearDownEyeTracking];
+//        [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
+//        //[ShowKit setState:_previewView forKey:SHKPreviewDisplayViewKey];
+//        //[ShowKit setState:SHKVideoLocalPreviewEnabled forKey:SHKPreviewDisplayViewKey];
+//        [self speakUtterance:@"Starting video streaming" atSpeechRate:AVSpeechUtteranceDefaultSpeechRate * .8 withVoice:nil];
+//    }
+//    else if ([value isEqualToString:SHKConnectionStatusInCall]) {
+//        [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
+//    }
+//    else if ([value isEqualToString:SHKConnectionStatusCallTerminated]) {
+//        [self setupEyeTracking];
+//    }
+//}
 
 
 
@@ -281,7 +285,7 @@
     
     NSLog(@"Calculated percentage %f, Inversed %f", calculatedPercentage, inversedPercentage);
     
-    [_eyes moveEyeballsToX:inversedPercentage andY:0.0 animated:YES];
+    //[_eyes moveEyeballsToX:inversedPercentage andY:0.0 animated:YES];
     
     //[_leftEye moveEyeballToX:inversedPercentage andY:0.5 animated:YES];
     //[_rightEye moveEyeballToX:inversedPercentage andY:0.5 animated:YES];
@@ -313,8 +317,9 @@
         //[_assistant stop];
         [_advertiser stopAdvertisingPeer];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self speakUtterance:@"Ready to go!" atSpeechRate:AVSpeechUtteranceDefaultSpeechRate *.85 withVoice:nil];
+            //[self speakUtterance:@"Ready to go!" atSpeechRate:AVSpeechUtteranceDefaultSpeechRate *.85 withVoice:nil];
             [_eyes openEyes];
+            [_eyes turnOnAutoBlinkWithTimeInterval:7];
         });
         
         
@@ -325,8 +330,9 @@
         [_advertiser startAdvertisingPeer];
         dispatch_async(dispatch_get_main_queue(), ^{
             [_robotDriver stopRobot];
-            [self speakUtterance:@"Sorry, seems I have a little stage fright." atSpeechRate:AVSpeechUtteranceDefaultSpeechRate * 0.85 withVoice:nil];
+            //[self speakUtterance:@"Sorry, seems I have a little stage fright." atSpeechRate:AVSpeechUtteranceDefaultSpeechRate * 0.85 withVoice:nil];
             [_eyes closeEyes];
+            [_eyes turnOffAutoBlink];
         });
         
         
@@ -370,6 +376,11 @@
     else if ([command[@"command"] isEqualToString:kRMBOStopRobotMovement]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [_robotDriver stopRobot];
+        });
+    }
+    else if ([command[@"command"] isEqualToString:kRMBOChangeMood]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self changeMoodOnRobotToMood:[command[@"mood"] integerValue]];
         });
     }
 }
@@ -431,7 +442,7 @@
 - (IBAction)sliderAction:(id)sender
 {
     UISlider *slider = sender;
-    [_eyes moveEyeballsToX:slider.value andY:0 animated:NO];
+    //[_eyes moveEyeballsToX:slider.value andY:0 animated:NO];
     NSLog(@"X value is %f", slider.value);
 }
 
@@ -457,6 +468,23 @@
 - (void) session:(MCSession *)session didReceiveCertificate:(NSArray *)certificate fromPeer:(MCPeerID *)peerID certificateHandler:(void (^)(BOOL accept))certificateHandler
 {
     certificateHandler(YES);
+}
+
+- (void)changeMoodOnRobotToMood:(NSInteger)mood
+{
+    if (mood == 0) {
+        [_eyes changeEyeMood:RMBOEyeMoodHappy];
+    }
+    else if (mood == 1) {
+        [_eyes changeEyeMood:RMBOEyeMoodExcited];
+    }
+    else if (mood == 2) {
+        [_eyes changeEyeMood:RMBOEyeMoodConfused];
+    }
+    else {
+        [_eyes changeEyeMood:RMBOEyeMoodSad];
+    }
+    [_eyes blinkEyes];
 }
 
 
