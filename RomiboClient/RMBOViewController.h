@@ -17,7 +17,10 @@
 @class RMBOEyeball;
 @class RMBODriver;
 @class RMBOEye;
-@class RMBOExpressiveMoodEyes;
+
+// Waiting for new animation. Use old RMBOExpressiveEyes for now.
+//@class RMBOExpressiveMoodEyes;
+@class RMBOExpressiveEyes;
 
 @interface RMBOViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate, MCSessionDelegate, RMBODriverDelegate, MCNearbyServiceAdvertiserDelegate>
 
@@ -40,12 +43,10 @@
 @property (nonatomic, weak) IBOutlet RMBOEye *leftEye;
 @property (nonatomic, weak) IBOutlet RMBOEye *rightEye;
 
-@property (nonatomic, weak) IBOutlet RMBOExpressiveMoodEyes *eyes;
+// Waiting for new animation. Use old RMBOExpressiveEyes for now.
+//@property (nonatomic, weak) IBOutlet RMBOExpressiveMoodEyes *eyes;
+@property (nonatomic, weak) IBOutlet RMBOExpressiveEyes *eyes;
 
-//TODO DELETE
-@property (nonatomic, weak) IBOutlet UISlider *xSlider;
-@property (nonatomic, weak) IBOutlet UISlider *ySlider;
-@property (nonatomic, weak) IBOutlet UILabel *cords;
 
 - (IBAction)sliderAction:(id)sender;
 

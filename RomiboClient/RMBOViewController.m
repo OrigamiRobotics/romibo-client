@@ -8,7 +8,9 @@
 
 #import "RMBOViewController.h"
 #import "RMBOEye.h"
-#import "RMBOExpressiveMoodEyes.h"
+// Waiting for new animation. Use old RMBOExpressiveEyes for now.
+//#import "RMBOExpressiveMoodEyes.h"
+#import "RMBOExpressiveEyes.h"
 
 @interface RMBOViewController ()
 
@@ -76,12 +78,12 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //[self setupEyeTracking];
+    [self setupEyeTracking];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    //[self tearDownEyeTracking];
+    [self tearDownEyeTracking];
 }
 
 - (void)didReceiveMemoryWarning
@@ -233,6 +235,7 @@
 
 - (void)tearDownEyeTracking
 {
+    [self.eyes turnOffAutoBlink];
     _videoOutput = nil;
     [_previewLayer removeFromSuperlayer];
     _previewLayer = nil;
@@ -275,7 +278,7 @@
 
     CIFaceFeature *feature = [features firstObject];
     
-    CGPoint centerPoint = CGPointMake((feature.bounds.size.width / 2) + feature.bounds.origin.x, (feature.bounds.size.height / 2) + feature.bounds.origin.y);
+//    CGPoint centerPoint = CGPointMake((feature.bounds.size.width / 2) + feature.bounds.origin.x, (feature.bounds.size.height / 2) + feature.bounds.origin.y);
     //NSLog(@"Center Point is X:%f Y:%f", centerPoint.x, centerPoint.y);
     
     //CGFloat calculatedPercentage = centerPoint.x / kRMBOVideoCaptureWidth;
@@ -285,7 +288,7 @@
     
     NSLog(@"Calculated percentage %f, Inversed %f", calculatedPercentage, inversedPercentage);
     
-    //[_eyes moveEyeballsToX:inversedPercentage andY:0.0 animated:YES];
+    [_eyes moveEyeballsToX:inversedPercentage andY:0.0 animated:YES];
     
     //[_leftEye moveEyeballToX:inversedPercentage andY:0.5 animated:YES];
     //[_rightEye moveEyeballToX:inversedPercentage andY:0.5 animated:YES];
@@ -319,7 +322,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //[self speakUtterance:@"Ready to go!" atSpeechRate:AVSpeechUtteranceDefaultSpeechRate *.85 withVoice:nil];
             [_eyes openEyes];
-            [_eyes turnOnAutoBlinkWithTimeInterval:7];
         });
         
         
@@ -332,7 +334,6 @@
             [_robotDriver stopRobot];
             //[self speakUtterance:@"Sorry, seems I have a little stage fright." atSpeechRate:AVSpeechUtteranceDefaultSpeechRate * 0.85 withVoice:nil];
             [_eyes closeEyes];
-            [_eyes turnOffAutoBlink];
         });
         
         

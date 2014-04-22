@@ -8,11 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+// OLD. Will remove with pending new eye animation.  tracy
+//typedef NS_ENUM(NSInteger, RMBOEyeMood) {
+//    RMBOEyeMoodRegular,
+//    RMBOEyeMoodHappy,
+//    RMBOEyeMoodSad
+//};
+
 typedef NS_ENUM(NSInteger, RMBOEyeMood) {
-    RMBOEyeMoodRegular,
     RMBOEyeMoodHappy,
-    RMBOEyeMoodSad
+    RMBOEyeMoodExcited,
+    RMBOEyeMoodConfused,
+    RMBOEyeMoodSad,
+    RMBOEyeBlink
 };
+
 
 @interface RMBOExpressiveEyes : UIView
 
@@ -29,9 +39,19 @@ typedef NS_ENUM(NSInteger, RMBOEyeMood) {
 @property (nonatomic, strong) NSTimer *blinkTimer;
 
 - (void)updateEyesForCurrentMood;
-- (void)moveEyeballsToX:(CGFloat)xValue andY:(CGFloat)yValue animated:(BOOL)animated;
-- (void)closeEyes;
+// OLD. Will remove with pending new eye animation.  tracy
+//- (void)moveEyeballsToX:(CGFloat)xValue andY:(CGFloat)yValue animated:(BOOL)animated;
+//- (void)closeEyes;
+//- (void)openEyes;
+//- (void)blinkEyes:(id)sender;
+
+- (void)changeEyeMood:(RMBOEyeMood)mood;
+- (void)blinkEyes;
 - (void)openEyes;
-- (void)blinkEyes:(id)sender;
+- (void)closeEyes;
+- (void)turnOnAutoBlinkWithTimeInterval:(NSTimeInterval)interval;
+- (void)turnOffAutoBlink;
+- (void)moveEyeballsToX:(CGFloat)xValue andY:(CGFloat)yValue animated:(BOOL)animated;
+
 
 @end

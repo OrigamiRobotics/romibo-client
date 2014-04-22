@@ -95,8 +95,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbF-ct-s26" customClass="RMBOExpressiveMoodEyes">
-                                        <rect key="frame" x="44" y="0.0" width="480" height="320"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbF-ct-s26" customClass="RMBOExpressiveEyes">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
@@ -109,7 +109,7 @@
                                     <constraint firstAttribute="bottom" secondItem="9is-ba-fwL" secondAttribute="bottom" id="N5d-dK-Au6"/>
                                     <constraint firstAttribute="bottom" secondItem="YIE-kR-yIH" secondAttribute="bottom" constant="42" id="SDD-GD-rgq"/>
                                     <constraint firstItem="9is-ba-fwL" firstAttribute="leading" secondItem="u34-e1-pyf" secondAttribute="leading" id="rat-gQ-nQ3"/>
-                                    <constraint firstItem="dbF-ct-s26" firstAttribute="leading" secondItem="u34-e1-pyf" secondAttribute="leading" constant="44" id="tKO-jh-KSe"/>
+                                    <constraint firstItem="dbF-ct-s26" firstAttribute="leading" secondItem="u34-e1-pyf" secondAttribute="leading" id="tKO-jh-KSe"/>
                                     <constraint firstItem="dbF-ct-s26" firstAttribute="top" secondItem="u34-e1-pyf" secondAttribute="top" id="xhp-dU-Qb6"/>
                                 </constraints>
                             </view>

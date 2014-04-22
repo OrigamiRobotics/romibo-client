@@ -19,9 +19,8 @@
 
 @implementation RMBODriver
 
-#define kRMBODriveRadius 0.161092
 
-#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+//#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 - (id)init
 {
@@ -65,27 +64,50 @@
     }
 }
 
+#define kSpeed_turnInPlace_metersPerSecond  0.3f
+#define kSpeed_MaxDrive_metersPerSecond  1.0f
+
+#define kRMBO_MAX_DriveRadius 0.5f
+#define kRMBO_MIN_DriveRadius 0.2f
+
+#define kRMBO_StraightAheadWidth 0.1f
+
+
+
+// xValue and yValue range +- 1.0 float
+
 - (void)driveRobotWithXValue:(float)xValue andYValue:(float)yValue
 {
+    if (yValue > kSpeed_MaxDrive_metersPerSecond)
+        yValue = kSpeed_MaxDrive_metersPerSecond;
+
+//    NSLog(@"Driving robot with x: %f  y: %f", xValue, yValue);
+    float xFabs = fabsf(xValue);
+
     //TFLog(@"Driving robot with values %f,%f", xValue, yValue);
-    if (xValue > -0.3 && xValue < 0.3) {
+    if (xFabs < kRMBO_StraightAheadWidth) {
         [_robot driveWithRadius:RM_DRIVE_RADIUS_STRAIGHT speed:yValue];
+        NSLog(@"Drive Straight");
     }
     else {
+
+        float driveRadius = kRMBO_MAX_DriveRadius - (xFabs * kRMBO_MAX_DriveRadius); // harder turn = smaller radius
+        if (driveRadius < kRMBO_MIN_DriveRadius)
+            driveRadius = kRMBO_MIN_DriveRadius;
+
         if (xValue < 0) {
-            
-            [_robot turnByAngle:((xValue * 180) * -1) withRadius:kRMBODriveRadius * -1 completion:^(BOOL completed, float heading) {
-                
-            }];
+
+            NSLog(@"Turn LEFT with radius: %f  speed: %f", driveRadius, yValue);
+
+            [_robot driveWithRadius:driveRadius speed:yValue];  // turnByAngle call did not work well.
         }
         else {
-            [_robot turnByAngle:((xValue * 180) * -1) withRadius:kRMBODriveRadius completion:^(BOOL completed, float heading) {
-                
-            }];
+            driveRadius *= -1.0f;
+            NSLog(@"Turn RIGHT with radius: %f  speed: %f", driveRadius, yValue);
+
+            [_robot driveWithRadius:driveRadius speed:yValue];  // turnByAngle call did not work well.
         }
     }
-    
-    
 }
 
 
@@ -110,18 +132,36 @@
     [_robot stopAllMotion];
 }
 
+
 - (void)turnRobotInPlaceClockwise
 {
-    [_robot turnByAngle:180 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:^(BOOL completed, float heading) {
-        
-    }];
+    [_robot turnByAngle:-180
+             withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
+                  speed: kSpeed_turnInPlace_metersPerSecond
+        finishingAction: RMCoreTurnFinishingActionStopDriving
+             completion:^(BOOL completed, float heading) {    }
+     ];
+
+    
+//    [_robot turnByAngle:180 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:^(BOOL completed, float heading) {
+//        
+//    }];
 }
 
 - (void)turnRobotInPlaceCounterClockwise
 {
-    [_robot turnByAngle:-180 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:^(BOOL completed, float heading) {
-        
-    }];
+    [_robot turnByAngle:
+     180
+             withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
+                  speed: kSpeed_turnInPlace_metersPerSecond
+        finishingAction: RMCoreTurnFinishingActionStopDriving
+             completion:^(BOOL completed, float heading) {    }
+     ];
+
+    
+//    [_robot turnByAngle:-180 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:^(BOOL completed, float heading) {
+//        
+//    }];
 }
 
 @end
