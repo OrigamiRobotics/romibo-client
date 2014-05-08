@@ -45,8 +45,6 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-//       _currentMood = RMBOEyeMoodRegular;    // OLD. Will remove withpending new eye animation.  tracy
-
         _currentMood = RMBOEyeMoodHappy;
         [self placeSubviews];
         [self updateEyesForCurrentMood];
@@ -84,8 +82,11 @@
     [self addSubview:_rightEyeLid];
 }
 
+
+
 - (void)setupBlinkingAnimationSequences
 {
+
     _leftBlinkAnimationSequence = @[
                                     [UIImage imageNamed:@"left_reg_closed"],
                                     [UIImage imageNamed:@"left_reg_blink1"],
@@ -101,17 +102,17 @@
                                     ];
 }
 
+
 - (void)updateEyesForCurrentMood
 {
-// OLD. Will remove withpending new eye animation.  tracy
 //    if (_currentMood == RMBOEyeMoodRegular) {
+    
         [_leftEyeBackground setImage:[UIImage imageNamed:@"left_reg_eyeback"]];
         [_rightEyeBackground setImage:[UIImage imageNamed:@"right_reg_eyeback"]];
         
-        [_leftEyeball setImage:[UIImage imageNamed:@"reg_eyeball"]];
-        [_rightEyeball setImage:[UIImage imageNamed:@"reg_eyeball"]];
-         
-//    }
+    [_leftEyeball setImage:[UIImage imageNamed:@"reg_eyeball"]];
+    [_rightEyeball setImage:[UIImage imageNamed:@"reg_eyeball"]];
+    
 }
 
 - (void)moveEyeballsToX:(CGFloat)xValue andY:(CGFloat)yValue animated:(BOOL)animated
@@ -198,6 +199,11 @@
         [self closeEyes];
         [self openEyes];
     }
+    else {  // Blink
+        [self closeEyes];
+        [self openEyes];
+    }
+
     
 //    [self setupLidSequenceArrayWithMood:_currentMood];
 //    [self setupBrowSequenceArrayWithMood:_currentMood];

@@ -14,13 +14,15 @@
 @import AVFoundation;
 @import CoreImage;
 
-@class RMBOEyeball;
 @class RMBODriver;
-@class RMBOEye;
 
-// Waiting for new animation. Use old RMBOExpressiveEyes for now.
 //@class RMBOExpressiveMoodEyes;
+#define OLD_EYES 1
+#if OLD_EYES
 @class RMBOExpressiveEyes;
+#else
+@class RMBOEyes_3;
+#endif
 
 @interface RMBOViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate, MCSessionDelegate, RMBODriverDelegate, MCNearbyServiceAdvertiserDelegate>
 
@@ -40,13 +42,13 @@
 @property (nonatomic, weak) IBOutlet UILabel *settingsHoldLabel;
 @property (nonatomic, weak) IBOutlet UILabel *verisionLabel;
 
-@property (nonatomic, weak) IBOutlet RMBOEye *leftEye;
-@property (nonatomic, weak) IBOutlet RMBOEye *rightEye;
 
-// Waiting for new animation. Use old RMBOExpressiveEyes for now.
 //@property (nonatomic, weak) IBOutlet RMBOExpressiveMoodEyes *eyes;
+#if OLD_EYES
 @property (nonatomic, weak) IBOutlet RMBOExpressiveEyes *eyes;
-
+#else
+@property (nonatomic, weak) IBOutlet RMBOEyes_3 *eyes;
+#endif
 
 - (IBAction)sliderAction:(id)sender;
 

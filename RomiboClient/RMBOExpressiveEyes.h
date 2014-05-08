@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-// OLD. Will remove with pending new eye animation.  tracy
-//typedef NS_ENUM(NSInteger, RMBOEyeMood) {
-//    RMBOEyeMoodRegular,
-//    RMBOEyeMoodHappy,
-//    RMBOEyeMoodSad
-//};
 
 typedef NS_ENUM(NSInteger, RMBOEyeMood) {
     RMBOEyeMoodHappy,
@@ -39,11 +33,6 @@ typedef NS_ENUM(NSInteger, RMBOEyeMood) {
 @property (nonatomic, strong) NSTimer *blinkTimer;
 
 - (void)updateEyesForCurrentMood;
-// OLD. Will remove with pending new eye animation.  tracy
-//- (void)moveEyeballsToX:(CGFloat)xValue andY:(CGFloat)yValue animated:(BOOL)animated;
-//- (void)closeEyes;
-//- (void)openEyes;
-//- (void)blinkEyes:(id)sender;
 
 - (void)changeEyeMood:(RMBOEyeMood)mood;
 - (void)blinkEyes;

@@ -8,9 +8,13 @@
 
 #import "RMBOViewController.h"
 #import "RMBOEye.h"
-// Waiting for new animation. Use old RMBOExpressiveEyes for now.
+
 //#import "RMBOExpressiveMoodEyes.h"
+#if OLD_EYES
 #import "RMBOExpressiveEyes.h"
+#else
+#import "RMBOEyes_3.h"
+#endif
 
 @interface RMBOViewController ()
 
@@ -471,21 +475,11 @@
     certificateHandler(YES);
 }
 
+
 - (void)changeMoodOnRobotToMood:(NSInteger)mood
 {
-    if (mood == 0) {
-        [_eyes changeEyeMood:RMBOEyeMoodHappy];
-    }
-    else if (mood == 1) {
-        [_eyes changeEyeMood:RMBOEyeMoodExcited];
-    }
-    else if (mood == 2) {
-        [_eyes changeEyeMood:RMBOEyeMoodConfused];
-    }
-    else {
-        [_eyes changeEyeMood:RMBOEyeMoodSad];
-    }
-    [_eyes blinkEyes];
+    [self.eyes changeEyeMood:mood];
+//    [_eyes blinkEyes];
 }
 
 
