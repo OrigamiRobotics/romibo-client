@@ -57,13 +57,14 @@
 - (void)setupMultipeerConnectivity;
 - (void)setupVoiceSynth;
 - (void)setupRobotCommunication;
-- (void)setupShowkit;
+
+//- (void)setupShowkit;
+//- (void)handleShowkitConnectionChange:(NSNotification *)notification;
+//- (void)handleShowkitConnectionChange;
+
 - (void)tearDownEyeTracking;
 
-- (void)handleShowkitConnectionChange:(NSNotification *)notification;
-
 - (void)speakUtterance:(NSString *)phrase atSpeechRate:(float)speechRate withVoice:(AVSpeechSynthesisVoice *)voice;
-- (void)handleShowkitConnectionChange;
 
 - (IBAction)beginSettingsHold:(id)sender;
 - (IBAction)endedSettingsHold:(id)sender;

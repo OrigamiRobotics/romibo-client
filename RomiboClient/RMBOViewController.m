@@ -201,17 +201,17 @@
     //[RMCore setDelegate:self];
 }
 
-//- (void)setupShowkit
-//{
+- (void)setupShowkit
+{
 //    [ShowKit login:@"584.romibo_test_client" password:@"iloverobots" withCompletionBlock:^(NSString *const connectionStatus) {
 //        NSLog(@"%@", connectionStatus);
 //        [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
 //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleShowkitConnectionChange:) name:SHKConnectionStatusChangedNotification object:nil];
 //    }];
-//}
+}
 //
-//- (void)handleShowkitConnectionChange:(NSNotification *)notification
-//{
+- (void)handleShowkitConnectionChange:(NSNotification *)notification
+{
 //    [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
 //    SHKNotification *showNotice ;
 //    NSString *value ;
@@ -233,7 +233,7 @@
 //    else if ([value isEqualToString:SHKConnectionStatusCallTerminated]) {
 //        [self setupEyeTracking];
 //    }
-//}
+}
 
 
 
