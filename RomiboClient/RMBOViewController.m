@@ -7,14 +7,6 @@
 //
 
 #import "RMBOViewController.h"
-#import "RMBOEye.h"
-
-//#import "RMBOExpressiveMoodEyes.h"
-#if OLD_EYES
-#import "RMBOExpressiveEyes.h"
-#else
-#import "RMBOEyes_3.h"
-#endif
 
 @interface RMBOViewController ()
 
@@ -82,12 +74,12 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self setupEyeTracking];
+    // [self setupEyeTracking];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [self tearDownEyeTracking];
+    // [self tearDownEyeTracking];
 }
 
 - (void)didReceiveMemoryWarning
@@ -210,8 +202,8 @@
 //    }];
 }
 //
-- (void)handleShowkitConnectionChange:(NSNotification *)notification
-{
+// - (void)handleShowkitConnectionChange:(NSNotification *)notification
+// {
 //    [ShowKit setState: SHKAudioInputModeMuted forKey: SHKAudioInputModeKey];
 //    SHKNotification *showNotice ;
 //    NSString *value ;
@@ -233,7 +225,7 @@
 //    else if ([value isEqualToString:SHKConnectionStatusCallTerminated]) {
 //        [self setupEyeTracking];
 //    }
-}
+// }
 
 
 
@@ -302,7 +294,7 @@
 
 }
 
-#pragma mark Robot Commuincation
+#pragma mark Robot Communication
 
 - (void)speakUtterance:(NSString *)phrase atSpeechRate:(float)speechRate withVoice:(AVSpeechSynthesisVoice *)voice
 {
@@ -346,47 +338,34 @@
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 {
-    
     NSDictionary *command = (NSDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:data];
-    if ([command[@"command"] isEqualToString:kRMBOSpeakPhrase]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self speakUtterance:command[@"phrase"] atSpeechRate:[command[@"speechRate"] floatValue] withVoice:nil];
-        });
-    }
-    else if ([command[@"command"] isEqualToString:kRMBOMoveRobot]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+    
+    // NSDictionary in lieu of a switch block or a string of if/elses
+    NSDictionary *actionBlocksForCommandStrings = @{
+        kRMBOMoveRobot: ^{
             if (command[@"x"] && command[@"y"]) {
                 [_robotDriver driveRobotWithXValue:[command[@"x"] floatValue] andYValue:[command[@"y"] floatValue]];
             }
-        });
-    }
-    else if ([command[@"command"] isEqualToString:kRMBOHeadTilt]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+        },
+        kRMBOSpeakPhrase: ^{
+            [self speakUtterance:command[@"phrase"] atSpeechRate:[command[@"speechRate"] floatValue] withVoice:nil];
+        },
+        kRMBOHeadTilt:  ^{
             NSLog(@"%f", [command[@"angle"] floatValue]);
             if (command[@"angle"]) {
                 [_robotDriver tiltHeadToAngle:[command[@"angle"] floatValue]];
             }
-        });
-    }
-    else if ([command[@"command"] isEqualToString:kRMBOTurnInPlaceClockwise]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_robotDriver turnRobotInPlaceClockwise];
-        });
-    }
-    else if ([command[@"command"] isEqualToString:kRMBOTurnInPlaceCounterClockwise]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_robotDriver turnRobotInPlaceCounterClockwise];
-        });
-    }
-    else if ([command[@"command"] isEqualToString:kRMBOStopRobotMovement]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_robotDriver stopRobot];
-        });
-    }
-    else if ([command[@"command"] isEqualToString:kRMBOChangeMood]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self changeMoodOnRobotToMood:[command[@"mood"] integerValue]];
-        });
+        },
+        kRMBOTurnInPlaceClockwise:          ^{[_robotDriver turnRobotInPlaceClockwise];},
+        kRMBOTurnInPlaceCounterClockwise:   ^{[_robotDriver turnRobotInPlaceCounterClockwise];},
+        kRMBOStopRobotMovement:             ^{[_robotDriver stopRobot];}, 
+        kRMBOChangeMood: ^{[self changeMoodOnRobotToMood:[command[@"mood"] integerValue]];},
+    };
+//    returnType (^blockName)(parameterTypes) = ^returnType(parameters) {...};
+
+    void (^receivedDataAction)() = actionBlocksForCommandStrings[command[@"command"]];
+    if (receivedDataAction){
+        dispatch_async(dispatch_get_main_queue(), receivedDataAction);
     }
 }
 
@@ -478,12 +457,20 @@
 
 - (void)changeMoodOnRobotToMood:(NSInteger)mood
 {
+    // ETJ DEBUG
+    NSLog(@"changeMoodOnRobotToMood called with mood: %ld",(long)mood);
+    // END DEBUG
     [self.eyes changeEyeMood:mood];
-//    [_eyes blinkEyes];
+    
 }
 
 
-
-
+// ETJ DEBUG
+- (IBAction)etjDebugButtonAction:(id)sender
+{   _currentMood += 1;
+    if (_currentMood > 4){ _currentMood = 0;}
+    [self changeMoodOnRobotToMood:_currentMood];
+}
+// END DEBUG
 
 @end

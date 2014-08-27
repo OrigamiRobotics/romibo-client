@@ -5,7 +5,7 @@
 //  Created by Doug Suriano on 1/2/14.
 //  Copyright (c) 2014 com.romibo. All rights reserved.
 //
-// This is v2 of the eyes. Not in use anymore
+// This is v2 of the eyes. 
 
 #import "RMBOExpressiveEyes.h"
 

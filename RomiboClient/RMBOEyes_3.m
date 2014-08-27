@@ -5,7 +5,7 @@
 //  Created by Doug Suriano on 1/2/14.
 //  Copyright (c) 2014 com.romibo. All rights reserved.
 //
-// This is v2 of the eyes. Not in use anymore
+// This is v3 of the eyes.
 
 #import "RMBOEyes_3.h"
 
@@ -222,26 +222,19 @@
 
 - (void)changeEyeMood:(RMBOEyeMood)mood
 {
+    // ETJ DEBUG
+    NSLog(@"RMBOEyes_3 changeEyeMood called with mood: %ld", (long)mood);
+    // END DEBUG 
     [self turnOffAutoBlink];
     _currentMood = mood;
     
-    if (_currentMood == RMBOEyeMood_Normal) {
-        [self openEyes];
-    }
-    else if (_currentMood == RMBOEyeMood_Curious) {
-        [self curiousAnimation];
-    }
-    else if (_currentMood == RMBOEyeMood_Excited) {
-        [self excitedAnimation];
-     }
-    else if (_currentMood == RMBOEyeMood_Indifferent) {
-        [self indifferentAnimation];
-    }
-    else if (_currentMood == RMBOEyeMood_Twitterpated) {
-        [self twitterpatedAnimation];
-    }
-    else if (_currentMood == RMBOEyeBlink) {
-        [self blinkEyes];
+    switch (_currentMood){
+        case RMBOEyeMood_Normal:        [self openEyes];                break;
+        case RMBOEyeMood_Curious:       [self curiousAnimation];        break;
+        case RMBOEyeMood_Excited:       [self excitedAnimation];        break;
+        case RMBOEyeBlink:              [self blinkEyes];               break;
+        case RMBOEyeMood_Indifferent:   [self indifferentAnimation];    break;
+        case RMBOEyeMood_Twitterpated:  [self twitterpatedAnimation];   break;
     }
     
 //    [self setupLidSequenceArrayWithMood:_currentMood];

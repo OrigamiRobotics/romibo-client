@@ -10,21 +10,22 @@
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 #import "RMBODriver.h"
 
+#define OLD_EYES 1
+#if OLD_EYES
+    #import "RMBOExpressiveMoodEyes.h"
+#else
+    #import "RMBOEyes_3.h"
+#endif
 
 @import AVFoundation;
 @import CoreImage;
 
 @class RMBODriver;
 
-//@class RMBOExpressiveMoodEyes;
-#define OLD_EYES 1
-#if OLD_EYES
-@class RMBOExpressiveEyes;
-#else
-@class RMBOEyes_3;
-#endif
-
-@interface RMBOViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate, MCSessionDelegate, RMBODriverDelegate, MCNearbyServiceAdvertiserDelegate>
+@interface RMBOViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate,
+                                                    MCSessionDelegate,
+                                                    MCNearbyServiceAdvertiserDelegate,
+                                                    RMBODriverDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *previewView;
 @property (nonatomic, weak) IBOutlet UIView *blackBackgroundView;
@@ -41,13 +42,17 @@
 @property (nonatomic, weak) IBOutlet UIButton *settingsButton;
 @property (nonatomic, weak) IBOutlet UILabel *settingsHoldLabel;
 @property (nonatomic, weak) IBOutlet UILabel *verisionLabel;
+// ETJ DEBUG
+@property unsigned int currentMood;
+@property (weak, nonatomic) IBOutlet UIButton *etjDebugButton;
+- (IBAction)etjDebugButtonAction:(id)sender;
 
+// END DEBUG
 
-//@property (nonatomic, weak) IBOutlet RMBOExpressiveMoodEyes *eyes;
-#if OLD_EYES
-@property (nonatomic, weak) IBOutlet RMBOExpressiveEyes *eyes;
-#else
+#if !OLD_EYES
 @property (nonatomic, weak) IBOutlet RMBOEyes_3 *eyes;
+#else
+@property (nonatomic, weak) IBOutlet RMBOExpressiveMoodEyes *eyes;
 #endif
 
 - (IBAction)sliderAction:(id)sender;
