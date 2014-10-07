@@ -33,7 +33,7 @@
 @property (nonatomic, strong) MCSession *session;
 //@property (nonatomic, strong) MCAdvertiserAssistant *assistant;
 @property (nonatomic, strong) MCNearbyServiceAdvertiser *advertiser;
-@property (nonatomic, strong) AVSpeechSynthesizer *speechSynth;
+@property (nonatomic, strong) AVSpeechSynthesizer *speechSynthesizer;
 @property (nonatomic, strong) RMBODriver *robotDriver;
 
 @property (nonatomic, weak) IBOutlet UILabel *debugLabel;

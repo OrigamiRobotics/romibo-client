@@ -3695,7 +3695,7 @@
 				ORGANIZATIONNAME = com.romibo;
 				TargetAttributes = {
 					2AF522F2184C3B3A00C250EF = {
-						DevelopmentTeam = 9YYN96VW6R;
+						DevelopmentTeam = WTG4846AFW;
 					};
 					2AF52313184C3B3A00C250EF = {
 						TestTargetID = 2AF522F2184C3B3A00C250EF;
@@ -5013,6 +5013,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
@@ -5023,7 +5024,7 @@
 				INFOPLIST_FILE = "RomiboClient/RomiboClient-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "51DEE047-DCF1-490C-B2B0-6C967945A0CB";
+				PROVISIONING_PROFILE = "3D8C27C3-8CC6-4933-92D0-F4BD1ADF14FD";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				WRAPPER_EXTENSION = app;
@@ -5037,6 +5038,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
@@ -5047,7 +5049,7 @@
 				INFOPLIST_FILE = "RomiboClient/RomiboClient-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "51DEE047-DCF1-490C-B2B0-6C967945A0CB";
+				PROVISIONING_PROFILE = "3D8C27C3-8CC6-4933-92D0-F4BD1ADF14FD";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				WRAPPER_EXTENSION = app;
