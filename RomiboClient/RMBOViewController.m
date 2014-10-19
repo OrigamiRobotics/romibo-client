@@ -314,7 +314,7 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
   NSLog(@"speach request data: phrase = %@, rate = %0.1f", phrase, speechRate);
   NSLog(@"current language = %@", voice);
   AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:phrase];
-  [utterance setRate:0.2];
+  [utterance setRate:speechRate];
   [utterance setVoice:voice];
   if (self.speechSynthesizer == NULL) {
     self.speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
@@ -336,7 +336,7 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
   
   if (state == MCSessionStateConnected) {
       _connectedToController = YES;
-      [_advertiser stopAdvertisingPeer];
+    //[_advertiser stopAdvertisingPeer];
       dispatch_async(dispatch_get_main_queue(), ^{
           [self speakUtterance:@"Ready to go!" atSpeechRate:AVSpeechUtteranceDefaultSpeechRate *.85 withVoice:nil];
           [_eyes openEyes];
