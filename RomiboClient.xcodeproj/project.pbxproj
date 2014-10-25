@@ -25,11 +25,6 @@
 		2AF5230A184C3B3A00C250EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF52308184C3B3A00C250EF /* Main.storyboard */; };
 		2AF5230D184C3B3A00C250EF /* RMBOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5230C184C3B3A00C250EF /* RMBOViewController.m */; };
 		2AF5230F184C3B3A00C250EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5230E184C3B3A00C250EF /* Images.xcassets */; };
-		2AF52316184C3B3A00C250EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF52315184C3B3A00C250EF /* XCTest.framework */; };
-		2AF52317184C3B3A00C250EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522F6184C3B3A00C250EF /* Foundation.framework */; };
-		2AF52318184C3B3A00C250EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF522FA184C3B3A00C250EF /* UIKit.framework */; };
-		2AF52320184C3B3A00C250EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5231E184C3B3A00C250EF /* InfoPlist.strings */; };
-		2AF52322184C3B3A00C250EF /* RomiboClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF52321184C3B3A00C250EF /* RomiboClientTests.m */; };
 		B1EDAAFF190F626500C17EBC /* blink_layer2_eyewhite0001.png in Resources */ = {isa = PBXBuildFile; fileRef = B1EDA69A190F626200C17EBC /* blink_layer2_eyewhite0001.png */; };
 		B1EDAB00190F626500C17EBC /* blink_layer3_pupil0001.png in Resources */ = {isa = PBXBuildFile; fileRef = B1EDA69B190F626200C17EBC /* blink_layer3_pupil0001.png */; };
 		B1EDAB01190F626500C17EBC /* blink_layer4_highlight0001.png in Resources */ = {isa = PBXBuildFile; fileRef = B1EDA69C190F626200C17EBC /* blink_layer4_highlight0001.png */; };
@@ -1151,16 +1146,6 @@
 		B1EDAF5F190F634000C17EBC /* RMBOEyes_3.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EDAF5E190F634000C17EBC /* RMBOEyes_3.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2AF52319184C3B3A00C250EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2AF522EB184C3B3A00C250EF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2AF522F2184C3B3A00C250EF;
-			remoteInfo = RomiboClient;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		2A15D63018B5C4C1008AF982 /* RMBOExpressiveMoodEyes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBOExpressiveMoodEyes.h; sourceTree = "<group>"; };
 		2A15D63118B5C4C1008AF982 /* RMBOExpressiveMoodEyes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBOExpressiveMoodEyes.m; sourceTree = "<group>"; };
@@ -1195,11 +1180,7 @@
 		2AF5230B184C3B3A00C250EF /* RMBOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMBOViewController.h; sourceTree = "<group>"; };
 		2AF5230C184C3B3A00C250EF /* RMBOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMBOViewController.m; sourceTree = "<group>"; };
 		2AF5230E184C3B3A00C250EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RomiboClient/Images.xcassets; sourceTree = "<group>"; };
-		2AF52314184C3B3A00C250EF /* RomiboClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RomiboClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF52315184C3B3A00C250EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2AF5231D184C3B3A00C250EF /* RomiboClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomiboClientTests-Info.plist"; sourceTree = "<group>"; };
-		2AF5231F184C3B3A00C250EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2AF52321184C3B3A00C250EF /* RomiboClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RomiboClientTests.m; sourceTree = "<group>"; };
 		B1EDA69A190F626200C17EBC /* blink_layer2_eyewhite0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blink_layer2_eyewhite0001.png; sourceTree = "<group>"; };
 		B1EDA69B190F626200C17EBC /* blink_layer3_pupil0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blink_layer3_pupil0001.png; sourceTree = "<group>"; };
 		B1EDA69C190F626200C17EBC /* blink_layer4_highlight0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blink_layer4_highlight0001.png; sourceTree = "<group>"; };
@@ -2340,16 +2321,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2AF52311184C3B3A00C250EF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2AF52316184C3B3A00C250EF /* XCTest.framework in Frameworks */,
-				2AF52318184C3B3A00C250EF /* UIKit.framework in Frameworks */,
-				2AF52317184C3B3A00C250EF /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -2359,7 +2330,6 @@
 				2AF522FC184C3B3A00C250EF /* RomiboClient */,
 				2AF5230E184C3B3A00C250EF /* Images.xcassets */,
 				2AF522FD184C3B3A00C250EF /* Supporting Files */,
-				2AF5231B184C3B3A00C250EF /* RomiboClientTests */,
 				2AF522F5184C3B3A00C250EF /* Frameworks */,
 				2AF522F4184C3B3A00C250EF /* Products */,
 			);
@@ -2369,7 +2339,6 @@
 			isa = PBXGroup;
 			children = (
 				2AF522F3184C3B3A00C250EF /* RomiboClient.app */,
-				2AF52314184C3B3A00C250EF /* RomiboClientTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2422,24 +2391,6 @@
 			);
 			name = "Supporting Files";
 			path = RomiboClient;
-			sourceTree = "<group>";
-		};
-		2AF5231B184C3B3A00C250EF /* RomiboClientTests */ = {
-			isa = PBXGroup;
-			children = (
-				2AF52321184C3B3A00C250EF /* RomiboClientTests.m */,
-				2AF5231C184C3B3A00C250EF /* Supporting Files */,
-			);
-			path = RomiboClientTests;
-			sourceTree = "<group>";
-		};
-		2AF5231C184C3B3A00C250EF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2AF5231D184C3B3A00C250EF /* RomiboClientTests-Info.plist */,
-				2AF5231E184C3B3A00C250EF /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B1EDA698190F626200C17EBC /* romiboeyes */ = {
@@ -3666,24 +3617,6 @@
 			productReference = 2AF522F3184C3B3A00C250EF /* RomiboClient.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2AF52313184C3B3A00C250EF /* RomiboClientTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2AF52328184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClientTests" */;
-			buildPhases = (
-				2AF52310184C3B3A00C250EF /* Sources */,
-				2AF52311184C3B3A00C250EF /* Frameworks */,
-				2AF52312184C3B3A00C250EF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2AF5231A184C3B3A00C250EF /* PBXTargetDependency */,
-			);
-			name = RomiboClientTests;
-			productName = RomiboClientTests;
-			productReference = 2AF52314184C3B3A00C250EF /* RomiboClientTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -3695,10 +3628,7 @@
 				ORGANIZATIONNAME = com.romibo;
 				TargetAttributes = {
 					2AF522F2184C3B3A00C250EF = {
-						DevelopmentTeam = WTG4846AFW;
-					};
-					2AF52313184C3B3A00C250EF = {
-						TestTargetID = 2AF522F2184C3B3A00C250EF;
+						DevelopmentTeam = 9YYN96VW6R;
 					};
 				};
 			};
@@ -3716,7 +3646,6 @@
 			projectRoot = "";
 			targets = (
 				2AF522F2184C3B3A00C250EF /* RomiboClient */,
-				2AF52313184C3B3A00C250EF /* RomiboClientTests */,
 			);
 		};
 /* End PBXProject section */
@@ -4850,14 +4779,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2AF52312184C3B3A00C250EF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2AF52320184C3B3A00C250EF /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -4874,23 +4795,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2AF52310184C3B3A00C250EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2AF52322184C3B3A00C250EF /* RomiboClientTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2AF5231A184C3B3A00C250EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2AF522F2184C3B3A00C250EF /* RomiboClient */;
-			targetProxy = 2AF52319184C3B3A00C250EF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2AF522FF184C3B3A00C250EF /* InfoPlist.strings */ = {
@@ -4907,14 +4812,6 @@
 				2AF52309184C3B3A00C250EF /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2AF5231E184C3B3A00C250EF /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2AF5231F184C3B3A00C250EF /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -5024,7 +4921,7 @@
 				INFOPLIST_FILE = "RomiboClient/RomiboClient-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3D8C27C3-8CC6-4933-92D0-F4BD1ADF14FD";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				WRAPPER_EXTENSION = app;
@@ -5049,52 +4946,10 @@
 				INFOPLIST_FILE = "RomiboClient/RomiboClient-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3D8C27C3-8CC6-4933-92D0-F4BD1ADF14FD";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		2AF52329184C3B3A00C250EF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RomiboClient.app/RomiboClient";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "RomiboClientTests/RomiboClientTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		2AF5232A184C3B3A00C250EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RomiboClient.app/RomiboClient";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RomiboClient/RomiboClient-Prefix.pch";
-				INFOPLIST_FILE = "RomiboClientTests/RomiboClientTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -5115,15 +4970,6 @@
 			buildConfigurations = (
 				2AF52326184C3B3A00C250EF /* Debug */,
 				2AF52327184C3B3A00C250EF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2AF52328184C3B3A00C250EF /* Build configuration list for PBXNativeTarget "RomiboClientTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2AF52329184C3B3A00C250EF /* Debug */,
-				2AF5232A184C3B3A00C250EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
