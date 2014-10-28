@@ -177,20 +177,22 @@
     [_advertiser setDelegate:self];
     [_advertiser startAdvertisingPeer];
     
-    
-    //_assistant = [[MCAdvertiserAssistant alloc] initWithServiceType:kRMBOServiceType discoveryInfo:@{} session:_session];
-    //[_assistant start];
+  NSLog(@"mp connectivity advertized");
 }
 
-- (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler
+- (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser
+didReceiveInvitationFromPeer:(MCPeerID *)peerID
+       withContext:(NSData *)context
+ invitationHandler:(void (^)(BOOL accept,
+                             MCSession *session))invitationHandler
 {
-    invitationHandler(YES, _session);
-    [_advertiser stopAdvertisingPeer];
+  NSLog(@"advertiser: peerID = %@", peerID);
+  invitationHandler(YES, _session);
 }
 
 - (void)setupVoiceSynth
 {
-    _speechSynth = [[AVSpeechSynthesizer alloc] init];
+    self.speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
 }
 
 - (void)setupRobotCommunication
@@ -306,42 +308,55 @@
 
 - (void)speakUtterance:(NSString *)phrase atSpeechRate:(float)speechRate withVoice:(AVSpeechSynthesisVoice *)voice
 {
-    if (!voice) {
-        voice = [AVSpeechSynthesisVoice voiceWithLanguage:[AVSpeechSynthesisVoice currentLanguageCode]];
-    }
-        
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:phrase];
-    [utterance setRate:speechRate];
-    [utterance setVoice:voice];
-    [_speechSynth speakUtterance:utterance];
+  if (!voice) {
+      voice = [AVSpeechSynthesisVoice voiceWithLanguage:[AVSpeechSynthesisVoice currentLanguageCode]];
+  }
+  NSLog(@"speach request data: phrase = %@, rate = %0.1f", phrase, speechRate);
+  NSLog(@"current language = %@", voice);
+  AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:phrase];
+  [utterance setRate:speechRate];
+  [utterance setVoice:voice];
+  if (self.speechSynthesizer == NULL) {
+    self.speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
+  }
+  [self.speechSynthesizer speakUtterance:utterance];
+  NSLog(@"was here!!!");
 }
 
 
 - (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state
 {
-    if (state == MCSessionStateConnected) {
-        _connectedToController = YES;
-        //[_assistant stop];
-        [_advertiser stopAdvertisingPeer];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //[self speakUtterance:@"Ready to go!" atSpeechRate:AVSpeechUtteranceDefaultSpeechRate *.85 withVoice:nil];
-            [_eyes openEyes];
-        });
-        
-        
-        
-    }
-    else {
-        _connectedToController = NO;
-        [_advertiser startAdvertisingPeer];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_robotDriver stopRobot];
-            //[self speakUtterance:@"Sorry, seems I have a little stage fright." atSpeechRate:AVSpeechUtteranceDefaultSpeechRate * 0.85 withVoice:nil];
-            [_eyes closeEyes];
-        });
-        
-        
-    }
+  NSDictionary *dict = @{@"peerID": peerID,
+                         @"state" : [NSNumber numberWithInt:state]
+                         };
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"MCDidChangeStateNotification"
+                                                      object:nil
+                                                    userInfo:dict];
+  
+  if (state == MCSessionStateConnected) {
+      _connectedToController = YES;
+    //[_advertiser stopAdvertisingPeer];
+      dispatch_async(dispatch_get_main_queue(), ^{
+          [self speakUtterance:@"Ready to go!" atSpeechRate:AVSpeechUtteranceDefaultSpeechRate *.85 withVoice:nil];
+          [_eyes openEyes];
+      });
+      
+    NSLog(@"client: successfully accepted connection");
+    
+  }
+  else {
+    NSLog(@"client: failed declined connection request");
+      _connectedToController = NO;
+      [_advertiser startAdvertisingPeer];
+      dispatch_async(dispatch_get_main_queue(), ^{
+          [_robotDriver stopRobot];
+          [self speakUtterance:@"Sorry, seems I have a little stage fright." atSpeechRate:AVSpeechUtteranceDefaultSpeechRate * 0.85 withVoice:nil];
+          [_eyes closeEyes];
+      });
+      
+      
+  }
 }
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
@@ -469,9 +484,9 @@
     [_session sendData:data toPeers:_session.connectedPeers withMode:MCSessionSendDataReliable error:&error];
 }
 
-//Workaround for Apple bug
 - (void) session:(MCSession *)session didReceiveCertificate:(NSArray *)certificate fromPeer:(MCPeerID *)peerID certificateHandler:(void (^)(BOOL accept))certificateHandler
 {
+  NSLog(@"got here dawg!!");
     certificateHandler(YES);
 }
 
