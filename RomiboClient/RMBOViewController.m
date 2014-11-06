@@ -334,6 +334,9 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
                                                       object:nil
                                                     userInfo:dict];
   
+  if (state == MCSessionStateConnecting)
+      return;
+    
   if (state == MCSessionStateConnected) {
       _connectedToController = YES;
     //[_advertiser stopAdvertisingPeer];
