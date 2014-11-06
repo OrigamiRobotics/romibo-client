@@ -341,7 +341,8 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
       _connectedToController = YES;
     //[_advertiser stopAdvertisingPeer];
       dispatch_async(dispatch_get_main_queue(), ^{
-          [self speakUtterance:@"Ready to go!" atSpeechRate:AVSpeechUtteranceDefaultSpeechRate *.85 withVoice:nil];
+          // https://github.com/TUNER88/iOSSystemSoundsLibrary
+          AudioServicesPlaySystemSound(1075);
           [_eyes openEyes];
       });
       
@@ -353,9 +354,15 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
       _connectedToController = NO;
       [_advertiser startAdvertisingPeer];
       dispatch_async(dispatch_get_main_queue(), ^{
-          [_robotDriver stopRobot];
-          [self speakUtterance:@"Sorry, seems I have a little stage fright." atSpeechRate:AVSpeechUtteranceDefaultSpeechRate * 0.85 withVoice:nil];
-          [_eyes closeEyes];
+        [_robotDriver stopRobot];
+        
+        // http://stackoverflow.com/questions/20879768/cant-play-lock-aiff-inside-springboard-app
+        NSURL *fileURL = [NSURL URLWithString:@"/System/Library/Audio/UISounds/Modern/sms_alert_circles.caf"];
+        SystemSoundID soundID;
+        AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)fileURL,&soundID);
+        AudioServicesPlaySystemSound(soundID);
+
+        [_eyes closeEyes];
       });
       
       
